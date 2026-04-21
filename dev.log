@@ -1,0 +1,112 @@
+
+> dinoora-education@1.0.0 dev
+> next dev
+
+▲ Next.js 16.2.0 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.2.254:3000
+- Environments: .env.local
+✓ Ready in 702ms
+⚠ i18n configuration in next.config.mjs is unsupported in App Router.
+Learn more about internationalization in App Router: https://nextjs.org/docs/app/building-your-application/routing/internationalization
+⚠ Invalid next.config.mjs options detected: 
+⚠     Invalid literal value, expected false at "i18n.localeDetection"
+⚠ See more info here: https://nextjs.org/docs/messages/invalid-next-config
+
+○ Compiling / ...
+Image with src "/images/hero-bg.jpg" is using quality "85" which is not configured in images.qualities [75]. Please update your config to [75, 85].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+ GET / 200 in 5.1s (next.js: 4.6s, application-code: 431ms)
+[browser] Image with src "/images/hero-bg.jpg" is using quality "85" which is not configured in images.qualities [75]. Please update your config to [75, 85].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities (file:///Users/mac/Downloads/dinoora-main 2/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2431:13)
+ GET /site.webmanifest 404 in 1342ms (next.js: 1260ms, application-code: 82ms)
+[browser] Image with src "/images/china-campus.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes (file:///Users/mac/Downloads/dinoora-main 2/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2431:13)
+[browser] Image with src "/images/turkey-campus.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes (file:///Users/mac/Downloads/dinoora-main 2/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2431:13)
+[browser] Image with src "/images/malaysia-campus.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes (file:///Users/mac/Downloads/dinoora-main 2/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2431:13)
+[browser] Image with src "/images/student-1.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes (file:///Users/mac/Downloads/dinoora-main 2/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2431:13)
+[browser] Image with src "/images/student-3.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes (file:///Users/mac/Downloads/dinoora-main 2/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2431:13)
+[browser] Image with src "/images/student-2.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes (file:///Users/mac/Downloads/dinoora-main 2/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2431:13)
+ GET / 200 in 23ms (next.js: 11ms, application-code: 12ms)
+ GET / 200 in 12ms (next.js: 3ms, application-code: 9ms)
+  Reload env: .env.local
+✓ Compiled in 499ms
+ GET / 200 in 459ms (next.js: 325ms, application-code: 133ms)
+ GET /site.webmanifest 404 in 143ms (next.js: 32ms, application-code: 111ms)
+✓ Compiled in 210ms
+✓ Compiled in 89ms
+✓ Compiled in 149ms
+✓ Compiled in 82ms
+✓ Compiled in 1527ms
+ GET / 200 in 368ms (next.js: 135ms, application-code: 234ms)
+ GET / 200 in 185ms (next.js: 12ms, application-code: 173ms)
+Image with src "/images/hero-bg.jpg" is using quality "85" which is not configured in images.qualities [70, 70, 70, 70, 70, 70, 70, 75]. Please update your config to [70, 70, 70, 70, 70, 70, 70, 75, 85].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+⨯ ReferenceError: Linkedin is not defined
+    at Footer (components/footer.tsx:34:13)
+  32 |     { icon: Instagram, href: "#", label: "Instagram" },
+  33 |     { icon: Facebook, href: "#", label: "Facebook" },
+> 34 |     { icon: Linkedin, href: "#", label: "LinkedIn" },
+     |             ^
+  35 |     { icon: Youtube, href: "#", label: "YouTube" },
+  36 |   ]
+  37 | {
+  digest: '3218339015'
+}
+ GET / 500 in 301ms (next.js: 4ms, application-code: 297ms)
+ GET /site.webmanifest 404 in 177ms (next.js: 44ms, application-code: 132ms)
+[browser] Encountered a script tag while rendering React component. Scripts inside React components are never executed when rendering on the client. Consider using template tag instead (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template). 
+    at completeWork (file:///Users/mac/Downloads/dinoora-main 2/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6945:102)
+    at runWithFiberInDEV (file:///Users/mac/Downloads/dinoora-main 2/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at completeUnitOfWork (file:///Users/mac/Downloads/dinoora-main 2/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9622:23)
+    at performUnitOfWork (file:///Users/mac/Downloads/dinoora-main 2/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9557:28)
+    at workLoopSync (file:///Users/mac/Downloads/dinoora-main 2/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9449:40)
+    at renderRootSync (file:///Users/mac/Downloads/dinoora-main 2/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9433:13)
+    at performWorkOnRoot (file:///Users/mac/Downloads/dinoora-main 2/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9061:186)
+    at performWorkOnRootViaSchedulerTask (file:///Users/mac/Downloads/dinoora-main 2/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (file:///Users/mac/Downloads/dinoora-main 2/.next/dev/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:2647:64) (file:///Users/mac/Downloads/dinoora-main 2/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6945:102)
+ GET /favicon.ico 404 in 308ms (next.js: 49ms, application-code: 259ms)
+[browser] Image with src "/images/hero-bg.jpg" is using quality "85" which is not configured in images.qualities [70, 70, 70, 70, 70, 70, 70, 75]. Please update your config to [70, 70, 70, 70, 70, 70, 70, 75, 85].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities (file:///Users/mac/Downloads/dinoora-main 2/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2431:13)
+[browser] Uncaught ReferenceError: Linkedin is not defined
+    at Footer (file:///Users/mac/Downloads/dinoora-main 2/.next/dev/static/chunks/_12m94m5._.js:4785:19)
+    at Object.react_stack_bottom_frame (file:///Users/mac/Downloads/dinoora-main 2/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:15037:24)
+    at renderWithHooks (file:///Users/mac/Downloads/dinoora-main 2/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:4620:24)
+    at updateFunctionComponent (file:///Users/mac/Downloads/dinoora-main 2/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6081:21)
+    at beginWork (file:///Users/mac/Downloads/dinoora-main 2/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6691:24)
+    at runWithFiberInDEV (file:///Users/mac/Downloads/dinoora-main 2/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at performUnitOfWork (file:///Users/mac/Downloads/dinoora-main 2/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9555:97)
+    at workLoopSync (file:///Users/mac/Downloads/dinoora-main 2/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9449:40)
+    at renderRootSync (file:///Users/mac/Downloads/dinoora-main 2/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9433:13)
+    at performWorkOnRoot (file:///Users/mac/Downloads/dinoora-main 2/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9098:47)
+    at performWorkOnRootViaSchedulerTask (file:///Users/mac/Downloads/dinoora-main 2/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (file:///Users/mac/Downloads/dinoora-main 2/.next/dev/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:2647:64)
+    at Home (file:///Users/mac/Downloads/dinoora-main 2/.next/dev/static/chunks/_12m94m5._.js:5379:219)
+    at ClientPageRoot (file:///Users/mac/Downloads/dinoora-main 2/.next/dev/static/chunks/node_modules_0qclm-_._.js:5117:50)
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+✓ Compiled in 540ms
+Image with src "/images/hero-bg.jpg" is using quality "85" which is not configured in images.qualities [70, 70, 70, 70, 70, 70, 70, 75]. Please update your config to [70, 70, 70, 70, 70, 70, 70, 75, 85].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+ GET / 200 in 1179ms (next.js: 297ms, application-code: 882ms)
+ GET / 200 in 668ms (next.js: 23ms, application-code: 645ms)
+ GET /site.webmanifest 404 in 359ms (next.js: 34ms, application-code: 325ms)
+ GET /site.webmanifest 404 in 193ms (next.js: 16ms, application-code: 177ms)
+[browser] Image with src "/images/hero-bg.jpg" is using quality "85" which is not configured in images.qualities [70, 70, 70, 70, 70, 70, 70, 75]. Please update your config to [70, 70, 70, 70, 70, 70, 70, 75, 85].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities (file:///Users/mac/Downloads/dinoora-main 2/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2431:13)
+ GET /site.webmanifest 404 in 56ms (next.js: 9ms, application-code: 47ms)
+ GET /site.webmanifest 404 in 72ms (next.js: 5ms, application-code: 68ms)
+[browser] Image with src "/images/malaysia-campus.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes (file:///Users/mac/Downloads/dinoora-main 2/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2431:13)
+[browser] Image with src "/images/china-campus.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes (file:///Users/mac/Downloads/dinoora-main 2/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2431:13)
+[browser] Image with src "/images/turkey-campus.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes (file:///Users/mac/Downloads/dinoora-main 2/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2431:13)
+[browser] Image with src "/images/student-1.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes (file:///Users/mac/Downloads/dinoora-main 2/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2431:13)
+[browser] Image with src "/images/student-2.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes (file:///Users/mac/Downloads/dinoora-main 2/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2431:13)
+[browser] Image with src "/images/student-3.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes (file:///Users/mac/Downloads/dinoora-main 2/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2431:13)
+ GET / 200 in 23ms (next.js: 9ms, application-code: 14ms)
+ GET / 200 in 11ms (next.js: 3ms, application-code: 8ms)
+ GET / 200 in 12ms (next.js: 4ms, application-code: 8ms)
+ GET / 200 in 11ms (next.js: 4ms, application-code: 8ms)
+ GET / 200 in 13ms (next.js: 4ms, application-code: 9ms)
+ GET / 200 in 12ms (next.js: 3ms, application-code: 9ms)
+ GET / 200 in 102ms (next.js: 29ms, application-code: 73ms)
+ GET / 200 in 25ms (next.js: 9ms, application-code: 16ms)
+[?25h

@@ -1,0 +1,54 @@
+/**
+ * Application Configuration
+ * Centralized configuration for the DINNOORA Education Platform
+ */
+
+export const config = {
+  site: {
+    name: 'DINOORA Education',
+    shortName: 'DINOORA',
+    description: 'Premium student recruitment and study abroad services',
+    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://dinnoora.com',
+    author: 'DINNOORA Team',
+    ogImage: '/og-image.png',
+  },
+
+  contact: {
+    whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '+971503456789',
+    email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'contact@dinoora.com',
+    phone: process.env.NEXT_PUBLIC_PHONE_NUMBER || '+971503456789',
+    address: 'Dubai, United Arab Emirates',
+  },
+
+  social: {
+    twitter: 'https://twitter.com/dinoora',
+    linkedin: 'https://linkedin.com/company/dinoora',
+    facebook: 'https://facebook.com/dinoora',
+    instagram: 'https://instagram.com/dinoora',
+  },
+
+  features: {
+    analytics: process.env.NODE_ENV === 'production',
+    maintenance: process.env.NEXT_PUBLIC_MAINTENANCE_MODE === 'true',
+  },
+
+  locales: {
+    default: 'en',
+    supported: ['en', 'ar'],
+  },
+
+  destinations: [
+    { code: 'CN', name: 'China', flag: '🇨🇳' },
+    { code: 'MY', name: 'Malaysia', flag: '🇲🇾' },
+    { code: 'TR', name: 'Turkey', flag: '🇹🇷' },
+  ],
+
+  stats: {
+    studentsPlaced: '10,000+',
+    partnerUniversities: '500+',
+    successRate: '98%',
+    yearsExperience: '9+',
+  },
+} as const
+
+export type Config = typeof config

@@ -1,0 +1,303 @@
+/* Enhanced Animations and Styles */
+
+/* Improved Background Effects */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes blob-float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 30px) scale(0.9);
+  }
+}
+
+/* Section backgrounds with gradient */
+.section-bg-enhanced {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-bg-enhanced::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(var(--primary-rgb), 0.03), transparent);
+  pointer-events: none;
+}
+
+/* Animated gradient background */
+.gradient-bg-animated {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+/* Floating blobs animation */
+.blob-float {
+  animation: blob-float 8s ease-in-out infinite;
+}
+
+.blob-float:nth-child(2) {
+  animation-delay: 2s;
+}
+
+.blob-float:nth-child(3) {
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Enhanced Header Background */
+.header-enhanced {
+  background: linear-gradient(135deg, rgba(15, 15, 35, 0.5), rgba(20, 20, 40, 0.3));
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Card hover effects */
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Gradient text animations */
+.gradient-text-animated {
+  background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary));
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Enhanced stat counter animation */
+.stat-item {
+  animation: bounce-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Timeline animations */
+.timeline-item {
+  animation: slide-up 0.6s ease-out;
+}
+
+.timeline-item:nth-child(1) { animation-delay: 0.1s; }
+.timeline-item:nth-child(2) { animation-delay: 0.2s; }
+.timeline-item:nth-child(3) { animation-delay: 0.3s; }
+.timeline-item:nth-child(4) { animation-delay: 0.4s; }
+.timeline-item:nth-child(5) { animation-delay: 0.5s; }
+
+/* Smooth image transitions */
+.image-container {
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.image-container img {
+  transition: transform 0.3s ease-out;
+}
+
+.image-container:hover img {
+  transform: scale(1.05);
+}
+
+/* Button enhancements */
+.button-hover-scale {
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.button-hover-scale:hover {
+  transform: scale(1.05) translateY(-2px);
+}
+
+.button-hover-scale:active {
+  transform: scale(0.98);
+}
+
+/* Trust badges */
+.trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  background: rgba(var(--primary-rgb), 0.1);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--primary);
+  border: 1px solid rgba(var(--primary-rgb), 0.2);
+}
+
+/* Pulse animation for badges */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.pulse-badge {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Scroll reveal animation */
+.scroll-reveal {
+  opacity: 0;
+  animation: slide-up 0.6s ease-out forwards;
+}
+
+/* Feature card enhancement */
+.feature-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  animation: shimmer 3s infinite;
+}
+
+/* Enhanced Footer Background */
+.footer-enhanced {
+  background: linear-gradient(180deg, transparent, rgba(15, 15, 35, 0.3));
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Section spacing */
+.section-padding {
+  padding: 6rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding: 8rem 1.5rem;
+  }
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+/* Improve font rendering */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Enhanced glass morphism */
+.glass {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  .glass {
+    background: rgba(0, 0, 0, 0.3) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  }
+}
+
+/* Loading animation */
+@keyframes loading {
+  0%, 100% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+}
+
+.loading-bar {
+  animation: loading 1.5s ease-in-out infinite;
+}
+
+/* Smooth page transitions */
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+main {
+  animation: page-enter 0.3s ease-out;
+}
+
