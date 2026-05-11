@@ -5,6 +5,7 @@ import { GraduationCap, Stamp, FileStack, Home, Car, UserCheck, ArrowRight } fro
 import { useLanguage } from "@/lib/language-context"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { LazyFloatingIcons } from "@/components/lazy/lazy-3d"
 
 export function Services() {
   const { t, dir } = useLanguage()
@@ -56,11 +57,37 @@ export function Services() {
 
   return (
     <section id="services" className="relative py-24 lg:py-32 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/30 to-background" />
-      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[150px] -translate-x-1/2" />
-      <div className="absolute top-1/2 right-0 w-[400px] h-[400px] bg-accent/10 rounded-full blur-[120px] translate-x-1/2" />
-      <div className="absolute inset-0 grid-pattern opacity-30" />
+      {/* Professional Background */}
+      <div className="absolute inset-0">
+        {/* Professional Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=90')",
+          }}
+        />
+        
+        {/* Professional Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/85 via-purple-900/75 to-pink-900/85" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/90 to-background/95" />
+        
+        {/* Elegant Mesh Gradient */}
+        <div className="absolute inset-0 opacity-25" style={{
+          backgroundImage: `
+            radial-gradient(circle at 25% 35%, rgba(99, 102, 241, 0.3) 0%, transparent 50%),
+            radial-gradient(circle at 75% 65%, rgba(236, 72, 153, 0.3) 0%, transparent 50%)
+          `
+        }} />
+        
+        {/* Subtle Grid Pattern */}
+        <div className="absolute inset-0 opacity-15" style={{
+          backgroundImage: `
+            linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px)
+          `,
+          backgroundSize: '60px 60px'
+        }} />
+      </div>
       
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}

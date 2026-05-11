@@ -14,10 +14,10 @@ export const config = {
   },
 
   contact: {
-    whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '+971503456789',
-    email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'contact@dinoora.com',
-    phone: process.env.NEXT_PUBLIC_PHONE_NUMBER || '+971503456789',
-    address: 'Dubai, United Arab Emirates',
+    whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '+8615587237864',
+    email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'maomoody524@gmail.com',
+    phone: process.env.NEXT_PUBLIC_PHONE_NUMBER || '+8615587237864',
+    address: 'Yiwu City, Zhejiang Province, China',
   },
 
   social: {

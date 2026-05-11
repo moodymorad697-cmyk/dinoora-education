@@ -2,6 +2,7 @@
 
 import { Send, Search, FileText, CheckCircle, Stamp, Plane } from "lucide-react"
 import { useLanguage } from "@/lib/language-context"
+import { AnimatedBackground } from "@/components/ui/animated-background"
 
 export function HowItWorks() {
   const { t, dir } = useLanguage()
@@ -17,9 +18,37 @@ export function HowItWorks() {
 
   return (
     <section id="how-it-works" className="py-24 lg:py-32 relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 grid-pattern opacity-30" />
-      <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[120px]" />
+      {/* Professional Background */}
+      <div className="absolute inset-0">
+        {/* Professional Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&q=90')",
+          }}
+        />
+        
+        {/* Professional Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-900/85 via-orange-900/75 to-rose-900/85" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/90 to-background/95" />
+        
+        {/* Elegant Mesh Gradient */}
+        <div className="absolute inset-0 opacity-25" style={{
+          backgroundImage: `
+            radial-gradient(circle at 25% 40%, rgba(245, 158, 11, 0.3) 0%, transparent 50%),
+            radial-gradient(circle at 75% 60%, rgba(244, 63, 94, 0.3) 0%, transparent 50%)
+          `
+        }} />
+        
+        {/* Subtle Grid Pattern */}
+        <div className="absolute inset-0 opacity-15" style={{
+          backgroundImage: `
+            linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px)
+          `,
+          backgroundSize: '60px 60px'
+        }} />
+      </div>
       
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}

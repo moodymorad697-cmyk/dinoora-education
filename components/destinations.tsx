@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, Star, Building2, BookOpen, Award } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { LazyRotatingGlobe } from "@/components/lazy/lazy-3d"
 
 export function Destinations() {
   const { t, dir } = useLanguage()
@@ -29,9 +30,37 @@ export function Destinations() {
 
   return (
     <section id="destinations" className="py-24 lg:py-32 relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 grid-pattern opacity-50" />
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[150px]" />
+      {/* Professional Background */}
+      <div className="absolute inset-0">
+        {/* Professional Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1920&q=90')",
+          }}
+        />
+        
+        {/* Professional Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-cyan-900/85 via-blue-900/75 to-indigo-900/85" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/90 to-background/95" />
+        
+        {/* Elegant Mesh Gradient */}
+        <div className="absolute inset-0 opacity-25" style={{
+          backgroundImage: `
+            radial-gradient(circle at 20% 40%, rgba(6, 182, 212, 0.3) 0%, transparent 50%),
+            radial-gradient(circle at 80% 60%, rgba(99, 102, 241, 0.3) 0%, transparent 50%)
+          `
+        }} />
+        
+        {/* Subtle Grid Pattern */}
+        <div className="absolute inset-0 opacity-15" style={{
+          backgroundImage: `
+            linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px)
+          `,
+          backgroundSize: '60px 60px'
+        }} />
+      </div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}

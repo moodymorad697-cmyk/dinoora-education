@@ -2,81 +2,101 @@
 
 import { useLanguage } from "@/lib/language-context"
 import { CheckCircle2, Clock, FileText, Plane, Home, FileCheck } from "lucide-react"
+import { AnimatedBackground } from "@/components/ui/animated-background"
 
 export function ProcessTimeline() {
-  const { t, dir } = useLanguage()
+  const { t, dir, locale } = useLanguage()
 
   const steps = [
     {
       number: 1,
       icon: FileText,
-      titleEn: "Consultation & Planning",
-      titleAr: "الاستشارة والتخطيط",
-      descriptionEn: "We understand your goals and create a personalized education plan",
-      descriptionAr: "نفهم أهدافك ونضع خطة تعليم مخصصة لك",
-      duration: "1-2 weeks",
+      title: t.processTimeline.step1Title,
+      description: t.processTimeline.step1Desc,
+      duration: t.processTimeline.step1Duration,
       emoji: "📋"
     },
     {
       number: 2,
       icon: FileCheck,
-      titleEn: "Document Preparation",
-      titleAr: "تحضير المستندات",
-      descriptionEn: "Gather and organize all required documents for university application",
-      descriptionAr: "جمع وتنظيم جميع المستندات المطلوبة",
-      duration: "2-3 weeks",
+      title: t.processTimeline.step2Title,
+      description: t.processTimeline.step2Desc,
+      duration: t.processTimeline.step2Duration,
       emoji: "📄"
     },
     {
       number: 3,
       icon: CheckCircle2,
-      titleEn: "University Application",
-      titleAr: "التقديم للجامعة",
-      descriptionEn: "Submit applications to your preferred universities with our guidance",
-      descriptionAr: "تقديم الطلبات للجامعات المفضلة بمساعدتنا",
-      duration: "2-4 weeks",
+      title: t.processTimeline.step3Title,
+      description: t.processTimeline.step3Desc,
+      duration: t.processTimeline.step3Duration,
       emoji: "🎓"
     },
     {
       number: 4,
       icon: CheckCircle2,
-      titleEn: "Visa Processing",
-      titleAr: "معالجة التأشيرة",
-      descriptionEn: "Complete visa application with full support and interview preparation",
-      descriptionAr: "استكمال طلب التأشيرة مع الدعم الكامل",
-      duration: "3-6 weeks",
+      title: t.processTimeline.step4Title,
+      description: t.processTimeline.step4Desc,
+      duration: t.processTimeline.step4Duration,
       emoji: "🛂"
     },
     {
       number: 5,
       icon: Home,
-      titleEn: "Accommodation & Travel",
-      titleAr: "السكن والسفر",
-      descriptionEn: "Arrange housing and help you prepare for your journey abroad",
-      descriptionAr: "ترتيب السكن والتحضير للسفر",
-      duration: "1-2 weeks",
+      title: t.processTimeline.step5Title,
+      description: t.processTimeline.step5Desc,
+      duration: t.processTimeline.step5Duration,
       emoji: "🏠"
     }
   ]
 
   return (
     <section className="relative py-24 lg:py-32 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/30 to-background" />
-      <div className="absolute left-0 top-1/2 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[150px] -translate-y-1/2" />
-      <div className="absolute inset-0 grid-pattern opacity-20" />
+      {/* Professional Background */}
+      <div className="absolute inset-0">
+        {/* Professional Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=1920&q=90')",
+          }}
+        />
+        
+        {/* Professional Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-violet-900/85 via-purple-900/75 to-fuchsia-900/85" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/90 to-background/95" />
+        
+        {/* Elegant Mesh Gradient */}
+        <div className="absolute inset-0 opacity-25" style={{
+          backgroundImage: `
+            radial-gradient(circle at 30% 35%, rgba(139, 92, 246, 0.3) 0%, transparent 50%),
+            radial-gradient(circle at 70% 65%, rgba(217, 70, 239, 0.3) 0%, transparent 50%)
+          `
+        }} />
+        
+        {/* Subtle Grid Pattern */}
+        <div className="absolute inset-0 opacity-15" style={{
+          backgroundImage: `
+            linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px)
+          `,
+          backgroundSize: '60px 60px'
+        }} />
+      </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-6">
-            <span className="text-sm font-medium text-primary">⏱️ عملية سهلة وسريعة</span>
+            <span className="text-sm font-medium text-primary">
+              {t.processTimeline.badge}
+            </span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-foreground">
-            Your Journey in 5 Simple Steps
+            {t.processTimeline.title}
           </h2>
           <p className="text-lg text-muted-foreground">
-            We guide you through every step of the process, making your dream of studying abroad a reality
+            {t.processTimeline.description}
           </p>
         </div>
 
@@ -104,7 +124,7 @@ export function ProcessTimeline() {
                     <div>
                       <div className="text-3xl mb-2 group-hover:scale-125 transition-transform">{step.emoji}</div>
                       <h3 className="text-2xl font-bold text-foreground mb-2">
-                        {dir === "rtl" ? step.titleAr : step.titleEn}
+                        {step.title}
                       </h3>
                     </div>
                     <div className="flex items-center gap-1 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold flex-shrink-0">
@@ -113,7 +133,7 @@ export function ProcessTimeline() {
                     </div>
                   </div>
                   <p className="text-muted-foreground text-lg leading-relaxed">
-                    {dir === "rtl" ? step.descriptionAr : step.descriptionEn}
+                    {step.description}
                   </p>
                 </div>
               </div>
@@ -125,15 +145,15 @@ export function ProcessTimeline() {
         <div className="grid grid-cols-3 gap-4 mt-20 max-w-2xl mx-auto">
           <div className="glass rounded-2xl p-6 text-center border border-border/40 hover:border-primary/50 transition-all">
             <div className="text-4xl font-bold gradient-text mb-2">12-16</div>
-            <p className="text-sm text-muted-foreground">Weeks Total</p>
+            <p className="text-sm text-muted-foreground">{t.processTimeline.weeksTotal}</p>
           </div>
           <div className="glass rounded-2xl p-6 text-center border border-border/40 hover:border-primary/50 transition-all">
             <div className="text-4xl font-bold gradient-text mb-2">100%</div>
-            <p className="text-sm text-muted-foreground">Support</p>
+            <p className="text-sm text-muted-foreground">{t.processTimeline.fullSupport}</p>
           </div>
           <div className="glass rounded-2xl p-6 text-center border border-border/40 hover:border-primary/50 transition-all">
             <div className="text-4xl font-bold gradient-text mb-2">Zero</div>
-            <p className="text-sm text-muted-foreground">Hidden Fees</p>
+            <p className="text-sm text-muted-foreground">{t.processTimeline.noHiddenFees}</p>
           </div>
         </div>
       </div>

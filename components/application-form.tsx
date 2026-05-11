@@ -75,7 +75,7 @@ export function ApplicationForm() {
 Thank you for applying to DINOORA Education!`
 
     // Get WhatsApp number from environment (without spaces)
-    const userWhatsapp = process.env.NEXT_PUBLIC_USER_WHATSAPP?.replace(/\s+/g, "") || "+8615587237864"
+    const userWhatsapp = process.env.NEXT_PUBLIC_USER_WHATSAPP?.replace(/\s+/g, "") || "8615587237864"
 
     // Create WhatsApp URL with encoded message
     const whatsappUrl = `https://wa.me/${userWhatsapp}?text=${encodeURIComponent(messageText)}`

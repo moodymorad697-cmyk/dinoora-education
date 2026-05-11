@@ -3,6 +3,7 @@
 import { Star, Quote } from "lucide-react"
 import { useLanguage } from "@/lib/language-context"
 import Image from "next/image"
+import { AnimatedBackground } from "@/components/ui/animated-background"
 
 const testimonials = [
   {
@@ -51,11 +52,37 @@ export function Testimonials() {
   
   return (
     <section id="testimonials" className="relative py-24 lg:py-32 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/20 to-background" />
-      <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[150px]" />
-      <div className="absolute bottom-1/3 left-0 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[120px]" />
-      <div className="absolute inset-0 grid-pattern opacity-30" />
+      {/* Professional Background */}
+      <div className="absolute inset-0">
+        {/* Professional Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&q=90')",
+          }}
+        />
+        
+        {/* Professional Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-lime-900/85 via-green-900/75 to-emerald-900/85" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/90 to-background/95" />
+        
+        {/* Elegant Mesh Gradient */}
+        <div className="absolute inset-0 opacity-25" style={{
+          backgroundImage: `
+            radial-gradient(circle at 30% 35%, rgba(132, 204, 22, 0.3) 0%, transparent 50%),
+            radial-gradient(circle at 70% 65%, rgba(16, 185, 129, 0.3) 0%, transparent 50%)
+          `
+        }} />
+        
+        {/* Subtle Grid Pattern */}
+        <div className="absolute inset-0 opacity-15" style={{
+          backgroundImage: `
+            linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px)
+          `,
+          backgroundSize: '60px 60px'
+        }} />
+      </div>
       
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}

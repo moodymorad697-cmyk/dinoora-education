@@ -25,7 +25,7 @@ export function Header() {
     { href: "#how-it-works", label: t.nav.howItWorks, icon: "📋" },
     { href: "/services", label: t.nav.services, icon: "🛠️" },
     { href: "/destinations", label: t.nav.destinations, icon: "🌍" },
-    { href: "#programs", label: t.nav.programs, icon: "🎓" },
+    { href: "/quote", label: t.nav.getQuote || "Get Quote", icon: "💰", highlight: true },
     { href: "#testimonials", label: t.nav.testimonials, icon: "💬" },
   ]
 
@@ -60,13 +60,19 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="relative px-5 py-3 text-base font-semibold text-muted-foreground hover:text-foreground transition-all duration-300 rounded-lg hover:bg-secondary/50 group"
+                className={`relative px-5 py-3 text-base font-semibold transition-all duration-300 rounded-lg group ${
+                  item.highlight
+                    ? "gold-gradient text-primary-foreground hover:opacity-90 shadow-lg shadow-primary/25"
+                    : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
+                }`}
               >
                 <span className="flex items-center gap-2">
-                  <span className="text-sm opacity-70 group-hover:opacity-100 transition-opacity">{item.icon}</span>
+                  <span className={`text-sm ${item.highlight ? "opacity-100" : "opacity-70 group-hover:opacity-100"} transition-opacity`}>{item.icon}</span>
                   {item.label}
                 </span>
-                <span className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-primary group-hover:w-3/4 transition-all duration-300"></span>
+                {!item.highlight && (
+                  <span className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-primary group-hover:w-3/4 transition-all duration-300"></span>
+                )}
               </Link>
             ))}
           </nav>

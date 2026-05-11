@@ -7,9 +7,10 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import { AnimatedBackground } from "@/components/ui/animated-background"
 
 export function FAQ() {
-  const { t, dir } = useLanguage()
+  const { t, dir, locale } = useLanguage()
 
   const faqs = [
     {
@@ -72,22 +73,49 @@ export function FAQ() {
 
   return (
     <section className="relative py-24 lg:py-32 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/20 to-background" />
-      <div className="absolute right-0 top-1/2 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[150px] -translate-y-1/2" />
-      <div className="absolute inset-0 grid-pattern opacity-20" />
+      {/* Professional Background */}
+      <div className="absolute inset-0">
+        {/* Professional Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1920&q=90')",
+          }}
+        />
+        
+        {/* Professional Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-sky-900/85 via-blue-900/75 to-indigo-900/85" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/90 to-background/95" />
+        
+        {/* Elegant Mesh Gradient */}
+        <div className="absolute inset-0 opacity-25" style={{
+          backgroundImage: `
+            radial-gradient(circle at 25% 40%, rgba(14, 165, 233, 0.3) 0%, transparent 50%),
+            radial-gradient(circle at 75% 60%, rgba(99, 102, 241, 0.3) 0%, transparent 50%)
+          `
+        }} />
+        
+        {/* Subtle Grid Pattern */}
+        <div className="absolute inset-0 opacity-15" style={{
+          backgroundImage: `
+            linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px)
+          `,
+          backgroundSize: '60px 60px'
+        }} />
+      </div>
 
       <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-6">
-            <span className="text-sm font-medium text-primary">❓ أسئلة شائعة</span>
+            <span className="text-sm font-medium text-primary">{t.faq.label}</span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-foreground">
-            Frequently Asked Questions
+            {t.faq.title}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Find answers to common questions about our services, programs, and admission process
+            {t.faq.description}
           </p>
         </div>
 
@@ -110,22 +138,24 @@ export function FAQ() {
 
         {/* Still Have Questions */}
         <div className="mt-16 glass rounded-3xl p-10 border border-border/40 text-center">
-          <h3 className="text-2xl font-bold mb-3 text-foreground">Still have questions?</h3>
+          <h3 className="text-2xl font-bold mb-3 text-foreground">{t.faq.stillQuestions}</h3>
           <p className="text-muted-foreground mb-6">
-            Contact our advisors for a personalized consultation
+            {t.faq.stillQuestionsDesc}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://wa.me/your-whatsapp"
+              href="https://wa.me/8615587237864"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-8 py-3 rounded-lg bg-green-600 hover:bg-green-700 text-white font-semibold transition-colors"
             >
-              💬 Chat on WhatsApp
+              💬 {t.faq.chatWhatsApp}
             </a>
             <a
-              href="tel:+1234567890"
+              href="tel:+8615587237864"
               className="inline-flex items-center justify-center px-8 py-3 rounded-lg border-2 border-primary text-primary hover:bg-primary/10 font-semibold transition-colors"
             >
-              📞 Call Us
+              📞 {t.faq.callUs}
             </a>
           </div>
         </div>

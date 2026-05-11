@@ -17,7 +17,7 @@ NC='\033[0m' # No Color
 # Check Node.js
 echo "📦 Checking dependencies..."
 if ! command -v node &> /dev/null; then
-    echo -e "${RED}❌ Node.js is not installed${NC}"
+    echo -e "${RED} Node.js is not installed${NC}"
     exit 1
 fi
 echo -e "${GREEN}✓ Node.js installed${NC}"

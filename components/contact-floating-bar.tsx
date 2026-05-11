@@ -2,6 +2,7 @@
 
 import { Mail, Phone, MessageCircle, MapPin } from "lucide-react"
 import { useLanguage } from "@/lib/language-context"
+import { LazyVideoBackground } from "@/components/lazy/lazy-backgrounds"
 
 export function ContactFloatingBar() {
   const { locale } = useLanguage()
@@ -46,7 +47,23 @@ export function ContactFloatingBar() {
 
   return (
     <>
-      <div className="fixed bottom-0 left-0 right-0 z-40 bg-gradient-to-r from-card/98 via-card/95 to-card/98 backdrop-blur-2xl border-t-4 border-primary/70 shadow-[0_-20px_60px_-15px_rgba(0,0,0,0.3)]">
+      {/* Enhanced Background with Video */}
+      <div className="fixed bottom-0 left-0 right-0 z-30">
+        <LazyVideoBackground
+          videoSrc="/videos/contact-background.mp4"
+          fallbackImageSrc="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1920&q=80"
+          opacity={0.3} // Increased visibility
+          blur={1} // Less blur for more visibility
+          className="absolute inset-0"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-card/80 via-card/70 to-transparent" />
+        
+        {/* Additional animated elements */}
+        <div className="absolute top-0 left-1/4 w-32 h-32 bg-primary/30 rounded-full blur-[60px] animate-pulse" />
+        <div className="absolute top-0 right-1/4 w-40 h-40 bg-accent/30 rounded-full blur-[80px] animate-pulse" style={{ animationDelay: "1s" }} />
+      </div>
+      
+      <div className="fixed bottom-0 left-0 right-0 z-40 bg-gradient-to-r from-card/95 via-card/90 to-card/95 backdrop-blur-2xl border-t-4 border-primary/70 shadow-[0_-20px_60px_-15px_rgba(0,0,0,0.3)]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center sm:justify-start gap-8 sm:gap-14 h-24 sm:h-28 overflow-x-auto py-3">
             {contactItems.map((item, index) => (

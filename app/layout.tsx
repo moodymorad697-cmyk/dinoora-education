@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: '%s | DINOORA Education',
   },
   description: 'Premium student recruitment and study abroad services for China, Malaysia, and Turkey. Expert admission, visa, and housing support for your international education journey.',
-  keywords: ['education', 'study abroad', 'universities', 'admissions', 'student services', 'international education', 'China', 'Malaysia', 'Turkey'],
+  keywords: ['education', 'study abroad', 'universities', 'admissions', 'student services', 'international education', 'China', 'Malaysia', 'Turkey', 'scholarships', 'visa assistance', 'student recruitment'],
   authors: [{ name: 'DINOORA Team' }],
   creator: 'DINOORA',
   publisher: 'DINOORA',
@@ -32,8 +32,22 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://dinoora.com',
     title: 'DINOORA - Your Gateway to Global Education',
-    description: 'Premium student recruitment and study abroad services',
+    description: 'Premium student recruitment and study abroad services for China, Malaysia, and Turkey',
     siteName: 'DINOORA Education',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'DINOORA Education - Study Abroad Services',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'DINOORA - Your Gateway to Global Education',
+    description: 'Premium student recruitment and study abroad services',
+    images: ['/og-image.jpg'],
   },
   generator: 'Next.js',
   icons: {
@@ -59,6 +73,9 @@ export const metadata: Metadata = {
     statusBarStyle: 'default',
     title: 'DINNOORA Education',
   },
+  verification: {
+    google: 'your-google-verification-code',
+  },
 }
 
 export const viewport = {
@@ -73,19 +90,55 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'EducationalOrganization',
+    name: 'DINOORA Education',
+    description: 'Premium student recruitment and study abroad services for China, Malaysia, and Turkey',
+    url: 'https://dinoora.com',
+    logo: 'https://dinoora.com/logo.png',
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+8615587237864',
+      contactType: 'customer service',
+      availableLanguage: ['English', 'Arabic', 'Chinese']
+    },
+    address: {
+      '@type': 'PostalAddress',
+      addressCountry: 'CN',
+      addressLocality: 'Yiwu',
+      addressRegion: 'Zhejiang Province'
+    },
+    sameAs: [
+      'https://www.facebook.com/dinoora',
+      'https://www.twitter.com/dinoora',
+      'https://www.instagram.com/dinoora'
+    ],
+    offers: {
+      '@type': 'Offer',
+      category: 'Educational Services',
+      name: 'Study Abroad Programs',
+      description: 'Complete student recruitment and admission services'
+    }
+  }
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="color-scheme" content="light dark" />
         <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
       <body className={`${geist.className} ${notoSansArabic.variable} antialiased font-sans`} suppressHydrationWarning>
         <ThemeProvider>
           <LanguageProvider>
-            <main className="min-h-screen bg-background">
+            <div className="min-h-screen bg-background">
               {children}
-            </main>
+            </div>
             <ContactFloatingBar />
           </LanguageProvider>
         </ThemeProvider>

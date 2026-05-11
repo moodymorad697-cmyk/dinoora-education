@@ -31,11 +31,11 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     document.documentElement.dir = locale === "ar" ? "rtl" : "ltr"
   }, [locale])
 
-  const value = {
+  const value: LanguageContextType = {
     locale,
     setLocale,
-    t: translations[locale],
-    dir: locale === "ar" ? "rtl" : "ltr" as "ltr" | "rtl",
+    t: translations[locale] as Translations,
+    dir: locale === "ar" ? "rtl" : "ltr",
   }
 
   return (
