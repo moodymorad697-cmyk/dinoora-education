@@ -3,7 +3,6 @@
   "framework": "nextjs",
   "buildCommand": "npm run build",
   "installCommand": "npm install",
-  "packageManager": "npm",
   "env": {
     "NEXT_PUBLIC_SITE_URL": "https://dinoora.com",
     "NEXT_PUBLIC_WHATSAPP_NUMBER": "+971503456789",
