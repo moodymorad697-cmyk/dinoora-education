@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, JetBrains_Mono, Noto_Sans_Arabic } from 'next/font/google'
+import { Plus_Jakarta_Sans, Cairo, Outfit } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import '../styles/enhancements.css'
@@ -7,12 +7,25 @@ import { LanguageProvider } from '@/lib/language-context'
 import { ThemeProvider } from '@/components/theme-provider'
 import { ContactFloatingBar } from '@/components/contact-floating-bar'
 
-const geist = Inter({ subsets: ["latin"] });
-const geistMono = JetBrains_Mono({ subsets: ["latin"] });
-const notoSansArabic = Noto_Sans_Arabic({
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: '--font-sans',
+  display: 'swap',
+});
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  weight: ["600", "700", "800", "900"],
+  variable: '--font-display',
+  display: 'swap',
+});
+
+const cairo = Cairo({
   subsets: ["arabic"],
-  weight: ["400", "500", "600", "700"],
-  variable: '--font-noto-arabic'
+  weight: ["400", "500", "600", "700", "800"],
+  variable: '--font-arabic',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -133,7 +146,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${geist.className} ${notoSansArabic.variable} antialiased font-sans`} suppressHydrationWarning>
+      <body className={`${jakarta.variable} ${outfit.variable} ${cairo.variable} antialiased font-sans`} suppressHydrationWarning>
         <ThemeProvider>
           <LanguageProvider>
             <div className="min-h-screen bg-background">

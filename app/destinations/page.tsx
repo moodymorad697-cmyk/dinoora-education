@@ -2,7 +2,6 @@
 
 import { ArrowLeft, Globe } from "lucide-react"
 import Link from "next/link"
-import Image from "next/image"
 import { useLanguage } from "@/lib/language-context"
 import { Button } from "@/components/ui/button"
 
@@ -42,9 +41,9 @@ export default function DestinationsPage() {
             {destinations.map((key) => {
               const country = t.destinations.countries[key as keyof typeof t.destinations.countries]
               const images: Record<typeof key, string> = {
-                china: "https://images.unsplash.com/photo-1498855926480-d98e83099315?w=500&q=80",
-                malaysia: "https://images.unsplash.com/photo-1579720643554-f4c1b8e8e6a7?w=500&q=80",
-                turkey: "https://images.unsplash.com/photo-1570129477492-45a003537e1f?w=500&q=80",
+                china: "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=800&q=80",
+                malaysia: "https://images.unsplash.com/photo-1597211833712-5e41faa202ea?w=800&q=80",
+                turkey: "https://images.unsplash.com/photo-1531219572328-a0171b4448a3?w=800&q=80",
               }
 
               return (
@@ -55,11 +54,10 @@ export default function DestinationsPage() {
                 >
                   {/* Background Image */}
                   <div className="relative h-48 mb-6 -mx-8 -mt-8 rounded-b-3xl overflow-hidden">
-                    <Image
+                    <img
                       src={images[key]}
                       alt={country.name}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent" />
                   </div>

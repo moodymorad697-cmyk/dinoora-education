@@ -4,7 +4,11 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/lib/language-context"
-import { Menu, X, Globe, GraduationCap, Search, Phone, MessageCircle } from "lucide-react"
+import {
+  Menu, X, Globe, GraduationCap, Search, Phone, MessageCircle,
+  Star, ListChecks, Briefcase, MapPin, BookOpen, Building2, Quote,
+  Mail, Clock,
+} from "lucide-react"
 
 export function Header() {
   const { t, locale, setLocale, dir } = useLanguage()
@@ -21,12 +25,13 @@ export function Header() {
   }, [])
 
   const navItems = [
-    { href: "#why-us", label: t.nav.whyUs, icon: "⭐" },
-    { href: "#how-it-works", label: t.nav.howItWorks, icon: "📋" },
-    { href: "/services", label: t.nav.services, icon: "🛠️" },
-    { href: "/destinations", label: t.nav.destinations, icon: "🌍" },
-    { href: "/quote", label: t.nav.getQuote || "Get Quote", icon: "💰", highlight: true },
-    { href: "#testimonials", label: t.nav.testimonials, icon: "💬" },
+    { href: "#why-us", label: t.nav.whyUs, Icon: Star, highlight: false },
+    { href: "#how-it-works", label: t.nav.howItWorks, Icon: ListChecks, highlight: false },
+    { href: "#services", label: t.nav.services, Icon: Briefcase, highlight: false },
+    { href: "#destinations", label: t.nav.destinations, Icon: MapPin, highlight: false },
+    { href: "#programs", label: t.nav.programs, Icon: BookOpen, highlight: false },
+    { href: "#universities", label: locale === "ar" ? "الجامعات" : "Universities", Icon: Building2, highlight: false },
+    { href: "#testimonials", label: t.nav.testimonials, Icon: Quote, highlight: false },
   ]
 
   const toggleLanguage = () => {
@@ -34,47 +39,73 @@ export function Header() {
   }
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+    <>
+      {/* Top Info Bar */}
+      <div className={`fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-slate-950 via-indigo-950 to-slate-950 border-b border-white/5 transition-all duration-500 ${isScrolled ? "h-0 overflow-hidden opacity-0" : "h-9 opacity-100"}`}>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full">
+          <div className="flex items-center justify-between h-full text-xs">
+            <div className="flex items-center gap-5 text-white/70">
+              <a href="tel:+8615587237864" className="hidden sm:inline-flex items-center gap-1.5 hover:text-amber-400 transition-colors">
+                <Phone className="w-3 h-3" />
+                <span className="font-medium">+86 155-8723-7864</span>
+              </a>
+              <a href="mailto:info@dinoora.com" className="hidden md:inline-flex items-center gap-1.5 hover:text-amber-400 transition-colors">
+                <Mail className="w-3 h-3" />
+                <span>info@dinoora.com</span>
+              </a>
+              <span className="inline-flex items-center gap-1.5">
+                <Clock className="w-3 h-3 text-emerald-400" />
+                <span className="text-white/60">{locale === "ar" ? "متاحون 24/7" : "Available 24/7"}</span>
+              </span>
+            </div>
+            <div className="flex items-center gap-3 text-white/70">
+              <span className="hidden sm:inline-flex items-center gap-1.5">
+                <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
+                <span>{locale === "ar" ? "موثوق من مئات الطلاب" : "Trusted by Hundreds of Students"}</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <header
+      className={`fixed left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "header-enhanced py-3 shadow-2xl"
-          : "bg-transparent py-5"
+          ? "top-0 header-enhanced py-3 shadow-2xl"
+          : "top-9 bg-transparent py-4"
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 gold-gradient rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 hover:shadow-xl hover:shadow-primary/40">
-              <GraduationCap className="w-6 h-6 text-primary-foreground" />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-xl font-bold gradient-text">DINOORA</span>
-              <span className="text-[10px] text-muted-foreground -mt-1 tracking-wider">EDUCATION</span>
+            <div className="relative w-32 h-12 md:w-40 md:h-14 overflow-hidden group-hover:scale-105 transition-transform duration-300">
+              <img
+                src="/images/logo.png"
+                alt="DINOORA Education"
+                className="w-full h-full object-contain"
+              />
             </div>
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`relative px-5 py-3 text-base font-semibold transition-all duration-300 rounded-lg group ${
-                  item.highlight
-                    ? "gold-gradient text-primary-foreground hover:opacity-90 shadow-lg shadow-primary/25"
-                    : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
-                }`}
-              >
-                <span className="flex items-center gap-2">
-                  <span className={`text-sm ${item.highlight ? "opacity-100" : "opacity-70 group-hover:opacity-100"} transition-opacity`}>{item.icon}</span>
-                  {item.label}
-                </span>
-                {!item.highlight && (
-                  <span className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-primary group-hover:w-3/4 transition-all duration-300"></span>
-                )}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const Icon = item.Icon
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="relative px-4 py-2.5 text-sm font-semibold tracking-wide transition-all duration-300 rounded-lg group text-muted-foreground hover:text-foreground hover:bg-secondary/40"
+                >
+                  <span className="flex items-center gap-2">
+                    <Icon className="w-4 h-4 opacity-70 group-hover:opacity-100 group-hover:text-primary transition-all" />
+                    {item.label}
+                  </span>
+                  <span className="absolute -bottom-0.5 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-primary to-amber-500 group-hover:w-3/4 transition-all duration-300 rounded-full" />
+                </Link>
+              )
+            })}
           </nav>
 
           {/* Right Side Actions */}
@@ -167,17 +198,20 @@ export function Header() {
         {isMobileMenuOpen && (
           <div className="lg:hidden mt-4 pb-4 border-t border-border/50 animate-in slide-in-from-top-2">
             <nav className="flex flex-col gap-2 mt-4">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`px-5 py-4 text-lg font-semibold text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-lg transition-all duration-300 ${dir === "rtl" ? "text-right" : "text-left"} flex items-center gap-3 group`}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  <span className="text-lg group-hover:scale-110 transition-transform">{item.icon}</span>
-                  {item.label}
-                </Link>
-              ))}
+              {navItems.map((item) => {
+                const Icon = item.Icon
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={`px-5 py-4 text-base font-semibold text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-lg transition-all duration-300 ${dir === "rtl" ? "text-right" : "text-left"} flex items-center gap-3 group`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <Icon className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
+                    {item.label}
+                  </Link>
+                )
+              })}
 
               {/* Mobile Contact Buttons */}
               <div className="flex gap-3 mt-4 px-5">
@@ -217,5 +251,6 @@ export function Header() {
         )}
       </div>
     </header>
+    </>
   )
 }

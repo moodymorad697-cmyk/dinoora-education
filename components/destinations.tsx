@@ -3,63 +3,32 @@
 import { useLanguage } from "@/lib/language-context"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Star, Building2, BookOpen, Award } from "lucide-react"
-import Image from "next/image"
 import Link from "next/link"
-import { LazyRotatingGlobe } from "@/components/lazy/lazy-3d"
+import { destinationImages } from "@/lib/images"
+
+// Verified working education & landmark images for each country
+const images = {
+  china: "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=800&q=80",
+  malaysia: "https://images.unsplash.com/photo-1597211833712-5e41faa202ea?w=800&q=80",
+  turkey: "https://images.unsplash.com/photo-1531219572328-a0171b4448a3?w=800&q=80",
+};
 
 export function Destinations() {
   const { t, dir } = useLanguage()
 
   const destinations = [
-    {
-      key: "china" as const,
-      image: "/images/china-campus.jpg",
-      featured: true,
-    },
-    {
-      key: "malaysia" as const,
-      image: "/images/malaysia-campus.jpg",
-      featured: false,
-    },
-    {
-      key: "turkey" as const,
-      image: "/images/turkey-campus.jpg",
-      featured: false,
-    },
+    { key: "china" as const, image: images.china, featured: true },
+    { key: "malaysia" as const, image: images.malaysia, featured: false },
+    { key: "turkey" as const, image: images.turkey, featured: false },
   ]
 
   return (
     <section id="destinations" className="py-24 lg:py-32 relative overflow-hidden">
-      {/* Professional Background */}
+      {/* Clean Destinations Background */}
       <div className="absolute inset-0">
-        {/* Professional Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1920&q=90')",
-          }}
-        />
-        
-        {/* Professional Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-cyan-900/85 via-blue-900/75 to-indigo-900/85" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/90 to-background/95" />
-        
-        {/* Elegant Mesh Gradient */}
-        <div className="absolute inset-0 opacity-25" style={{
-          backgroundImage: `
-            radial-gradient(circle at 20% 40%, rgba(6, 182, 212, 0.3) 0%, transparent 50%),
-            radial-gradient(circle at 80% 60%, rgba(99, 102, 241, 0.3) 0%, transparent 50%)
-          `
-        }} />
-        
-        {/* Subtle Grid Pattern */}
-        <div className="absolute inset-0 opacity-15" style={{
-          backgroundImage: `
-            linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px)
-          `,
-          backgroundSize: '60px 60px'
-        }} />
+        {/* Simple Gradient Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-cyan-900/70 via-blue-800/60 to-indigo-900/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/80 to-background/95" />
       </div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
@@ -90,11 +59,10 @@ export function Destinations() {
                 >
                   {/* Image */}
                   <div className="absolute inset-0">
-                    <Image
+                    <img
                       src={dest.image}
                       alt={country.name}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
                   </div>
@@ -170,11 +138,10 @@ export function Destinations() {
                 >
                   {/* Image */}
                   <div className="absolute inset-0">
-                    <Image
+                    <img
                       src={dest.image}
                       alt={country.name}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent" />
                   </div>

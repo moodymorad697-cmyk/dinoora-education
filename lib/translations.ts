@@ -18,11 +18,11 @@ export const translations = {
     },
     // Hero
     hero: {
-      badge: "The #1 Choice for Arab Students Studying in China",
+      badge: "The #1 Choice for Arab Students Studying Abroad",
       title: "Transform Your Future with",
       titleHighlight: "World-Class Education",
-      titleEnd: "in China",
-      description: "DINNOORA is your premium gateway to top Chinese universities. We provide complete support from admission to graduation - visas, accommodation, airport pickup, and continuous follow-up. Your success is our commitment.",
+      titleEnd: "Worldwide",
+      description: "DINNOORA is your premium gateway to top universities in China, Malaysia, and Turkey. We provide complete support from admission to graduation - visas, accommodation, airport pickup, and continuous follow-up. Your success is our commitment.",
       applyNow: "Apply Now - Get Consultation",
       chatWhatsApp: "WhatsApp Us Directly",
       studentsPlaced: "Successful Students",
@@ -33,7 +33,7 @@ export const translations = {
     // Why Choose Us
     whyChooseUs: {
       label: "The DINNOORA Difference",
-      title: "Why 10,000+ Students Trust Us",
+      title: "Why 500+ Students Trust Us",
       description: "We don't just help you apply - we ensure your success. Our proven track record and dedicated team make your study abroad dreams a reality.",
       features: {
         directAdmission: {
@@ -207,7 +207,7 @@ export const translations = {
             "Direct admission to 500+ partner universities",
             "Visa approval rate: 98% within 2-3 weeks",
             "Affordable cost of living: $300-500/month",
-            "Network with 10,000+ Arab students already in China",
+            "Network with hundreds of Arab students already in China",
             "Internship opportunities at global companies",
           ],
           facts: [
@@ -318,7 +318,7 @@ export const translations = {
     cta: {
       badge: "Start Your Journey Free",
       title: "Your Dream University Awaits",
-      description: "Join the 10,000+ students who trusted DINNOORA to guide them to success. Expert consultation and comprehensive support - your future starts here.",
+      description: "Join hundreds of students who trusted DINNOORA to guide them to success. Expert consultation and comprehensive support - your future starts here.",
       applyNow: "Start Your Application",
       whatsapp: "WhatsApp: +86 155 8723 7864",
       benefits: {
@@ -523,7 +523,7 @@ export const translations = {
     },
     // Footer
     footer: {
-      description: "DINNOORA - Your trusted partner for international education since 2015. We've helped over 10,000 students achieve their dreams of studying abroad.",
+      description: "DINNOORA - Your trusted partner for international education. We've helped hundreds of students achieve their dreams of studying abroad.",
       quickLinks: "Quick Links",
       destinations: "Destinations",
       studyIn: "Study in",
@@ -559,11 +559,11 @@ export const translations = {
     },
     // Hero
     hero: {
-      badge: "الخيار الأول للطلاب العرب للدراسة في الصين",
+      badge: "الخيار الأول للطلاب العرب للدراسة في الخارج",
       title: "حول مستقبلك مع",
       titleHighlight: "تعليم عالمي المستوى",
-      titleEnd: "في الصين",
-      description: "دينورا هي بوابتك الاحترافية لأفضل الجامعات الصينية. نقدم دعماً كاملاً من القبول حتى التخرج - التأشيرات، السكن، الاستقبال من المطار، والمتابعة المستمرة. نجاحك هو التزامنا.",
+      titleEnd: "حول العالم",
+      description: "دينورا هي بوابتك الاحترافية لأفضل الجامعات في الصين وماليزيا وتركيا. نقدم دعماً كاملاً من القبول حتى التخرج - التأشيرات، السكن، الاستقبال من المطار، والمتابعة المستمرة. نجاحك هو التزامنا.",
       applyNow: "قدم الآن - احصل على استشارة",
       chatWhatsApp: "تواصل معنا عبر واتساب",
       studentsPlaced: "طالب ناجح",
@@ -574,7 +574,7 @@ export const translations = {
     // Why Choose Us
     whyChooseUs: {
       label: "تميز دينورا",
-      title: "لماذا يثق بنا أكثر من 10,000 طالب",
+      title: "لماذا يثق بنا مئات الطلاب",
       description: "نحن لا نساعدك فقط في التقديم - نضمن نجاحك. سجلنا الحافل وفريقنا المتفاني يحولون أحلام الدراسة في الخارج إلى واقع.",
       features: {
         directAdmission: {
@@ -748,7 +748,7 @@ export const translations = {
             "قبول مباشر في 500+ جامعة شريكة",
             "معدل نجاح التأشيرة: 98% في 2-3 أسابيع",
             "تكلفة المعيشة معقولة: 300-500 دولار شهرياً",
-            "التواصل مع 10,000+ طالب عربي يدرسون في الصين",
+            "التواصل مع مئات الطلاب العرب الدارسين في الصين",
             "فرص تدريب في شركات عالمية",
           ],
           facts: [
@@ -859,7 +859,7 @@ export const translations = {
     cta: {
       badge: "ابدأ رحلتك مجاناً",
       title: "جامعة أحلامك تنتظرك",
-      description: "انضم لأكثر من 10,000 طالب وثقوا بدينورا لإرشادهم نحو النجاح. استشارة خبراء ودعم شامل - مستقبلك يبدأ هنا.",
+      description: "انضم لمئات الطلاب الذين وثقوا بدينورا لإرشادهم نحو النجاح. استشارة خبراء ودعم شامل - مستقبلك يبدأ هنا.",
       applyNow: "ابدأ تقديمك",
       whatsapp: "واتساب: +86 155 8723 7864",
       benefits: {
@@ -1009,7 +1009,7 @@ export const translations = {
     },
     // Footer
     footer: {
-      description: "دينورا - شريكك الموثوق للتعليم الدولي منذ 2015. ساعدنا أكثر من 10,000 طالب على تحقيق أحلامهم في الدراسة بالخارج.",
+      description: "دينورا - شريكك الموثوق للتعليم الدولي. ساعدنا مئات الطلاب على تحقيق أحلامهم في الدراسة بالخارج.",
       quickLinks: "روابط سريعة",
       destinations: "الوجهات",
       studyIn: "ادرس في",

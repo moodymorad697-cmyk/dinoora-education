@@ -83,21 +83,48 @@ export function Footer() {
   ]
 
   return (
-    <footer className="relative border-t border-border/50 bg-card/30 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 grid-pattern opacity-20" />
-      <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[120px]" />
-      
+    <footer className="relative border-t border-white/5 overflow-hidden">
+      {/* Premium Multi-Layer Background */}
+      <div className="absolute inset-0">
+        {/* Deep base */}
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-950 to-black" />
+
+        {/* Top accent line */}
+        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+
+        {/* Mesh gradients */}
+        <div className="absolute inset-0 opacity-50" style={{
+          backgroundImage: `
+            radial-gradient(ellipse 60% 40% at 0% 0%, rgba(212, 168, 83, 0.10) 0%, transparent 50%),
+            radial-gradient(ellipse 60% 40% at 100% 0%, rgba(99, 102, 241, 0.10) 0%, transparent 50%),
+            radial-gradient(ellipse 80% 40% at 50% 100%, rgba(168, 85, 247, 0.08) 0%, transparent 60%)
+          `
+        }} />
+
+        {/* Floating orb */}
+        <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[150px]" />
+        <div className="absolute top-0 right-1/4 w-[400px] h-[400px] bg-indigo-500/5 rounded-full blur-[120px]" />
+
+        {/* Dotted pattern */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{
+          backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)',
+          backgroundSize: '28px 28px'
+        }} />
+      </div>
+
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
         <div className="grid gap-16 lg:grid-cols-5">
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-4 group">
-              <div className="w-14 h-14 gold-gradient rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                <GraduationCap className="w-8 h-8 text-primary-foreground" />
+              <div className="relative w-40 h-16 overflow-hidden group-hover:scale-105 transition-transform duration-300">
+                <img
+                  src="/images/logo.png"
+                  alt="DINOORA Education"
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div className="flex flex-col">
-                <span className="text-3xl font-bold gradient-text">DINOORA</span>
                 <span className="text-sm text-muted-foreground tracking-wider">{t.footer.tagline}</span>
               </div>
             </Link>
@@ -129,15 +156,19 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-bold uppercase tracking-wider text-foreground mb-8">{t.footer.quickLinks}</h3>
-            <ul className="space-y-5">
+            <h3 className="text-sm font-bold uppercase tracking-wider text-primary mb-6 flex items-center gap-2">
+              <span className="inline-block w-6 h-px bg-primary" />
+              {t.footer.quickLinks}
+            </h3>
+            <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.href + link.label}>
                   <Link
                     href={link.href}
-                    className="text-muted-foreground text-base hover:text-primary transition-colors font-medium"
+                    className="group inline-flex items-center gap-2 text-muted-foreground text-sm hover:text-primary transition-all duration-300 font-medium"
                   >
-                    {link.label}
+                    <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                    <span className="group-hover:translate-x-1 transition-transform">{link.label}</span>
                   </Link>
                 </li>
               ))}
@@ -146,114 +177,174 @@ export function Footer() {
 
           {/* Destinations & Services */}
           <div>
-            <h3 className="text-lg font-bold uppercase tracking-wider text-foreground mb-8">{t.footer.destinations}</h3>
-            <ul className="space-y-5 mb-10">
+            <h3 className="text-sm font-bold uppercase tracking-wider text-primary mb-6 flex items-center gap-2">
+              <span className="inline-block w-6 h-px bg-primary" />
+              {t.footer.destinations}
+            </h3>
+            <ul className="space-y-3 mb-8">
               {destinations.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-muted-foreground text-base hover:text-primary transition-colors font-medium"
+                    className="group inline-flex items-center gap-2 text-muted-foreground text-sm hover:text-primary transition-all duration-300 font-medium"
                   >
-                    {link.label}
+                    <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                    <span className="group-hover:translate-x-1 transition-transform">{link.label}</span>
                   </Link>
                 </li>
               ))}
             </ul>
-            <h3 className="text-lg font-bold uppercase tracking-wider text-foreground mb-8">{t.footer.servicesTitle}</h3>
-            <ul className="space-y-5">
+            <h3 className="text-sm font-bold uppercase tracking-wider text-primary mb-6 flex items-center gap-2">
+              <span className="inline-block w-6 h-px bg-primary" />
+              {t.footer.servicesTitle}
+            </h3>
+            <ul className="space-y-3">
               {services.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-muted-foreground text-base hover:text-primary transition-colors font-medium"
+                    className="group inline-flex items-center gap-2 text-muted-foreground text-sm hover:text-primary transition-all duration-300 font-medium"
                   >
-                    {link.label}
+                    <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                    <span className="group-hover:translate-x-1 transition-transform">{link.label}</span>
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Contact - Premium Cards */}
           <div>
-            <h3 className="text-lg font-bold uppercase tracking-wider text-foreground mb-8">{t.footer.contactUs}</h3>
-            <ul className="space-y-6">
-              <li className="flex items-start gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl gold-gradient text-primary-foreground shrink-0 mt-1">
-                  <MapPin className="h-6 w-6" />
+            <h3 className="text-sm font-bold uppercase tracking-wider text-primary mb-6 flex items-center gap-2">
+              <span className="inline-block w-6 h-px bg-primary" />
+              {t.footer.contactUs}
+            </h3>
+            <ul className="space-y-3">
+              <li className="group rounded-xl bg-white/[0.03] border border-white/5 p-4 hover:bg-white/[0.05] hover:border-amber-500/30 transition-all duration-300">
+                <div className="flex items-start gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-amber-500 to-orange-500 text-white shadow-lg shrink-0">
+                    <MapPin className="h-5 w-5" />
+                  </div>
+                  <span className="text-muted-foreground text-sm leading-relaxed">
+                    {locale === "ar" ? (
+                      <>الغرفة 201، الطابق الثاني، المبنى 2<br />رقم 37، قرية جيتانج، شارع جيانج دونج<br />مدينة ييوو، تشجيانج</>
+                    ) : (
+                      <>Room 201, 2nd Floor, Building 2<br />No. 37, Getang Village, Jiangdong St.<br />Yiwu, Zhejiang Province</>
+                    )}
+                  </span>
                 </div>
-                <span className="text-muted-foreground text-base leading-relaxed font-medium">
-                  {locale === "ar" ? (
-                    <>الغرفة 201، الطابق الثاني، المبنى 2<br />رقم 37، قرية جيتانج، شارع جيانج دونج<br />مدينة ييوو، مدينة جينهوا، مقاطعة تشجيانج</>
-                  ) : (
-                    <>Room 201, 2nd Floor, Building 2<br />No. 37, Getang Village, Jiangdong Street<br />Yiwu City, Jinhua City, Zhejiang Province</>
-                  )}
-                </span>
               </li>
-              <li className="flex items-center gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl gold-gradient text-primary-foreground shrink-0">
-                  <Phone className="h-6 w-6" />
-                </div>
-                <a href="tel:+8615587237864" className="text-muted-foreground hover:text-primary text-base font-medium" dir="ltr">
-                  +86 15587237864
+              <li className="group">
+                <a href="tel:+8615587237864" className="flex items-center gap-3 rounded-xl bg-white/[0.03] border border-white/5 p-4 hover:bg-white/[0.05] hover:border-blue-500/30 transition-all duration-300" dir="ltr">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 text-white shadow-lg shrink-0">
+                    <Phone className="h-5 w-5" />
+                  </div>
+                  <span className="text-foreground text-sm font-semibold group-hover:text-blue-400 transition-colors">+86 15587237864</span>
                 </a>
               </li>
-              <li className="flex items-center gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl gold-gradient text-primary-foreground shrink-0">
-                  <Mail className="h-6 w-6" />
-                </div>
-                <a href="mailto:maomoody524@gmail.com" className="text-muted-foreground hover:text-primary text-base font-medium break-all">
-                  maomoody524@gmail.com
+              <li className="group">
+                <a href="mailto:maomoody524@gmail.com" className="flex items-center gap-3 rounded-xl bg-white/[0.03] border border-white/5 p-4 hover:bg-white/[0.05] hover:border-purple-500/30 transition-all duration-300">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 text-white shadow-lg shrink-0">
+                    <Mail className="h-5 w-5" />
+                  </div>
+                  <span className="text-foreground text-sm font-semibold break-all group-hover:text-purple-400 transition-colors">maomoody524@gmail.com</span>
                 </a>
               </li>
-              <li className="flex items-center gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl gold-gradient text-primary-foreground shrink-0">
-                  <MessageCircle className="h-6 w-6" />
-                </div>
-                <a href="https://wa.me/8615587237864" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary text-base font-bold">
-                  {t.footer.whatsappSupport}
+              <li className="group">
+                <a href="https://wa.me/8615587237864" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 rounded-xl bg-gradient-to-br from-emerald-500/10 to-teal-500/5 border border-emerald-500/20 p-4 hover:from-emerald-500/20 hover:border-emerald-500/40 transition-all duration-300">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-emerald-500 to-teal-500 text-white shadow-lg shadow-emerald-500/30 shrink-0">
+                    <MessageCircle className="h-5 w-5" />
+                  </div>
+                  <span className="text-foreground text-sm font-bold group-hover:text-emerald-400 transition-colors">
+                    {t.footer.whatsappSupport}
+                  </span>
                 </a>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Newsletter Signup */}
-        <div className="mt-16 pt-12 border-t border-border/50">
-          <div className="text-center max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-foreground mb-4">
-              {t.footer.newsletterTitle || "Stay Updated with Latest Opportunities"}
+        {/* Study Quick Actions */}
+        <div className="mt-16 pt-12 border-t border-white/5">
+          <div className="text-center max-w-3xl mx-auto mb-10">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-4">
+              <GraduationCap className="w-4 h-4 text-primary" />
+              <span className="text-sm font-semibold text-primary tracking-wider uppercase">
+                {locale === "ar" ? "ابدأ رحلتك الدراسية الآن" : "Start Your Study Journey Now"}
+              </span>
+            </div>
+            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
+              {locale === "ar" ? "خطوتك القادمة على بعد نقرة واحدة" : "Your Next Step Is Just One Click Away"}
             </h3>
-            <p className="text-muted-foreground mb-8 leading-relaxed">
-              {t.footer.newsletterDescription || "Get the latest scholarship opportunities, university updates, and study abroad tips delivered to your inbox."}
+            <p className="text-muted-foreground leading-relaxed">
+              {locale === "ar"
+                ? "اختر ما يناسبك واحصل على رد فوري من فريق دينورا"
+                : "Choose what suits you and get an instant response from the Dinoora team"}
             </p>
-            <form onSubmit={handleNewsletterSubscribe} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder={t.footer.emailPlaceholder || "Enter your email address"}
-                className="flex-1 px-4 py-3 bg-secondary/50 border border-border/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground placeholder:text-muted-foreground"
-                disabled={newsletterStatus === "loading"}
-              />
-              <Button 
-                type="submit"
-                className="gold-gradient text-primary-foreground font-bold px-6 py-3 hover:scale-105 transition-transform flex items-center gap-2 disabled:opacity-50"
-                disabled={newsletterStatus === "loading"}
-              >
-                <Send className="w-4 h-4" />
-                {newsletterStatus === "loading" ? "..." : (t.footer.subscribe || "Subscribe")}
-              </Button>
-            </form>
-            {newsletterStatus !== "idle" && (
-              <div className={`mt-4 p-3 rounded-lg text-sm font-medium ${
-                newsletterStatus === "success" 
-                  ? "bg-green-500/20 text-green-600 border border-green-500/30" 
-                  : "bg-red-500/20 text-red-600 border border-red-500/30"
-              }`}>
-                {newsletterMessage}
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+            {/* Free Consultation */}
+            <a
+              href="https://wa.me/8615587237864?text=Hi%20Dinoora%2C%20I%20would%20like%20a%20free%20consultation%20about%20studying%20abroad"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative rounded-2xl card-glow lift-emerald p-6 text-center bg-gradient-to-br from-emerald-500/10 to-teal-500/5 border border-emerald-500/20 transition-all duration-500"
+            >
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 mb-3 shadow-lg shadow-emerald-500/30 group-hover:scale-110 group-hover:rotate-3 transition-all">
+                <MessageCircle className="w-6 h-6 text-white" />
               </div>
-            )}
+              <h4 className="font-bold text-foreground mb-2">
+                {locale === "ar" ? "استشارة مجانية" : "Free Consultation"}
+              </h4>
+              <p className="text-xs text-muted-foreground mb-3">
+                {locale === "ar" ? "تحدث مع خبير عبر واتساب" : "Talk to an expert via WhatsApp"}
+              </p>
+              <span className="inline-flex items-center gap-1 text-xs font-semibold text-emerald-400">
+                {locale === "ar" ? "ابدأ المحادثة" : "Start Chat"}
+                <ArrowRight className={`w-3 h-3 ${locale === "ar" ? "rotate-180" : ""} group-hover:translate-x-1 transition-transform`} />
+              </span>
+            </a>
+
+            {/* Browse Programs */}
+            <Link
+              href="#programs"
+              className="group relative rounded-2xl card-glow lift-gold p-6 text-center bg-gradient-to-br from-amber-500/10 to-orange-500/5 border border-amber-500/20 transition-all duration-500"
+            >
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-orange-500 mb-3 shadow-lg shadow-amber-500/30 group-hover:scale-110 group-hover:rotate-3 transition-all">
+                <GraduationCap className="w-6 h-6 text-white" />
+              </div>
+              <h4 className="font-bold text-foreground mb-2">
+                {locale === "ar" ? "تصفّح البرامج" : "Browse Programs"}
+              </h4>
+              <p className="text-xs text-muted-foreground mb-3">
+                {locale === "ar" ? "اكتشف برامج الدراسة المتاحة" : "Discover available study programs"}
+              </p>
+              <span className="inline-flex items-center gap-1 text-xs font-semibold text-amber-400">
+                {locale === "ar" ? "عرض البرامج" : "View Programs"}
+                <ArrowRight className={`w-3 h-3 ${locale === "ar" ? "rotate-180" : ""} group-hover:translate-x-1 transition-transform`} />
+              </span>
+            </Link>
+
+            {/* Apply Now */}
+            <Link
+              href="#apply"
+              className="group relative rounded-2xl card-glow lift-blue p-6 text-center bg-gradient-to-br from-blue-500/10 to-cyan-500/5 border border-blue-500/20 transition-all duration-500"
+            >
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 mb-3 shadow-lg shadow-blue-500/30 group-hover:scale-110 group-hover:rotate-3 transition-all">
+                <Send className="w-6 h-6 text-white" />
+              </div>
+              <h4 className="font-bold text-foreground mb-2">
+                {locale === "ar" ? "قدّم طلبك الآن" : "Apply Now"}
+              </h4>
+              <p className="text-xs text-muted-foreground mb-3">
+                {locale === "ar" ? "املأ نموذج التسجيل بسرعة" : "Fill the registration form quickly"}
+              </p>
+              <span className="inline-flex items-center gap-1 text-xs font-semibold text-blue-400">
+                {locale === "ar" ? "ابدأ التقديم" : "Start Application"}
+                <ArrowRight className={`w-3 h-3 ${locale === "ar" ? "rotate-180" : ""} group-hover:translate-x-1 transition-transform`} />
+              </span>
+            </Link>
           </div>
         </div>
 

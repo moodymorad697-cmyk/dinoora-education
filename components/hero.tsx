@@ -15,52 +15,52 @@ export function Hero() {
   const { t, dir } = useLanguage()
 
   const stats = [
-    { icon: GraduationCap, value: config.stats.studentsPlaced, label: t.hero.studentsPlaced, emoji: "🎓" },
-    { icon: Building2, value: config.stats.partnerUniversities, label: t.hero.partnerUniversities, emoji: "🏢" },
-    { icon: Trophy, value: config.stats.successRate, label: t.hero.successRate, emoji: "🏆" },
-    { icon: Clock, value: config.stats.yearsExperience, label: t.hero.yearsExperience, emoji: "⏱️" },
+    { Icon: GraduationCap, value: config.stats.studentsPlaced, label: t.hero.studentsPlaced, gradient: "from-amber-500 to-orange-500" },
+    { Icon: Building2, value: config.stats.partnerUniversities, label: t.hero.partnerUniversities, gradient: "from-blue-500 to-cyan-500" },
+    { Icon: Trophy, value: config.stats.successRate, label: t.hero.successRate, gradient: "from-emerald-500 to-teal-500" },
+    { Icon: Clock, value: config.stats.yearsExperience, label: t.hero.yearsExperience, gradient: "from-purple-500 to-pink-500" },
   ]
 
   const whatsappUrl = `https://wa.me/${config.contact.whatsapp.replace(/[^\d]/g, '')}?text=Hi%20DINNOORA%2C%20I'm%20interested%20in%20studying%20abroad`
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Professional Background with High-Quality Image */}
+      {/* Premium Multi-Layer Background */}
       <div className="absolute inset-0 z-0">
-        {/* Professional Background Image */}
-        <div 
+        {/* Background image with overlay */}
+        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=1920&q=95')",
+            backgroundImage: "url('https://images.unsplash.com/photo-1562774053-701939374585?w=1600&q=85')",
           }}
         />
-        
-        {/* Professional Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/80 via-purple-900/70 to-violet-900/80" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-background/50" />
-        
-        {/* Elegant Mesh Gradient */}
-        <div className="absolute inset-0 opacity-30" style={{
+
+        {/* Deep gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950/95 via-indigo-950/85 to-purple-950/95" />
+
+        {/* Aurora mesh gradients */}
+        <div className="absolute inset-0 opacity-60" style={{
           backgroundImage: `
-            radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.4) 0%, transparent 50%),
-            radial-gradient(circle at 80% 70%, rgba(168, 85, 247, 0.4) 0%, transparent 50%),
-            radial-gradient(circle at 40% 80%, rgba(139, 92, 246, 0.3) 0%, transparent 50%)
+            radial-gradient(ellipse 70% 50% at 20% 30%, rgba(212, 168, 83, 0.20) 0%, transparent 50%),
+            radial-gradient(ellipse 60% 50% at 80% 70%, rgba(99, 102, 241, 0.20) 0%, transparent 50%),
+            radial-gradient(ellipse 50% 30% at 50% 100%, rgba(168, 85, 247, 0.15) 0%, transparent 60%)
           `
         }} />
-        
-        {/* Subtle Grid Pattern */}
-        <div className="absolute inset-0 opacity-20" style={{
-          backgroundImage: `
-            linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px)
-          `,
-          backgroundSize: '50px 50px'
+
+        {/* Bottom fade to background */}
+        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-background via-background/60 to-transparent" />
+
+        {/* Subtle noise texture via dotted grid */}
+        <div className="absolute inset-0 opacity-[0.04]" style={{
+          backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)',
+          backgroundSize: '32px 32px'
         }} />
       </div>
 
-      {/* Elegant Floating Orbs */}
-      <div className="absolute top-20 right-20 w-64 h-64 bg-blue-500/20 rounded-full blur-[100px] animate-pulse" />
-      <div className="absolute bottom-20 left-20 w-72 h-72 bg-purple-500/20 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '1s' }} />
+      {/* Floating Animated Orbs */}
+      <div className="absolute top-1/4 -right-32 w-96 h-96 bg-amber-500/15 rounded-full blur-[150px] animate-pulse" />
+      <div className="absolute bottom-1/4 -left-32 w-96 h-96 bg-purple-500/15 rounded-full blur-[150px] animate-pulse" style={{ animationDelay: '1.5s' }} />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-500/8 rounded-full blur-[200px]" />
 
       <div className="container relative z-10 px-4 py-20 md:py-32 mx-auto max-w-7xl">
         <div className="max-w-5xl mx-auto text-center">
@@ -149,38 +149,44 @@ export function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Stats Grid with Emojis */}
-          <motion.div 
-            className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8"
+          {/* Premium Stats Grid */}
+          <motion.div
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1 }}
           >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                className="glass rounded-2xl p-8 text-center hover:bg-secondary/40 transition-all duration-300 group border border-border/40 hover:shadow-lg hover:shadow-primary/10"
-                whileHover={{ 
-                  scale: 1.05,
-                  boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)"
-                }}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
-              >
-                <motion.div 
-                  className="text-5xl mb-3"
-                  whileHover={{ scale: 1.3, rotate: 5 }}
-                  transition={{ type: "spring", stiffness: 300 }}
+            {stats.map((stat, index) => {
+              const Icon = stat.Icon
+              return (
+                <motion.div
+                  key={index}
+                  className="group relative rounded-2xl card-glow lift-gold backdrop-blur-xl bg-gradient-to-br from-white/[0.06] to-white/[0.02] border border-white/10 p-6 transition-all duration-500 overflow-hidden"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
                 >
-                  {stat.emoji}
+                  {/* Decorative gradient blob */}
+                  <div className={`absolute -top-12 -right-12 w-32 h-32 bg-gradient-to-br ${stat.gradient} opacity-10 rounded-full blur-2xl group-hover:opacity-25 transition-opacity duration-700`} />
+
+                  <div className="relative">
+                    {/* Icon */}
+                    <div className="relative inline-flex mb-4">
+                      <div className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} rounded-xl blur-lg opacity-40 group-hover:opacity-70 transition-opacity duration-500`} />
+                      <div className={`relative w-12 h-12 rounded-xl bg-gradient-to-br ${stat.gradient} flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:-rotate-3 transition-all duration-500`}>
+                        <Icon className="w-6 h-6 text-white" strokeWidth={2.2} />
+                      </div>
+                    </div>
+
+                    {/* Value */}
+                    <div className={`text-3xl md:text-4xl font-bold bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent mb-1`}>
+                      {stat.value}
+                    </div>
+                    <div className="text-sm md:text-base font-medium text-muted-foreground">{stat.label}</div>
+                  </div>
                 </motion.div>
-                <div className="text-4xl md:text-5xl font-bold gradient-text mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-base md:text-lg font-medium text-muted-foreground">{stat.label}</div>
-              </motion.div>
-            ))}
+              )
+            })}
           </motion.div>
         </div>
       </div>

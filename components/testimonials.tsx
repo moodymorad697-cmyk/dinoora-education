@@ -149,10 +149,10 @@ export function Testimonials() {
         {/* Stats Row */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
-            { value: "10,000+", label: locale === "ar" ? "طالب ناجح" : "Successful Students" },
-            { value: "$15M+", label: locale === "ar" ? "منح تم تأمينها" : "Scholarships Secured" },
-            { value: "98%", label: locale === "ar" ? "نسبة القبول" : "Acceptance Rate" },
-            { value: "500+", label: locale === "ar" ? "جامعة شريكة" : "Partner Universities" },
+            { value: "500+", label: locale === "ar" ? "طالب ناجح" : "Successful Students" },
+            { value: "$2M+", label: locale === "ar" ? "منح تم تأمينها" : "Scholarships Secured" },
+            { value: "95%", label: locale === "ar" ? "نسبة القبول" : "Acceptance Rate" },
+            { value: "50+", label: locale === "ar" ? "جامعة شريكة" : "Partner Universities" },
           ].map((stat, index) => (
             <div key={index} className="text-center">
               <div className="text-3xl md:text-4xl font-bold gradient-text">{stat.value}</div>

@@ -6,6 +6,16 @@ import Image from "next/image"
 import { useLanguage } from "@/lib/language-context"
 import { Button } from "@/components/ui/button"
 import { ApplicationForm } from "@/components/application-form"
+import { DynamicHeroImage } from "@/components/dynamic-hero-image"
+import { DestinationEnrichment } from "@/components/destination-enrichment"
+import { chinaEnrichment } from "@/lib/destination-data"
+
+const chinaHeroImages = [
+  "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=1200&q=80",
+  "https://images.unsplash.com/photo-1474181487882-5abf3f0ba6c2?w=1200&q=80",
+  "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=1200&q=80",
+  "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&q=80",
+]
 
 export default function ChinaPage() {
   const { t, locale } = useLanguage()
@@ -50,13 +60,8 @@ export default function ChinaPage() {
                 </Link>
               </Button>
             </div>
-            <div className="relative h-96 rounded-3xl overflow-hidden">
-              <Image
-                src="https://images.unsplash.com/photo-1498855926480-d98e83099315?w=800&q=80"
-                alt="China"
-                fill
-                className="object-cover"
-              />
+            <div className="relative h-96">
+              <DynamicHeroImage images={chinaHeroImages} alt="China" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
             </div>
           </div>
@@ -257,6 +262,9 @@ export default function ChinaPage() {
           </div>
         </div>
       </section>
+
+      {/* Rich Content: Cities, Universities, Costs, Visa, Testimonial */}
+      <DestinationEnrichment {...chinaEnrichment} />
 
       {/* Application Form */}
       <ApplicationForm />

@@ -2,10 +2,19 @@
 
 import { ArrowLeft, Globe, Users, BookOpen, Award } from "lucide-react"
 import Link from "next/link"
-import Image from "next/image"
 import { useLanguage } from "@/lib/language-context"
 import { Button } from "@/components/ui/button"
 import { ApplicationForm } from "@/components/application-form"
+import { DynamicHeroImage } from "@/components/dynamic-hero-image"
+import { DestinationEnrichment } from "@/components/destination-enrichment"
+import { turkeyEnrichment } from "@/lib/destination-data"
+
+const turkeyHeroImages = [
+  "https://images.unsplash.com/photo-1531219572328-a0171b4448a3?w=1200&q=80",
+  "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=1200&q=80",
+  "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&q=80",
+  "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1200&q=80",
+]
 
 export default function TurkeyPage() {
   const { t, locale } = useLanguage()
@@ -29,13 +38,8 @@ export default function TurkeyPage() {
               <p className="text-xl text-primary mb-6 italic">{country.tagline}</p>
               <p className="text-lg text-muted-foreground mb-8">{country.description}</p>
             </div>
-            <div className="relative h-96 rounded-3xl overflow-hidden">
-              <Image
-                src="https://images.unsplash.com/photo-1570129477492-45a003537e1f?w=500&q=80"
-                alt="Turkey"
-                fill
-                className="object-cover"
-              />
+            <div className="relative h-96">
+              <DynamicHeroImage images={turkeyHeroImages} alt="Turkey" />
             </div>
           </div>
         </div>
@@ -117,11 +121,10 @@ export default function TurkeyPage() {
             ].map((image, i) => (
               <div key={i} className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
                 <div className="aspect-[4/3] relative">
-                  <Image
+                  <img
                     src={image.src}
                     alt={image.alt}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
@@ -134,6 +137,9 @@ export default function TurkeyPage() {
           </div>
         </div>
       </section>
+
+      {/* Rich Content: Cities, Universities, Costs, Visa, Testimonial */}
+      <DestinationEnrichment {...turkeyEnrichment} />
 
       {/* CTA */}
       <section className="relative py-24 overflow-hidden">

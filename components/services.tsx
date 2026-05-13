@@ -1,159 +1,164 @@
 "use client"
 
-import Image from "next/image"
-import { GraduationCap, Stamp, FileStack, Home, Car, UserCheck, ArrowRight } from "lucide-react"
+import { GraduationCap, Stamp, FileStack, Home, Car, UserCheck, ArrowRight, Sparkles } from "lucide-react"
 import { useLanguage } from "@/lib/language-context"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { LazyFloatingIcons } from "@/components/lazy/lazy-3d"
 
 export function Services() {
   const { t, dir } = useLanguage()
 
   const services = [
     {
-      icon: GraduationCap,
+      Icon: GraduationCap,
       key: "admission" as const,
-      gradient: "from-amber-500/20 to-orange-500/20",
-      iconBg: "bg-amber-500/10 text-amber-400 group-hover:bg-amber-500",
-      image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=500&q=80", // University Admission
+      gradient: "from-amber-500 to-orange-500",
+      ringColor: "ring-amber-500/30",
+      shadowColor: "shadow-amber-500/20",
     },
     {
-      icon: Stamp,
+      Icon: Stamp,
       key: "visa" as const,
-      gradient: "from-blue-500/20 to-cyan-500/20",
-      iconBg: "bg-blue-500/10 text-blue-400 group-hover:bg-blue-500",
-      image: "https://images.unsplash.com/photo-1483389127117-b6a2102724ae?w=500&q=80", // Visa/Passport
+      gradient: "from-blue-500 to-cyan-500",
+      ringColor: "ring-blue-500/30",
+      shadowColor: "shadow-blue-500/20",
     },
     {
-      icon: FileStack,
+      Icon: FileStack,
       key: "documents" as const,
-      gradient: "from-emerald-500/20 to-teal-500/20",
-      iconBg: "bg-emerald-500/10 text-emerald-400 group-hover:bg-emerald-500",
-      image: "https://images.unsplash.com/photo-1450880014744-d98d85957e38?w=500&q=80", // Documents
+      gradient: "from-emerald-500 to-teal-500",
+      ringColor: "ring-emerald-500/30",
+      shadowColor: "shadow-emerald-500/20",
     },
     {
-      icon: Home,
+      Icon: Home,
       key: "accommodation" as const,
-      gradient: "from-purple-500/20 to-violet-500/20",
-      iconBg: "bg-purple-500/10 text-purple-400 group-hover:bg-purple-500",
-      image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=500&q=80", // Accommodation/Home
+      gradient: "from-purple-500 to-pink-500",
+      ringColor: "ring-purple-500/30",
+      shadowColor: "shadow-purple-500/20",
     },
     {
-      icon: Car,
+      Icon: Car,
       key: "airport" as const,
-      gradient: "from-rose-500/20 to-red-500/20",
-      iconBg: "bg-rose-500/10 text-rose-400 group-hover:bg-rose-500",
-      image: "https://images.unsplash.com/photo-1462620808062-c1e12eaf20c1?w=500&q=80", // Airport/Travel
+      gradient: "from-rose-500 to-red-500",
+      ringColor: "ring-rose-500/30",
+      shadowColor: "shadow-rose-500/20",
     },
     {
-      icon: UserCheck,
+      Icon: UserCheck,
       key: "followup" as const,
-      gradient: "from-indigo-500/20 to-violet-500/20",
-      iconBg: "bg-indigo-500/10 text-indigo-400 group-hover:bg-indigo-500",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&q=80", // Support/Follow-up
+      gradient: "from-indigo-500 to-violet-500",
+      ringColor: "ring-indigo-500/30",
+      shadowColor: "shadow-indigo-500/20",
     },
   ]
 
   return (
     <section id="services" className="relative py-24 lg:py-32 overflow-hidden">
-      {/* Professional Background */}
+      {/* Premium Multi-Layer Background */}
       <div className="absolute inset-0">
-        {/* Professional Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=90')",
-          }}
-        />
-        
-        {/* Professional Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/85 via-purple-900/75 to-pink-900/85" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/90 to-background/95" />
-        
-        {/* Elegant Mesh Gradient */}
-        <div className="absolute inset-0 opacity-25" style={{
+        {/* Deep base */}
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-indigo-950/40 to-slate-950" />
+
+        {/* Aurora effect */}
+        <div className="absolute inset-0 opacity-60" style={{
           backgroundImage: `
-            radial-gradient(circle at 25% 35%, rgba(99, 102, 241, 0.3) 0%, transparent 50%),
-            radial-gradient(circle at 75% 65%, rgba(236, 72, 153, 0.3) 0%, transparent 50%)
+            radial-gradient(ellipse 70% 50% at 30% 0%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+            radial-gradient(ellipse 60% 40% at 70% 100%, rgba(236, 72, 153, 0.12) 0%, transparent 50%),
+            radial-gradient(ellipse 50% 30% at 50% 50%, rgba(212, 168, 83, 0.08) 0%, transparent 60%)
           `
         }} />
-        
-        {/* Subtle Grid Pattern */}
-        <div className="absolute inset-0 opacity-15" style={{
+
+        {/* Floating orbs */}
+        <div className="absolute top-1/3 right-0 w-80 h-80 bg-indigo-500/10 rounded-full blur-[120px] animate-pulse" />
+        <div className="absolute bottom-1/3 left-0 w-80 h-80 bg-pink-500/10 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '1.5s' }} />
+
+        {/* Diagonal grid */}
+        <div className="absolute inset-0 opacity-[0.04]" style={{
           backgroundImage: `
-            linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px)
+            linear-gradient(45deg, rgba(255,255,255,0.5) 1px, transparent 1px),
+            linear-gradient(-45deg, rgba(255,255,255,0.5) 1px, transparent 1px)
           `,
-          backgroundSize: '60px 60px'
+          backgroundSize: '50px 50px'
         }} />
+
+        {/* Fade edges */}
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-background to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent" />
       </div>
-      
+
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-6">
-            <span className="text-base font-semibold text-primary">{t.services.label}</span>
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-md mb-6">
+            <Sparkles className="w-4 h-4 text-primary" />
+            <span className="text-sm font-semibold text-primary tracking-wider uppercase">{t.services.label}</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-balance mb-8">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-balance mb-6 leading-tight">
             <span className="text-foreground">{t.services.title.split(" ").slice(0, -1).join(" ")} </span>
             <span className="gradient-text">{t.services.title.split(" ").slice(-1)}</span>
           </h2>
-          <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed font-medium">
+          <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed">
             {t.services.description}
           </p>
         </div>
 
-        {/* Services Grid */}
+        {/* Premium Services Grid */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => {
             const data = t.services.items[service.key]
+            const Icon = service.Icon
             return (
-              <div
+              <Link
                 key={index}
-                className="group relative rounded-3xl border border-border/40 bg-card/40 p-10 backdrop-blur-sm transition-all duration-500 hover:border-primary/50 hover:bg-card/60 hover:shadow-2xl hover:shadow-primary/10 overflow-hidden"
+                href={`/services/${service.key}`}
+                className="group relative rounded-3xl card-glow lift-gold backdrop-blur-xl bg-gradient-to-br from-white/[0.05] to-white/[0.01] border border-white/10 p-7 transition-all duration-500 overflow-hidden block"
               >
-                {/* Background Image (very subtle) */}
-                <div className="absolute inset-0 rounded-3xl overflow-hidden">
-                  <Image
-                    src={service.image}
-                    alt=""
-                    fill
-                    className="object-cover opacity-10 group-hover:opacity-20 transition-opacity duration-500"
-                  />
-                </div>
+                {/* Decorative gradient blob */}
+                <div className={`absolute -top-20 -right-20 w-48 h-48 bg-gradient-to-br ${service.gradient} opacity-10 rounded-full blur-3xl group-hover:opacity-25 transition-opacity duration-700`} />
 
-                {/* Gradient Background on Hover */}
-                <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                {/* Top accent line */}
+                <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
 
                 <div className="relative z-10">
-                  <div className={`flex h-16 w-16 items-center justify-center rounded-2xl ${service.iconBg} transition-all duration-300 group-hover:text-white group-hover:scale-125 group-hover:shadow-xl`}>
-                    <service.icon className="h-8 w-8" />
+                  {/* Icon with glow */}
+                  <div className="relative inline-flex mb-6">
+                    <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} rounded-2xl blur-xl opacity-40 group-hover:opacity-70 transition-opacity duration-500`} />
+                    <div className={`relative flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${service.gradient} shadow-xl ${service.shadowColor} group-hover:scale-110 group-hover:-rotate-3 transition-all duration-500 ring-1 ${service.ringColor}`}>
+                      <Icon className="h-7 w-7 text-white" strokeWidth={2.2} />
+                    </div>
                   </div>
-                  <h3 className="mt-8 text-2xl font-bold text-foreground">{data.title}</h3>
-                  <p className="mt-4 text-lg text-muted-foreground leading-relaxed">{data.description}</p>
-                  
-                  {/* Learn More Link */}
-                  <div className="mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <Button variant="ghost" className="p-0 h-auto text-primary hover:text-primary hover:bg-transparent group/btn" asChild>
-                      <Link href={`/services/${service.key}`}>
-                        <span className="text-sm font-medium">{t.services.learnMore}</span>
-                        <ArrowRight className={`w-4 h-4 transition-transform group-hover/btn:translate-x-1 ${dir === "rtl" ? "mr-2 rotate-180 group-hover/btn:-translate-x-1" : "ml-2"}`} />
-                      </Link>
-                    </Button>
+
+                  <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
+                    {data.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed text-[15px] mb-5">
+                    {data.description}
+                  </p>
+
+                  {/* Learn More */}
+                  <div className="inline-flex items-center gap-2 text-sm font-semibold text-primary opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-x-2 group-hover:translate-x-0">
+                    <span>{t.services.learnMore}</span>
+                    <ArrowRight className={`w-4 h-4 ${dir === "rtl" ? "rotate-180" : ""}`} />
                   </div>
+
+                  {/* Bottom accent */}
+                  <div className={`mt-5 h-1 w-12 rounded-full bg-gradient-to-r ${service.gradient} opacity-60 group-hover:w-20 transition-all duration-500`} />
                 </div>
-              </div>
+              </Link>
             )
           })}
         </div>
 
         {/* Bottom CTA */}
         <div className="mt-20 text-center">
-          <Button className="gold-gradient text-primary-foreground hover:opacity-90 px-10 py-8 text-xl font-semibold shadow-lg shadow-primary/30" asChild>
+          <Button
+            className="gold-gradient text-primary-foreground hover:opacity-90 px-10 py-7 text-lg font-bold shadow-2xl shadow-primary/30 hover:shadow-primary/50 transition-all hover:scale-105"
+            asChild
+          >
             <Link href="#apply">
               {t.services.cta}
-              <ArrowRight className={`w-6 h-6 ${dir === "rtl" ? "mr-3 rotate-180" : "ml-3"}`} />
+              <ArrowRight className={`w-5 h-5 ${dir === "rtl" ? "mr-3 rotate-180" : "ml-3"}`} />
             </Link>
           </Button>
         </div>

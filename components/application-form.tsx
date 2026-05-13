@@ -116,13 +116,8 @@ Thank you for applying to DINOORA Education!`
 
   return (
     <section id="apply" className="py-24 lg:py-32 relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/85 to-background" />
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=1200&q=80')] bg-cover bg-center opacity-30" />
-      <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-background/80 to-background/70" />
-      <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[150px]" />
-      <div className="absolute bottom-1/4 left-0 w-[400px] h-[400px] bg-accent/10 rounded-full blur-[120px]" />
-      <div className="absolute inset-0 grid-pattern opacity-20" />
+      {/* Clean Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-indigo-950/20 to-background" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-20 items-center">
@@ -162,10 +157,11 @@ Thank you for applying to DINOORA Education!`
 
           {/* Right Column - Form */}
           <div className="relative">
-            {/* Gradient Border Effect */}
-            <div className="absolute -inset-1 gold-gradient rounded-[2rem] opacity-20 blur-sm" />
+            {/* Animated Gradient Border */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-amber-500 via-purple-500 to-indigo-500 rounded-[2rem] opacity-30 blur-lg animate-pulse" />
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-amber-500 rounded-[2rem] opacity-20" />
 
-            <div className="relative rounded-3xl border border-border/50 bg-card/80 backdrop-blur-xl p-8 lg:p-10">
+            <div className="relative rounded-3xl border border-white/10 bg-card/90 backdrop-blur-2xl p-8 lg:p-10 shadow-2xl shadow-black/20">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-2">
                   <Label htmlFor="name" className="text-foreground font-medium">{t.applicationForm.form.fullName}</Label>

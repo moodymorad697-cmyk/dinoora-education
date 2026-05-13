@@ -44,10 +44,10 @@ export const config = {
   ],
 
   stats: {
-    studentsPlaced: '10,000+',
-    partnerUniversities: '500+',
-    successRate: '98%',
-    yearsExperience: '9+',
+    studentsPlaced: '500+',
+    partnerUniversities: '50+',
+    successRate: '95%',
+    yearsExperience: '5+',
   },
 } as const
 
