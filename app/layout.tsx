@@ -84,7 +84,7 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
-    title: 'DINNOORA Education',
+    title: 'DINOORA Education',
   },
   verification: {
     google: 'your-google-verification-code',

@@ -5,7 +5,7 @@
 
 echo ""
 echo "╔════════════════════════════════════════════════════════╗"
-echo "║      🚀 DINNOORA Education Platform - Quick Start      ║"
+echo "║      🚀 DINOORA Education Platform - Quick Start       ║"
 echo "╚════════════════════════════════════════════════════════╝"
 echo ""
 

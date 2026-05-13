@@ -4,7 +4,7 @@ export const translations = {
   en: {
     // Header
     nav: {
-      whyUs: "Why DINNOORA",
+      whyUs: "Why DINOORA",
       howItWorks: "Our Process",
       services: "Services",
       destinations: "Destinations",
@@ -22,7 +22,7 @@ export const translations = {
       title: "Transform Your Future with",
       titleHighlight: "World-Class Education",
       titleEnd: "Worldwide",
-      description: "DINNOORA is your premium gateway to top universities in China, Malaysia, and Turkey. We provide complete support from admission to graduation - visas, accommodation, airport pickup, and continuous follow-up. Your success is our commitment.",
+      description: "DINOORA is your premium gateway to top universities in China, Malaysia, and Turkey. We provide complete support from admission to graduation - visas, accommodation, airport pickup, and continuous follow-up. Your success is our commitment.",
       applyNow: "Apply Now - Get Consultation",
       chatWhatsApp: "WhatsApp Us Directly",
       studentsPlaced: "Successful Students",
@@ -32,7 +32,7 @@ export const translations = {
     },
     // Why Choose Us
     whyChooseUs: {
-      label: "The DINNOORA Difference",
+      label: "The DINOORA Difference",
       title: "Why 500+ Students Trust Us",
       description: "We don't just help you apply - we ensure your success. Our proven track record and dedicated team make your study abroad dreams a reality.",
       features: {
@@ -311,14 +311,14 @@ export const translations = {
     testimonials: {
       label: "Success Stories",
       title: "Students Who Made It",
-      description: "Real stories from students who transformed their futures with DINNOORA.",
+      description: "Real stories from students who transformed their futures with DINOORA.",
       readMore: "Read Full Story",
     },
     // CTA
     cta: {
       badge: "Start Your Journey Free",
       title: "Your Dream University Awaits",
-      description: "Join hundreds of students who trusted DINNOORA to guide them to success. Expert consultation and comprehensive support - your future starts here.",
+      description: "Join hundreds of students who trusted DINOORA to guide them to success. Expert consultation and comprehensive support - your future starts here.",
       applyNow: "Start Your Application",
       whatsapp: "WhatsApp: +86 155 8723 7864",
       benefits: {
@@ -356,7 +356,7 @@ export const translations = {
       },
       success: {
         title: "✅ Message Sent Successfully!",
-        description: "Your application has been sent to our WhatsApp (+86 155 8723 7864). Our expert advisors will contact you within 24 hours with personalized university recommendations and scholarship information. Thank you for choosing DINNOORA!",
+        description: "Your application has been sent to our WhatsApp (+86 155 8723 7864). Our expert advisors will contact you within 24 hours with personalized university recommendations and scholarship information. Thank you for choosing DINOORA!",
         submitAnother: "Submit Another Application",
       },
     },
@@ -523,7 +523,7 @@ export const translations = {
     },
     // Footer
     footer: {
-      description: "DINNOORA - Your trusted partner for international education. We've helped hundreds of students achieve their dreams of studying abroad.",
+      description: "DINOORA - Your trusted partner for international education. We've helped hundreds of students achieve their dreams of studying abroad.",
       quickLinks: "Quick Links",
       destinations: "Destinations",
       studyIn: "Study in",

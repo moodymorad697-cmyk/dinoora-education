@@ -244,7 +244,7 @@ export default function ChinaPage() {
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
               {locale === "en"
-                ? "Join thousands of successful students studying in China with DINNOORA's expert guidance."
+                ? "Join thousands of successful students studying in China with DINOORA's expert guidance."
                 : "انضم إلى الآلاف من الطلاب الناجحين يدرسون في الصين مع توجيه دينورا الخبراء."}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

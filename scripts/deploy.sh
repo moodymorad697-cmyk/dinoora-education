@@ -5,7 +5,7 @@
 
 set -e
 
-echo "🚀 DINNOORA Deployment Script"
+echo "🚀 DINOORA Deployment Script"
 echo "=============================="
 
 # Color codes

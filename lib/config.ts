@@ -1,6 +1,6 @@
 /**
  * Application Configuration
- * Centralized configuration for the DINNOORA Education Platform
+ * Centralized configuration for the DINOORA Education Platform
  */
 
 export const config = {
@@ -8,8 +8,8 @@ export const config = {
     name: 'DINOORA Education',
     shortName: 'DINOORA',
     description: 'Premium student recruitment and study abroad services',
-    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://dinnoora.com',
-    author: 'DINNOORA Team',
+    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://dinoora.com',
+    author: 'DINOORA Team',
     ogImage: '/og-image.png',
   },
 

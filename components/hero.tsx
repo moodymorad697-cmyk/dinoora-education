@@ -21,7 +21,7 @@ export function Hero() {
     { Icon: Clock, value: config.stats.yearsExperience, label: t.hero.yearsExperience, gradient: "from-purple-500 to-pink-500" },
   ]
 
-  const whatsappUrl = `https://wa.me/${config.contact.whatsapp.replace(/[^\d]/g, '')}?text=Hi%20DINNOORA%2C%20I'm%20interested%20in%20studying%20abroad`
+  const whatsappUrl = `https://wa.me/${config.contact.whatsapp.replace(/[^\d]/g, '')}?text=Hi%20DINOORA%2C%20I'm%20interested%20in%20studying%20abroad`
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
