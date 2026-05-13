@@ -44,6 +44,10 @@ lerna-debug.log*
 .vercel
 .cache
 
+# Lock files (we use package-lock.json instead)
+pnpm-lock.yaml
+yarn.lock
+
 # Local development
 .env.local
 .env.development.local
