@@ -1,11 +1,11 @@
 {
-  "buildCommand": "pnpm run build",
-  "devCommand": "pnpm dev",
-  "installCommand": "pnpm install",
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
   "env": {
     "NEXT_PUBLIC_SITE_URL": "https://dinoora.com",
     "NEXT_PUBLIC_WHATSAPP_NUMBER": "+971503456789",
-    "NEXT_PUBLIC_CONTACT_EMAIL": "contact@dinnoora.com"
+    "NEXT_PUBLIC_CONTACT_EMAIL": "contact@dinoora.com"
   },
   "headers": [
     {
