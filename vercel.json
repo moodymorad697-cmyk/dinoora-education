@@ -1,7 +1,9 @@
 {
+  "version": 2,
+  "framework": "nextjs",
   "buildCommand": "npm run build",
-  "devCommand": "npm run dev",
   "installCommand": "npm install",
+  "packageManager": "npm",
   "env": {
     "NEXT_PUBLIC_SITE_URL": "https://dinoora.com",
     "NEXT_PUBLIC_WHATSAPP_NUMBER": "+971503456789",
