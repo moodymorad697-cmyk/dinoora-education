@@ -45,9 +45,9 @@ export function Header() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full">
           <div className="flex items-center justify-between h-full text-xs">
             <div className="flex items-center gap-5 text-white/70">
-              <a href="tel:+8615587237864" className="hidden sm:inline-flex items-center gap-1.5 hover:text-amber-400 transition-colors">
+              <a href="tel:+971503456789" className="hidden sm:inline-flex items-center gap-1.5 hover:text-amber-400 transition-colors">
                 <Phone className="w-3 h-3" />
-                <span className="font-medium">+86 155-8723-7864</span>
+                <span className="font-medium">+971 50 345 6789</span>
               </a>
               <a href="mailto:info@dinoora.com" className="hidden md:inline-flex items-center gap-1.5 hover:text-amber-400 transition-colors">
                 <Mail className="w-3 h-3" />
@@ -69,10 +69,10 @@ export function Header() {
       </div>
 
       <header
-      className={`fixed left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed left-0 right-0 z-50 transition-all duration-500 bg-slate-950 border-b border-slate-800 ${
         isScrolled
-          ? "top-0 header-enhanced py-3 shadow-2xl"
-          : "top-9 bg-transparent py-4"
+          ? "top-0 py-3 shadow-2xl shadow-black/20"
+          : "top-9 py-4"
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
