@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   robots: 'index, follow',
   openGraph: {
     type: 'website',
-    locale: 'en_US',
+    locale: 'ar_SA',
     url: 'https://dinoora.com',
     title: 'DINOORA - Your Gateway to Global Education',
     description: 'Premium student recruitment and study abroad services for China, Malaysia, and Turkey',
@@ -114,7 +114,7 @@ export default function RootLayout({
       '@type': 'ContactPoint',
       telephone: '+8615587237864',
       contactType: 'customer service',
-      availableLanguage: ['English', 'Arabic', 'Chinese']
+      availableLanguage: ['Arabic', 'English', 'Chinese']
     },
     address: {
       '@type': 'PostalAddress',
@@ -136,7 +136,7 @@ export default function RootLayout({
   }
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="ar" dir="rtl" suppressHydrationWarning>
       <head>
         <meta name="color-scheme" content="light dark" />
         <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />

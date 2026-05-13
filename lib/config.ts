@@ -33,8 +33,8 @@ export const config = {
   },
 
   locales: {
-    default: 'en',
-    supported: ['en', 'ar'],
+    default: 'ar',
+    supported: ['ar', 'en'],
   },
 
   destinations: [
