@@ -79,7 +79,7 @@ export function Header() {
         <div className="flex items-center justify-between gap-6">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group flex-shrink-0">
-            <div className="relative w-36 h-12 md:w-44 md:h-16 overflow-hidden group-hover:scale-105 transition-transform duration-300">
+            <div className="relative w-44 h-14 md:w-56 md:h-20 overflow-hidden group-hover:scale-105 transition-transform duration-300">
               <img
                 src="/images/logo.png"
                 alt="DINOORA Education"

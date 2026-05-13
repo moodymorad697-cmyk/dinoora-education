@@ -117,7 +117,7 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-4 group">
-              <div className="relative w-44 h-16 md:w-52 md:h-20 overflow-hidden group-hover:scale-105 transition-transform duration-300">
+              <div className="relative w-52 h-18 md:w-64 md:h-24 overflow-hidden group-hover:scale-105 transition-transform duration-300">
                 <img
                   src="/images/logo.png"
                   alt="DINOORA Education"
