@@ -108,12 +108,10 @@ export default function AdmissionPage() {
       <section className="relative py-24 lg:py-32 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <Image
+          <img
             src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1600&q=85"
             alt="University Campus"
-            fill
-            className="object-cover opacity-15"
-            priority
+            className="absolute inset-0 w-full h-full object-cover opacity-15"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/80 to-slate-950/60" />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-transparent to-slate-950" />
