@@ -74,32 +74,32 @@ export default function AdmissionPage() {
       name: "Tsinghua University", 
       rank: "#1 Asia", 
       location: "Beijing",
-      image: "https://images.unsplash.com/photo-1562774053-701939374585?w=600&q=80"
+      image: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=600&q=80"
     },
     { 
       name: "Peking University", 
       rank: "#2 Asia", 
       location: "Beijing",
-      image: "https://images.unsplash.com/photo-1596522354195-e91ea3402eae?w=600&q=80"
+      image: "https://images.unsplash.com/photo-1544531585-9847b68c8c86?w=600&q=80"
     },
     { 
       name: "Fudan University", 
       rank: "#3 Asia", 
       location: "Shanghai",
-      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80"
+      image: "https://images.unsplash.com/photo-1592288557716-c4c744e1760c?w=600&q=80"
     },
     { 
       name: "Zhejiang University", 
       rank: "#4 Asia", 
       location: "Hangzhou",
-      image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&q=80"
+      image: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=600&q=80"
     },
   ]
 
   const galleryImages = [
-    { src: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&q=80", alt: "Student Campus" },
+    { src: "https://images.unsplash.com/photo-1525921429624-479b6a26d84d?w=400&q=80", alt: "Student Campus" },
     { src: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&q=80", alt: "Study Group" },
-    { src: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=400&q=80", alt: "Graduation" },
+    { src: "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?w=400&q=80", alt: "Graduation" },
   ]
 
   return (
@@ -109,7 +109,7 @@ export default function AdmissionPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1562774053-701939374585?w=1600&q=85"
+            src="https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=1600&q=85"
             alt="University Campus"
             className="absolute inset-0 w-full h-full object-cover opacity-15"
           />
