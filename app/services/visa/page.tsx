@@ -1,34 +1,69 @@
 "use client"
 
-import { ArrowLeft, Stamp, CheckCircle, Zap, Shield, Clock } from "lucide-react"
+import { ArrowLeft, ArrowRight, Stamp, CheckCircle, Zap, Shield, Clock, FileCheck, Users, Phone, Mail, MessageCircle, Globe, Award } from "lucide-react"
 import Link from "next/link"
 import { useLanguage } from "@/lib/language-context"
 import { Button } from "@/components/ui/button"
-import { ApplicationForm } from "@/components/application-form"
 
 export default function VisaPage() {
   const { t, locale } = useLanguage()
   const service = t.services.items.visa
 
+  const stats = [
+    { value: "98%", label: locale === "en" ? "Success Rate" : "نسبة النجاح", desc: locale === "en" ? "Visa approval guaranteed" : 
+
+  const features = [
+    {
+      icon: Shield,
+      title: locale === "en" ? "Document Preparation" : "إعداد الوثائق",
+      desc: locale === "en" ? "Complete checklist, translation & notarization" : "قائمة كاملة، ترجمة وتوثيق",
+    },
+    {
+      icon: Users,
+      title: locale === "en" ? "Interview Coaching" : "تدريب المقابلة",
+      desc: locale === "en" ? "Mock sessions & confidence building" : "جلسات تجريبية وبناء الثقة",
+    },
+    {
+      icon: Clock,
+      title: locale === "en" ? "Fast Processing" : "معالجة سريعة",
+      desc: locale === "en" ? "2-3 weeks average processing time" : "متوسط 2-3 أسابيع معالجة",
+    },
+    {
+      icon: Award,
+      title: locale === "en" ? "Embassy Guidance" : "إرشاد السفارة",
+      desc: locale === "en" ? "Direct communication with embassies" : "تواصل مباشر مع السفارات",
+    },
+  ]
+
+  const steps = [
+    { en: "Document Review", ar: "مراجعة الوثائق" },
+    { en: "Application Preparation", ar: "إعداد الطلب" },
+    { en: "Embassy Submission", ar: "تقديم للسفارة" },
+    { en: "Visa Collection", ar: "استلام التأشيرة" },
+  ]
+
   return (
-    <main className="min-h-screen bg-background">
-      {/* Header */}
+    <main className="min-h-screen bg-slate-950">
+      {/* Header - Dark Gold Theme */}
       <section className="relative py-24 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-card/30 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900/50 to-slate-950" />
+        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-amber-500/5 rounded-full blur-[150px]" />
+        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[150px]" />
+        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-amber-500/50 to-transparent" />
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <Link href="/services" className="inline-flex items-center gap-2 text-primary hover:text-primary/80 mb-8">
-            <ArrowLeft className="w-4 h-4" />
-            <span>{locale === "en" ? "Back to Services" : "العودة للخدمات"}</span>
+          <Link href="/services" className="inline-flex items-center gap-2 text-amber-400 hover:text-amber-300 transition-colors mb-8 group">
+            <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+            <span className="font-medium">{locale === "en" ? "Back to Services" : "العودة للخدمات"}</span>
           </Link>
 
-          <div className="flex items-center gap-4 mb-6">
-            <div className="flex h-16 w-16 items-center justify-center rounded-3xl bg-blue-500/10 text-blue-400">
-              <Stamp className="h-8 w-8" />
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-6 mb-8">
+            <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-500/20 to-amber-600/10 border border-amber-500/20">
+              <Stamp className="h-10 w-10 text-amber-400" />
             </div>
             <div>
-              <h1 className="text-4xl lg:text-5xl font-bold text-foreground">{service.title}</h1>
-              <p className="text-lg text-muted-foreground mt-2">{service.description}</p>
+              <h1 className="text-4xl lg:text-6xl font-bold text-white mb-3">{service.title}</h1>
+              <p className="text-xl text-slate-400 max-w-2xl">{service.description}</p>
             </div>
           </div>
         </div>
