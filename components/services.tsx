@@ -3,6 +3,7 @@
 import { GraduationCap, Stamp, FileStack, Home, Plane, HeartHandshake, ArrowRight, Sparkles } from "lucide-react"
 import { useLanguage } from "@/lib/language-context"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
 
@@ -13,31 +14,37 @@ export function Services() {
     {
       Icon: GraduationCap,
       key: "admission" as const,
+      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80",
       features: locale === "en" ? ["500+ Universities", "Priority Application", "Full Guidance"] : ["500+ جامعة", "تطبيق ذو أولوية", "إرشاد كامل"],
     },
     {
       Icon: Stamp,
       key: "visa" as const,
+      image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&q=80",
       features: locale === "en" ? ["98% Success Rate", "Document Prep", "Interview Coaching"] : ["98% نسبة نجاح", "إعداد الوثائق", "تدريب المقابلة"],
     },
     {
       Icon: FileStack,
       key: "documents" as const,
+      image: "https://images.unsplash.com/photo-1568667256549-094345857637?w=600&q=80",
       features: locale === "en" ? ["Translation", "Notarization", "Attestation"] : ["ترجمة", "توثيق", "تصديق"],
     },
     {
       Icon: Home,
       key: "accommodation" as const,
+      image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&q=80",
       features: locale === "en" ? ["Verified Housing", "Near Campus", "Best Rates"] : ["سكن معتمد", "قرب الحرم", "أفضل الأسعار"],
     },
     {
       Icon: Plane,
       key: "airport" as const,
+      image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&q=80",
       features: locale === "en" ? ["VIP Pickup", "24/7 Support", "Safe Transfer"] : ["استقبال VIP", "دعم 24/7", "نقل آمن"],
     },
     {
       Icon: HeartHandshake,
       key: "followup" as const,
+      image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80",
       features: locale === "en" ? ["Monthly Check-ins", "Academic Help", "Career Advice"] : ["متابعة شهرية", "مساعدة أكاديمية", "نصائح مهنية"],
     },
   ]
@@ -100,16 +107,27 @@ export function Services() {
               >
                 <Link
                   href={`/services/${service.key}`}
-                  className="group relative rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-amber-500/30 p-7 transition-all duration-500 overflow-hidden block h-full"
+                  className="group relative rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-amber-500/30 transition-all duration-500 overflow-hidden block h-full"
                 >
-                  {/* Gold glow on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
-
-                  <div className="relative z-10">
-                    {/* Icon */}
-                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-amber-500/20 to-amber-600/10 border border-amber-500/20 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
-                      <Icon className="w-7 h-7 text-amber-400" />
+                  {/* Service Image */}
+                  <div className="relative h-48 overflow-hidden">
+                    <Image
+                      src={service.image}
+                      alt={data.title}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent" />
+                    
+                    {/* Icon Badge */}
+                    <div className="absolute bottom-4 left-4 w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500/30 to-amber-600/20 border border-amber-500/40 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <Icon className="w-6 h-6 text-amber-400" />
                     </div>
+                  </div>
+
+                  <div className="relative z-10 p-6">
+                    {/* Gold glow on hover */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
 
                     <h3 className="text-xl font-bold text-white mb-3 group-hover:text-amber-400 transition-colors duration-300">
                       {data.title}
