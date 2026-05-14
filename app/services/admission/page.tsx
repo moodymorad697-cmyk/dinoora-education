@@ -109,7 +109,7 @@ export default function AdmissionPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1600&q=85"
+            src="https://images.unsplash.com/photo-1562774053-701939374585?w=1600&q=85"
             alt="University Campus"
             className="absolute inset-0 w-full h-full object-cover opacity-15"
           />
