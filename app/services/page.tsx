@@ -1,17 +1,19 @@
 "use client"
 
-import { ArrowLeft, CheckCircle, Phone, Mail, MessageCircle, GraduationCap, FileText, Stamp, Home, ArrowRight } from "lucide-react"
+import { ArrowLeft, CheckCircle, Mail, MessageCircle, GraduationCap, FileText, Stamp, Home, ArrowRight, Plane, HeartHandshake } from "lucide-react"
 import Link from "next/link"
 import { useLanguage } from "@/lib/language-context"
 import { Button } from "@/components/ui/button"
 
-const serviceKeys = ["admission", "visa", "documents", "accommodation"] as const
+const serviceKeys = ["admission", "visa", "documents", "accommodation", "airport", "followup"] as const
 
 const serviceIcons = {
   admission: GraduationCap,
   visa: FileText,
   documents: Stamp,
   accommodation: Home,
+  airport: Plane,
+  followup: HeartHandshake,
 }
 
 export default function ServicesPage() {
@@ -60,7 +62,7 @@ export default function ServicesPage() {
         }} />
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {serviceKeys.map((key) => {
               const service = t.services.items[key]
               const servicePath = key

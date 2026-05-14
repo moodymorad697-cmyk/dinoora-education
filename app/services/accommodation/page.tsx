@@ -124,6 +124,43 @@ export default function AccommodationPage() {
         </div>
       </section>
 
+      {/* Amenities Section */}
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950" />
+        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent" />
+
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-white">
+              {locale === "en" ? "Standard Amenities" : "المرافق القياسية"}
+            </h2>
+            <p className="text-lg text-slate-400 max-w-2xl mx-auto">
+              {locale === "en" ? "All our housing options include these essentials" : "جميع خيارات السكن لدينا تشمل هذه الأساسيات"}
+            </p>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-4">
+            {[
+              { en: "Wi-Fi Internet", ar: "إنترنت Wi-Fi" },
+              { en: "Furnished Rooms", ar: "غرف مفروشة" },
+              { en: "24/7 Security", ar: "أمان 24/7" },
+              { en: "Laundry Facilities", ar: "مرافق غسيل" },
+              { en: "Study Areas", ar: "مناطق دراسة" },
+              { en: "Kitchen Access", ar: "وصول للمطبخ" },
+              { en: "Air Conditioning", ar: "تكييف" },
+              { en: "Public Transport Nearby", ar: "مواصلات عامة قريبة" },
+            ].map((amenity, i) => (
+              <div key={i} className="flex items-center gap-3 p-4 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-amber-500/30 transition-all duration-300 group">
+                <div className="w-8 h-8 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <CheckCircle className="w-4 h-4 text-amber-400" />
+                </div>
+                <span className="text-white text-sm font-medium">{locale === "en" ? amenity.en : amenity.ar}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950" />

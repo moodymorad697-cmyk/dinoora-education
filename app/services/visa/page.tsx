@@ -137,6 +137,46 @@ export default function VisaPage() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950" />
+        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent" />
+
+        <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-white">
+              {locale === "en" ? "Frequently Asked Questions" : "الأسئلة الشائعة"}
+            </h2>
+          </div>
+
+          <div className="space-y-4">
+            {[
+              {
+                q: locale === "en" ? "How long does visa processing take?" : "كم يستغرق معالجة التأشيرة؟",
+                a: locale === "en" ? "Typically 2-3 weeks after document submission. We prioritize urgent applications." : "عادة 2-3 أسابيع بعد تقديم الوثائق. نعطي الأولوية للطلبات العاجلة."
+              },
+              {
+                q: locale === "en" ? "What documents are required?" : "ما هي الوثائق المطلوبة؟",
+                a: locale === "en" ? "Passport, academic transcripts, medical report, police clearance, and admission letter. We guide you through each step." : "جواز السفر، كشوف دراسية، تقرير طبي، براءة سوابق، وخطاب القبول. نرشدك في كل خطوة."
+              },
+              {
+                q: locale === "en" ? "Do I need an interview?" : "هل أحتاج إلى مقابلة؟",
+                a: locale === "en" ? "Most student visas don't require interviews, but we prepare you just in case." : "معظم تأشيرات الطلاب لا تتطلب مقابلات، لكننا نحضرك احتياطياً."
+              },
+              {
+                q: locale === "en" ? "What if my visa is rejected?" : "ماذا لو تم رفض تأشيرتي؟",
+                a: locale === "en" ? "We analyze rejection reasons, fix issues, and reapply at no extra cost. 98% success rate ensures approval." : "نحلل أسباب الرفض، نصلح المشاكل، ونعيد التقديم بدون تكلفة إضافية. نسبة النجاح 98% تضمن الموافقة."
+              },
+            ].map((faq, i) => (
+              <div key={i} className="rounded-xl bg-slate-900/50 border border-slate-800 p-6 hover:border-amber-500/30 transition-all duration-300">
+                <h3 className="text-lg font-bold text-white mb-2">{faq.q}</h3>
+                <p className="text-slate-400">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950" />

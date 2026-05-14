@@ -182,6 +182,84 @@ export default function AdmissionPage() {
         </div>
       </section>
 
+      {/* Scholarships Section */}
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950" />
+        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent" />
+
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-white">
+              {locale === "en" ? "Scholarship Opportunities" : "فرص المنح الدراسية"}
+            </h2>
+            <p className="text-lg text-slate-400 max-w-2xl mx-auto">
+              {locale === "en" 
+                ? "Full and partial scholarships available for qualified students"
+                : "منح كاملة وجزئية متاحة للطلاب المؤهلين"}
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            {[
+              { 
+                title: locale === "en" ? "CSC Scholarship" : "منح CSC", 
+                desc: locale === "en" ? "Full tuition + monthly stipend + accommodation" : "رسوم كاملة + مخصص شهري + سكن",
+                badge: locale === "en" ? "Most Popular" : "الأكثر شيوعاً"
+              },
+              { 
+                title: locale === "en" ? "University Scholarships" : "منح الجامعات", 
+                desc: locale === "en" ? "Partial to full tuition coverage" : "تغطية جزئية إلى كاملة للرسوم",
+                badge: locale === "en" ? "Multiple Options" : "خيارات متعددة"
+              },
+              { 
+                title: locale === "en" ? "Belt & Road Initiative" : "مبادرة الحزام والطريق", 
+                desc: locale === "en" ? "Special scholarships for partner countries" : "منح خاصة لدول الشراكة",
+                badge: locale === "en" ? "Exclusive" : "حصري"
+              },
+            ].map((item, i) => (
+              <div key={i} className="group relative rounded-2xl border border-slate-800 bg-slate-900/50 p-8 hover:border-amber-500/30 transition-all duration-500">
+                <div className="absolute top-4 right-4 text-xs font-bold text-amber-400 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">
+                  {item.badge}
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-amber-400 transition-colors">{item.title}</h3>
+                <p className="text-slate-400">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Popular Programs */}
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-slate-950" />
+
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-white">
+              {locale === "en" ? "Popular Programs" : "التخصصات الشائعة"}
+            </h2>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {[
+              { en: "Medicine (MBBS)", ar: "الطب (MBBS)" },
+              { en: "Engineering (All Fields)", ar: "الهندسة (جميع التخصصات)" },
+              { en: "Business Administration", ar: "إدارة الأعمال" },
+              { en: "Computer Science & AI", ar: "علوم الحاسوب والذكاء الاصطناعي" },
+              { en: "International Trade", ar: "التجارة الدولية" },
+              { en: "Chinese Language", ar: "اللغة الصينية" },
+            ].map((program, i) => (
+              <div key={i} className="flex items-center gap-4 p-4 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-amber-500/30 transition-all duration-300 group">
+                <div className="w-10 h-10 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <CheckCircle className="w-5 h-5 text-amber-400" />
+                </div>
+                <span className="text-white font-medium">{locale === "en" ? program.en : program.ar}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950" />
