@@ -45,9 +45,9 @@ export function Header() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full">
           <div className="flex items-center justify-between h-full text-xs">
             <div className="flex items-center gap-5 text-white/70">
-              <a href="tel:+971503456789" className="hidden sm:inline-flex items-center gap-1.5 hover:text-amber-400 transition-colors">
+              <a href="tel:+8615587237864" className="hidden sm:inline-flex items-center gap-1.5 hover:text-amber-400 transition-colors">
                 <Phone className="w-3 h-3" />
-                <span className="font-medium">+971 50 345 6789</span>
+                <span className="font-medium">+86 15587237864</span>
               </a>
               <a href="mailto:info@dinoora.com" className="hidden md:inline-flex items-center gap-1.5 hover:text-amber-400 transition-colors">
                 <Mail className="w-3 h-3" />
