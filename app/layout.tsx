@@ -5,7 +5,7 @@ import './globals.css'
 import '../styles/enhancements.css'
 import { LanguageProvider } from '@/lib/language-context'
 import { ThemeProvider } from '@/components/theme-provider'
-import { ContactFloatingBar } from '@/components/contact-floating-bar'
+import { FloatingActions } from '@/components/floating-actions'
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -152,7 +152,7 @@ export default function RootLayout({
             <div className="min-h-screen bg-background">
               {children}
             </div>
-            <ContactFloatingBar />
+            <FloatingActions />
           </LanguageProvider>
         </ThemeProvider>
         {process.env.NODE_ENV === 'production' && <Analytics />}

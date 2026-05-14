@@ -1,13 +1,14 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/lib/language-context"
+import { EnhancedSearch } from "./enhanced-search"
 import {
   Menu, X, Globe, GraduationCap, Search, Phone, MessageCircle,
   Star, ListChecks, Briefcase, MapPin, BookOpen, Building2, Quote,
-  Mail, Clock,
+  Mail, Clock, Sparkles, TrendingUp, Award, ArrowRight, Target,
 } from "lucide-react"
 
 export function Header() {
@@ -110,26 +111,8 @@ export function Header() {
 
           {/* Right Side Actions */}
           <div className="hidden lg:flex items-center gap-3">
-            {/* Search Bar */}
-            <div className="relative">
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => setIsSearchOpen(!isSearchOpen)}
-                className="text-muted-foreground hover:text-foreground transition-all hover:bg-secondary/50 rounded-lg px-3 py-2 duration-300"
-              >
-                <Search className="w-5 h-5" />
-              </Button>
-              {isSearchOpen && (
-                <div className="absolute top-full right-0 mt-2 w-80 bg-card border border-border rounded-xl shadow-lg p-4 z-50 animate-in slide-in-from-top-2">
-                  <input
-                    type="text"
-                    placeholder={t.nav.searchPlaceholder || "Search services, destinations..."}
-                    className="w-full px-4 py-2 bg-secondary/50 border border-border/50 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 text-sm"
-                  />
-                </div>
-              )}
-            </div>
+            {/* Enhanced Search Bar */}
+            <EnhancedSearch isOpen={isSearchOpen} setIsOpen={setIsSearchOpen} />
 
             {/* Language Toggle - More Visible */}
             <Button

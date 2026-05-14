@@ -12,6 +12,9 @@ import { FAQ } from "@/components/faq"
 import { CTA } from "@/components/cta"
 import { ApplicationForm } from "@/components/application-form"
 import { Footer } from "@/components/footer"
+import { ProgressTracker } from "@/components/progress-tracker"
+import { ReferralSystem } from "@/components/referral-system"
+import { MoneyBackGuarantee } from "@/components/money-back-guarantee"
 
 export default function Home() {
   return (
@@ -19,6 +22,7 @@ export default function Home() {
       <Header />
       <Hero />
       <WhyChooseUs />
+      <ProgressTracker currentStep={3} />
       <HowItWorks />
       <ProcessTimeline />
       <Services />
@@ -26,6 +30,8 @@ export default function Home() {
       <Programs />
       <Universities />
       <Testimonials />
+      <MoneyBackGuarantee />
+      <ReferralSystem />
       <FAQ />
       <CTA />
       <ApplicationForm />
