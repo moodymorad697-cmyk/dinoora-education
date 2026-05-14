@@ -15,6 +15,7 @@ import { Footer } from "@/components/footer"
 import { ProgressTracker } from "@/components/progress-tracker"
 import { ReferralSystem } from "@/components/referral-system"
 import { MoneyBackGuarantee } from "@/components/money-back-guarantee"
+import { StatsShowcase } from "@/components/stats-showcase"
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <Header />
       <Hero />
       <WhyChooseUs />
+      <StatsShowcase />
       <ProgressTracker currentStep={3} />
       <HowItWorks />
       <ProcessTimeline />

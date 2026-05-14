@@ -18,19 +18,19 @@ export function CTA() {
   
   return (
     <section className="py-24 lg:py-32 relative overflow-hidden">
-      {/* Professional Background */}
+      {/* Professional Education Background */}
       <div className="absolute inset-0">
-        {/* Professional Background Image */}
+        {/* Education Background Image - Library/Study Scene */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1920&q=90')",
+            backgroundImage: "url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=1920&q=90')",
           }}
         />
         
-        {/* Professional Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-yellow-900/85 via-amber-900/75 to-orange-900/85" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/90 to-background/95" />
+        {/* Gold/Slate Gradient Overlay for Premium Look */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950/90 via-slate-900/85 to-amber-950/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/85 to-background/95" />
         
         {/* Elegant Mesh Gradient */}
         <div className="absolute inset-0 opacity-25" style={{
