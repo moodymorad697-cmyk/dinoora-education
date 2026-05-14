@@ -10,7 +10,10 @@ export default function VisaPage() {
   const service = t.services.items.visa
 
   const stats = [
-    { value: "98%", label: locale === "en" ? "Success Rate" : "نسبة النجاح", desc: locale === "en" ? "Visa approval guaranteed" : 
+    { value: "98%", label: locale === "en" ? "Success Rate" : "نسبة النجاح", desc: locale === "en" ? "Visa approval guaranteed" : "ضمان موافقة التأشيرة" },
+    { value: "2-3", label: locale === "en" ? "Weeks Processing" : "أسابيع المعالجة", desc: locale === "en" ? "Fast processing time" : "وقت معالجة سريع" },
+    { value: "100%", label: locale === "en" ? "Document Support" : "دعم الوثائق", desc: locale === "en" ? "Complete documentation help" : "مساعدة في الوثائق الكاملة" },
+  ]
 
   const features = [
     {
