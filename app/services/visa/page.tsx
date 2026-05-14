@@ -137,19 +137,54 @@ export default function VisaPage() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* CTA Section */}
       <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-accent/10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-500/5 via-transparent to-transparent" />
 
-        <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-6 text-foreground">
-            {locale === "en" ? "Let's Get Your Visa Approved" : "دعنا نحصل على موافقة تأشيرتك"}
-          </h2>
-          <Button className="gold-gradient text-primary-foreground px-8 py-6 text-lg" asChild>
-            <Link href="#apply">
-              {t.services.cta}
-            </Link>
-          </Button>
+        <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-5xl font-bold mb-6 text-white">
+              {locale === "en" ? "Let's Get Your Visa Approved" : "دعنا نحصل على موافقة تأشيرتك"}
+            </h2>
+            <p className="text-lg text-slate-400 max-w-2xl mx-auto">
+              {locale === "en" ? "98% success rate - Your visa journey starts here" : "98% نسبة نجاح - رحلة تأشيرتك تبدأ هنا"}
+            </p>
+          </div>
+
+          {/* Contact Options */}
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2 max-w-3xl mx-auto mb-8">
+            {/* WhatsApp China */}
+            <a href="https://wa.me/8615587237864" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-4 p-5 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-amber-500/30 hover:bg-slate-900 transition-all duration-300">
+              <div className="w-12 h-12 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <MessageCircle className="w-5 h-5 text-amber-400" />
+              </div>
+              <div className="text-left">
+                <div className="text-sm text-slate-400">{locale === "en" ? "WhatsApp" : "واتساب"}</div>
+                <div className="text-white font-medium">+86 15587237864</div>
+              </div>
+            </a>
+
+            {/* Email */}
+            <a href="mailto:info@dinoora.com" className="group flex items-center gap-4 p-5 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-amber-500/30 hover:bg-slate-900 transition-all duration-300">
+              <div className="w-12 h-12 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <Mail className="w-5 h-5 text-amber-400" />
+              </div>
+              <div className="text-left">
+                <div className="text-sm text-slate-400">{locale === "en" ? "Email" : "البريد"}</div>
+                <div className="text-white font-medium">info@dinoora.com</div>
+              </div>
+            </a>
+          </div>
+
+          <div className="text-center">
+            <Button className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold px-10 py-7 text-lg shadow-lg shadow-amber-500/20 hover:shadow-amber-500/30 transition-all duration-300" asChild>
+              <Link href="#apply" className="flex items-center gap-2">
+                {t.services.cta}
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            </Button>
+          </div>
         </div>
       </section>
     </main>

@@ -201,17 +201,19 @@ export default function AdmissionPage() {
           </div>
 
           {/* Contact Options */}
-          <div className="grid gap-4 sm:grid-cols-3 mb-8">
-            <a href="tel:+971503456789" className="group flex items-center gap-4 p-5 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-amber-500/30 hover:bg-slate-900 transition-all duration-300">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2 max-w-3xl mx-auto mb-8">
+            {/* WhatsApp China */}
+            <a href="https://wa.me/8615587237864" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-4 p-5 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-amber-500/30 hover:bg-slate-900 transition-all duration-300">
               <div className="w-12 h-12 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                <Phone className="w-5 h-5 text-amber-400" />
+                <MessageCircle className="w-5 h-5 text-amber-400" />
               </div>
               <div className="text-left">
-                <div className="text-sm text-slate-400">{locale === "en" ? "Phone" : "الهاتف"}</div>
-                <div className="text-white font-medium">+971 50 345 6789</div>
+                <div className="text-sm text-slate-400">{locale === "en" ? "WhatsApp" : "واتساب"}</div>
+                <div className="text-white font-medium">+86 15587237864</div>
               </div>
             </a>
 
+            {/* Email */}
             <a href="mailto:info@dinoora.com" className="group flex items-center gap-4 p-5 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-amber-500/30 hover:bg-slate-900 transition-all duration-300">
               <div className="w-12 h-12 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
                 <Mail className="w-5 h-5 text-amber-400" />
@@ -219,16 +221,6 @@ export default function AdmissionPage() {
               <div className="text-left">
                 <div className="text-sm text-slate-400">{locale === "en" ? "Email" : "البريد"}</div>
                 <div className="text-white font-medium">info@dinoora.com</div>
-              </div>
-            </a>
-
-            <a href="https://wa.me/971503456789" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-4 p-5 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-amber-500/30 hover:bg-slate-900 transition-all duration-300">
-              <div className="w-12 h-12 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                <MessageCircle className="w-5 h-5 text-amber-400" />
-              </div>
-              <div className="text-left">
-                <div className="text-sm text-slate-400">{locale === "en" ? "WhatsApp" : "واتساب"}</div>
-                <div className="text-white font-medium">+971 50 345 6789</div>
               </div>
             </a>
           </div>
