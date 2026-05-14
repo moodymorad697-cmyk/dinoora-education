@@ -306,22 +306,22 @@ export function Footer() {
               </span>
             </a>
 
-            {/* Browse Programs */}
+            {/* Explore Destinations */}
             <Link
-              href="#programs"
+              href="/destinations"
               className="group relative rounded-2xl card-glow lift-gold p-6 text-center bg-gradient-to-br from-amber-500/10 to-orange-500/5 border border-amber-500/20 transition-all duration-500"
             >
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-orange-500 mb-3 shadow-lg shadow-amber-500/30 group-hover:scale-110 group-hover:rotate-3 transition-all">
                 <GraduationCap className="w-6 h-6 text-white" />
               </div>
               <h4 className="font-bold text-foreground mb-2">
-                {locale === "ar" ? "تصفّح البرامج" : "Browse Programs"}
+                {locale === "ar" ? "استكشاف الوجهات" : "Explore Destinations"}
               </h4>
               <p className="text-xs text-muted-foreground mb-3">
-                {locale === "ar" ? "اكتشف برامج الدراسة المتاحة" : "Discover available study programs"}
+                {locale === "ar" ? "اكتشف وجهات الدراسة المتاحة" : "Discover available study destinations"}
               </p>
               <span className="inline-flex items-center gap-1 text-xs font-semibold text-amber-400">
-                {locale === "ar" ? "عرض البرامج" : "View Programs"}
+                {locale === "ar" ? "عرض الوجهات" : "View Destinations"}
                 <ArrowRight className={`w-3 h-3 ${locale === "ar" ? "rotate-180" : ""} group-hover:translate-x-1 transition-transform`} />
               </span>
             </Link>
