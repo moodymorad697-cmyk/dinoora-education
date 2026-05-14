@@ -77,12 +77,12 @@ const faqs = [
   {
     id: 7,
     category: "life",
-    question: { en: "Can I work while studying?", ar: "هل يمكنني العمل أثناء الدراسة؟" },
+    question: { en: "What about accommodation and living costs?", ar: "ماذا عن السكن وتكاليف المعيشة؟" },
     answer: { 
-      en: "Yes! Part-time work allowed (15-20 hrs/week) during studies, full-time during holidays.", 
-      ar: "نعم! العمل الجزئي مسموح (15-20 ساعة/أسبوع) خلال الدراسة، دوام كامل في العطل."
+      en: "University dorms: $100-200/month. Private apartments: $300-500/month. Living costs: $400-800/month including food, transport, and utilities. We help you find affordable, safe housing near campus.", 
+      ar: "سكن الجامعة: $100-200/شهر. شقق خاصة: $300-500/شهر. تكاليف المعيشة: $400-800/شهر تشمل الطعام والمواصلات والخدمات. نساعدك في إيجاد سكن آمن وبأسعار معقولة قرب الحرم."
     },
-    icon: "💼"
+    icon: "🏠"
   },
   {
     id: 8,
