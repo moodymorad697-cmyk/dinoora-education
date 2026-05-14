@@ -92,7 +92,17 @@ Thank you for applying to DINOORA Education!`
   if (isSubmitted) {
     return (
       <section id="apply" className="py-24 lg:py-32 relative overflow-hidden">
-        <div className="absolute inset-0 grid-pattern opacity-30" />
+        {/* Success Background */}
+        <div className="absolute inset-0">
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: "url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1920&q=90')",
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-950/90 via-slate-900/85 to-emerald-950/80" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/90 to-background/95" />
+        </div>
         <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="rounded-3xl border border-primary/20 bg-card/50 backdrop-blur-xl p-10 sm:p-14 text-center">
             <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full gold-gradient shadow-lg shadow-primary/25">
@@ -116,8 +126,23 @@ Thank you for applying to DINOORA Education!`
 
   return (
     <section id="apply" className="py-24 lg:py-32 relative overflow-hidden">
-      {/* Clean Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-indigo-950/20 to-background" />
+      {/* Professional Education Background */}
+      <div className="absolute inset-0">
+        {/* Background Image - Students studying */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1920&q=90')",
+          }}
+        />
+        {/* Dark gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950/90 via-slate-900/85 to-amber-950/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/90 to-background/95" />
+        
+        {/* Gold glow effects */}
+        <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-amber-500/5 rounded-full blur-[150px]" />
+        <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-indigo-500/5 rounded-full blur-[150px]" />
+      </div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-20 items-center">

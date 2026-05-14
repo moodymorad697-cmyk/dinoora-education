@@ -109,9 +109,9 @@ export default function AdmissionPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=1600&q=85"
+            src="https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=1600&q=85"
             alt="University Campus"
-            className="absolute inset-0 w-full h-full object-cover opacity-20"
+            className="absolute inset-0 w-full h-full object-cover opacity-25"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/80 to-slate-950/60" />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-transparent to-slate-950" />

@@ -29,8 +29,8 @@ const faqs = [
     category: "fees",
     question: { en: "How much does the complete service cost?", ar: "كم تكلفة الخدمة الكاملة؟" },
     answer: { 
-      en: "Our service fees start from $500 and vary by destination. We offer transparent pricing with no hidden fees. Contact us for a custom quote.", 
-      ar: "تبدأ من $500 وتختلف حسب الوجهة. تسعير شفاف بدون رسوم خفية. تواصل معنا للعرض المناسب."
+      en: "Our service fees are transparent and reasonable, covering all services from admission to arrival. We offer competitive rates with no hidden fees. Contact us for a personalized quote based on your chosen destination and program.", 
+      ar: "رسوم خدماتنا شفافة ومناسبة، تغطي جميع الخدمات من القبول حتى الوصول. نقدم أسعاراً تنافسية بدون رسوم خفية. تواصل معنا للحصول على عرض مخصص حسب وجهتك والبرنامج المختار."
     },
     icon: "💰"
   },
