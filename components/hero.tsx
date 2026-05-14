@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/lib/language-context"
-import { ArrowRight, MessageCircle, GraduationCap, Building2, Trophy, Clock, Sparkles, Globe2 } from "lucide-react"
+import { ArrowRight, MessageCircle, GraduationCap, Building2, Trophy, Users, Sparkles, Globe2 } from "lucide-react"
 import Link from "next/link"
 import { motion } from "framer-motion"
 
@@ -10,11 +10,19 @@ export function Hero() {
   const { t, dir, locale } = useLanguage()
 
   const stats = [
-    { Icon: GraduationCap, value: "2,500+", label: locale === "en" ? "Students Placed" : "طالب تم توظيفهم", gradient: "from-amber-400 to-amber-600" },
-    { Icon: Building2, value: "500+", label: locale === "en" ? "Partner Universities" : "جامعات شريكة", gradient: "from-amber-500 to-yellow-500" },
-    { Icon: Trophy, value: "98%", label: locale === "en" ? "Success Rate" : "نسبة النجاح", gradient: "from-yellow-400 to-amber-500" },
-    { Icon: Clock, value: "10+", label: locale === "en" ? "Years Experience" : "سنوات خبرة", gradient: "from-amber-600 to-orange-500" },
+    { Icon: GraduationCap, value: "2,500+", label: locale === "en" ? "Students Placed" : "طالب تم توظيفهم" },
+    { Icon: Building2, value: "500+", label: locale === "en" ? "Partner Universities" : "جامعات شريكة" },
+    { Icon: Trophy, value: "98%", label: locale === "en" ? "Success Rate" : "نسبة النجاح" },
+    { Icon: Users, value: "24/7", label: locale === "en" ? "Multilingual Support" : "دعم متعدد اللغات" },
   ]
+
+  // Multilingual support features
+  const languageSupport = {
+    title: locale === "en" ? "Native Speakers in Your Language" : "مستشارون ناطقون بلغتك",
+    description: locale === "en" 
+      ? "Arabic, Chinese & English native speakers who understand your culture and needs. Support available 24/7 throughout your journey."
+      : "مستشارون ناطقون بالعربية والصينية والإنجليزية يفهمون ثقافتك واحتياجاتك. دعم على مدار الساعة طوال رحلتك."
+  }
 
   const whatsappUrl = `https://wa.me/8615587237864?text=${locale === "en" ? "Hi%20DINOORA" : "%D9%85%D8%B1%D8%AD%D8%A8%D8%A7"}`
 
@@ -109,6 +117,24 @@ export function Hero() {
             }
           </motion.p>
 
+          {/* Language Support Badge */}
+          <motion.div 
+            className="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-gradient-to-r from-amber-500/10 to-amber-600/10 border border-amber-500/30 mb-8"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.65 }}
+          >
+            <Globe2 className="w-5 h-5 text-amber-400" />
+            <span className="text-sm font-semibold text-amber-300">
+              {locale === "en" ? "We speak:" : "نتحدث:"}
+            </span>
+            <div className="flex items-center gap-2">
+              <span className="px-2 py-1 rounded bg-amber-500/20 text-amber-300 text-xs font-bold">🇸🇦 العربية</span>
+              <span className="px-2 py-1 rounded bg-amber-500/20 text-amber-300 text-xs font-bold">🇨🇳 中文</span>
+              <span className="px-2 py-1 rounded bg-amber-500/20 text-amber-300 text-xs font-bold">🇬🇧 English</span>
+            </div>
+          </motion.div>
+
           {/* Feature Pills */}
           <motion.div 
             className="flex flex-wrap items-center justify-center gap-3 mb-10"
@@ -120,7 +146,7 @@ export function Hero() {
               locale === "en" ? "✓ Free Consultation" : "✓ استشارة مجانية",
               locale === "en" ? "✓ Scholarship Guidance" : "✓ إرشاد المنح",
               locale === "en" ? "✓ Visa Support" : "✓ دعم التأشيرة",
-              locale === "en" ? "✓ Accommodation Help" : "✓ مساعدة السكن",
+              locale === "en" ? "✓ Multilingual Team" : "✓ فريق متعدد اللغات",
             ].map((item, i) => (
               <span key={i} className="px-4 py-2 rounded-full bg-slate-800/50 border border-slate-700 text-slate-300 text-sm">
                 {item}
@@ -198,6 +224,36 @@ export function Hero() {
                 </motion.div>
               )
             })}
+          </motion.div>
+
+          {/* Multilingual Support Section */}
+          <motion.div 
+            className="mt-12 p-6 rounded-2xl bg-gradient-to-r from-amber-500/10 via-amber-600/5 to-amber-500/10 border border-amber-500/20 backdrop-blur-sm"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1.6 }}
+          >
+            <div className="flex flex-col md:flex-row items-center gap-4 text-center md:text-left">
+              <div className="w-12 h-12 rounded-full bg-amber-500/20 border border-amber-500/30 flex items-center justify-center flex-shrink-0">
+                <Globe2 className="w-6 h-6 text-amber-400" />
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-white mb-1">
+                  {locale === "en" ? "Native Language Support" : "دعم باللغة الأم"}
+                </h3>
+                <p className="text-slate-400 text-sm">
+                  {locale === "en" 
+                    ? "Our team includes native Arabic, Chinese & English speakers who understand your culture. Get support 24/7 in your preferred language throughout your academic journey."
+                    : "فريقنا يضم ناطقين أصليين بالعربية والصينية والإنجليزية يفهمون ثقافتك. احصل على دعم 24/7 بلغتك المفضلة طوال رحلتك الأكاديمية."
+                  }
+                </p>
+              </div>
+              <div className="flex gap-2 flex-shrink-0">
+                <span className="px-3 py-1.5 rounded-lg bg-amber-500/20 text-amber-300 text-xs font-bold border border-amber-500/30">🇸🇦 العربية</span>
+                <span className="px-3 py-1.5 rounded-lg bg-amber-500/20 text-amber-300 text-xs font-bold border border-amber-500/30">🇨🇳 中文</span>
+                <span className="px-3 py-1.5 rounded-lg bg-amber-500/20 text-amber-300 text-xs font-bold border border-amber-500/30">🇬🇧 English</span>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>
