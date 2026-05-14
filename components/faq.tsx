@@ -1,164 +1,311 @@
 "use client"
 
+import { useState } from "react"
 import { useLanguage } from "@/lib/language-context"
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
-import { AnimatedBackground } from "@/components/ui/animated-background"
+import { motion, AnimatePresence } from "framer-motion"
+import { Search, X, ChevronDown, HelpCircle, MessageCircle, Phone, Sparkles } from "lucide-react"
+
+const categories = [
+  { id: "all", labelEn: "All Questions", labelAr: "جميع الأسئلة", icon: "🔍" },
+  { id: "admission", labelEn: "Admission", labelAr: "القبول", icon: "🎓" },
+  { id: "visa", labelEn: "Visa", labelAr: "التأشيرة", icon: "🛂" },
+  { id: "fees", labelEn: "Fees", labelAr: "الرسوم", icon: "💰" },
+  { id: "life", labelEn: "Student Life", labelAr: "حياة الطالب", icon: "🌍" },
+]
+
+const faqs = [
+  {
+    id: 1,
+    category: "admission",
+    question: { en: "What are the eligibility requirements?", ar: "ما هي متطلبات الأهلية؟" },
+    answer: { 
+      en: "You need a high school diploma or equivalent, a good academic record, and basic English skills. Some programs may require additional tests.", 
+      ar: "تحتاج شهادة الثانوية أو ما يعادلها، معدل جيد، وإنجليزية أساسية. بعض البرامج تتطلب اختبارات إضافية."
+    },
+    icon: "📋"
+  },
+  {
+    id: 2,
+    category: "fees",
+    question: { en: "How much does the complete service cost?", ar: "كم تكلفة الخدمة الكاملة؟" },
+    answer: { 
+      en: "Our service fees start from $500 and vary by destination. We offer transparent pricing with no hidden fees. Contact us for a custom quote.", 
+      ar: "تبدأ من $500 وتختلف حسب الوجهة. تسعير شفاف بدون رسوم خفية. تواصل معنا للعرض المناسب."
+    },
+    icon: "💰"
+  },
+  {
+    id: 3,
+    category: "admission",
+    question: { en: "How long does the process take?", ar: "كم تستغرق العملية؟" },
+    answer: { 
+      en: "12-16 weeks from consultation to arrival. Visa processing takes 2-3 weeks after acceptance.", 
+      ar: "12-16 أسبوع من الاستشارة للوصول. التأشيرة تستغرق 2-3 أسابيع بعد القبول."
+    },
+    icon: "⏱️"
+  },
+  {
+    id: 4,
+    category: "admission",
+    question: { en: "Do you guarantee admission?", ar: "هل تضمن القبول؟" },
+    answer: { 
+      en: "95%+ acceptance rate with our partner universities. If not accepted, get 100% money-back guarantee.", 
+      ar: "95%+ نسبة قبول مع جامعاتنا. إذا لم تقبل، استرداد 100% من المبلغ."
+    },
+    icon: "✅"
+  },
+  {
+    id: 5,
+    category: "visa",
+    question: { en: "Do you provide visa support?", ar: "هل تقدمون دعم التأشيرة؟" },
+    answer: { 
+      en: "Complete visa support with 98% success rate. We handle documents, appointments, and interview coaching.", 
+      ar: "دعم كامل للتأشيرة بنسبة نجاح 98%. نتولى الوثائق والمواعيد وتدريب المقابلة."
+    },
+    icon: "🛂"
+  },
+  {
+    id: 6,
+    category: "life",
+    question: { en: "What countries can I study in?", ar: "ما الدول المتاحة؟" },
+    answer: { 
+      en: "China, Malaysia, and Turkey. All offer affordable quality education with scholarships available.", 
+      ar: "الصين، ماليزيا، وتركيا. جميعها تقدم تعليماً ممتازاً بأسعار معقولة مع منح متاحة."
+    },
+    icon: "🌍"
+  },
+  {
+    id: 7,
+    category: "life",
+    question: { en: "Can I work while studying?", ar: "هل يمكنني العمل أثناء الدراسة؟" },
+    answer: { 
+      en: "Yes! Part-time work allowed (15-20 hrs/week) during studies, full-time during holidays.", 
+      ar: "نعم! العمل الجزئي مسموح (15-20 ساعة/أسبوع) خلال الدراسة، دوام كامل في العطل."
+    },
+    icon: "💼"
+  },
+  {
+    id: 8,
+    category: "fees",
+    question: { en: "What scholarships are available?", ar: "ما المنح المتاحة؟" },
+    answer: { 
+      en: "CSC Government Scholarship (full coverage), university merit scholarships (up to 100%), and country-specific grants.", 
+      ar: "منحة CSC الحكومية (تغطية كاملة)، منح الجامعات (حتى 100%)، ومنح خاصة بكل دولة."
+    },
+    icon: "🎓"
+  },
+]
 
 export function FAQ() {
-  const { t, dir, locale } = useLanguage()
+  const { locale } = useLanguage()
+  const [activeCategory, setActiveCategory] = useState("all")
+  const [searchQuery, setSearchQuery] = useState("")
+  const [openItem, setOpenItem] = useState<number | null>(null)
 
-  const faqs = [
-    {
-      titleEn: "What are the eligibility requirements?",
-      titleAr: "ما هي متطلبات الأهلية؟",
-      contentEn: "You need a high school diploma or equivalent, a good academic record, and basic English language skills. Some universities may have additional requirements.",
-      contentAr: "تحتاج إلى شهادة الثانوية العامة أو ما يعادلها وسجل أكاديمي جيد ومهارات لغة إنجليزية أساسية.",
-      icon: "📋"
-    },
-    {
-      titleEn: "How much does the complete service cost?",
-      titleAr: "كم تكلفة الخدمة الكاملة؟",
-      contentEn: "Our service fees are transparent and competitive. We charge a one-time service fee that covers all our support services. Contact us for detailed pricing based on your destination and program.",
-      contentAr: "رسوم خدماتنا شفافة وتنافسية. نحصل على رسوم خدمة لمرة واحدة تغطي جميع خدمات الدعم. تواصل معنا للحصول على تفاصيل التسعير حسب وجهتك والبرنامج.",
-      icon: "💰"
-    },
-    {
-      titleEn: "How long does the entire process take?",
-      titleAr: "كم من الوقت تستغرق العملية برمتها؟",
-      contentEn: "The average timeline is 12-16 weeks from initial consultation to arrival at the university. This varies based on your requirements.",
-      contentAr: "يستغرق المتوسط 12-16 أسبوع من الاستشارة الأولية إلى الوصول للجامعة.",
-      icon: "⏱️"
-    },
-    {
-      titleEn: "Can you guarantee university admission?",
-      titleAr: "هل تضمن القبول في الجامعة؟",
-      contentEn: "We have strong partnerships with universities and a 95%+ acceptance rate. However, admission depends on your qualifications and the university's requirements.",
-      contentAr: "لدينا شراكات قوية وحوالي 95%+ معدل قبول. لكن القبول يعتمد على مؤهلاتك.",
-      icon: "✅"
-    },
-    {
-      titleEn: "What countries can I study in?",
-      titleAr: "ما الدول التي يمكنني الدراسة فيها؟",
-      contentEn: "We specialize in China, Malaysia, and Turkey. These countries offer affordable quality education with easy admission processes.",
-      contentAr: "نتخصص في الصين وماليزيا وتركيا. تقدم هذه الدول تعليم عالي الجودة برسوم معقولة.",
-      icon: "🌍"
-    },
-    {
-      titleEn: "Do you provide visa support?",
-      titleAr: "هل تقدمون دعم التأشيرة؟",
-      contentEn: "Yes! We provide complete visa application support, document preparation, and interview coaching. Our success rate is 98%+.",
-      contentAr: "نعم! نقدم دعم كامل لتطبيق التأشيرة والتحضير للمقابلة. معدل النجاح لدينا 98%+.",
-      icon: "🛂"
-    },
-    {
-      titleEn: "Can I work while studying?",
-      titleAr: "هل يمكنني العمل أثناء الدراسة؟",
-      contentEn: "Yes, international students are usually allowed to work part-time (15-20 hours per week) during studies and full-time during holidays.",
-      contentAr: "نعم، عادة يُسمح للطلاب الدوليين بالعمل بدوام جزئي خلال فترة الدراسة.",
-      icon: "💼"
-    },
-    {
-      titleEn: "What scholarship opportunities are available?",
-      titleAr: "ما فرص المنح الدراسية المتاحة؟",
-      contentEn: "Many of our partner universities offer scholarships up to 100% tuition coverage. We help you apply for all available scholarships.",
-      contentAr: "تقدم العديد من جامعاتنا منح دراسية تغطي حتى 100% من الرسوم.",
-      icon: "🎓"
-    },
-  ]
+  const filteredFaqs = faqs.filter(faq => {
+    const matchesCategory = activeCategory === "all" || faq.category === activeCategory
+    const matchesSearch = faq.question[locale].toLowerCase().includes(searchQuery.toLowerCase()) ||
+                         faq.answer[locale].toLowerCase().includes(searchQuery.toLowerCase())
+    return matchesCategory && matchesSearch
+  })
 
   return (
-    <section className="relative py-24 lg:py-32 overflow-hidden">
-      {/* Professional Background */}
+    <section className="py-20 lg:py-28 bg-slate-950 relative overflow-hidden">
+      {/* Background */}
       <div className="absolute inset-0">
-        {/* Professional Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1920&q=90')",
-          }}
-        />
-        
-        {/* Professional Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-sky-900/85 via-blue-900/75 to-indigo-900/85" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/90 to-background/95" />
-        
-        {/* Elegant Mesh Gradient */}
-        <div className="absolute inset-0 opacity-25" style={{
-          backgroundImage: `
-            radial-gradient(circle at 25% 40%, rgba(14, 165, 233, 0.3) 0%, transparent 50%),
-            radial-gradient(circle at 75% 60%, rgba(99, 102, 241, 0.3) 0%, transparent 50%)
-          `
-        }} />
-        
-        {/* Subtle Grid Pattern */}
-        <div className="absolute inset-0 opacity-15" style={{
-          backgroundImage: `
-            linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px)
-          `,
-          backgroundSize: '60px 60px'
-        }} />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900/50 to-slate-950" />
+        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-amber-500/5 rounded-full blur-[150px]" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-6">
-            <span className="text-sm font-medium text-primary">{t.faq.label}</span>
+      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        {/* Compact Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-10"
+        >
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/30 mb-4">
+            <HelpCircle className="w-4 h-4 text-amber-400" />
+            <span className="text-sm font-semibold text-amber-300">
+              {locale === "en" ? "Quick Answers" : "إجابات سريعة"}
+            </span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-foreground">
-            {t.faq.title}
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
+            {locale === "en" ? "Frequently Asked Questions" : "الأسئلة الشائعة"}
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            {t.faq.description}
+          <p className="text-slate-400">
+            {locale === "en" ? "Find answers quickly or contact us" : "ابحث عن إجابات سريعة أو تواصل معنا"}
           </p>
+        </motion.div>
+
+        {/* Search Bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+          className="max-w-xl mx-auto mb-8"
+        >
+          <div className="relative">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder={locale === "en" ? "Search your question..." : "ابحث عن سؤالك..."}
+              className="w-full pl-12 pr-10 py-3 bg-slate-900 border border-slate-800 rounded-xl text-white placeholder:text-slate-500 focus:outline-none focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/50"
+            />
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery("")}
+                className="absolute right-4 top-1/2 -translate-y-1/2 w-6 h-6 flex items-center justify-center rounded-full bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white transition-colors"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            )}
+          </div>
+        </motion.div>
+
+        {/* Category Filter Pills */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="flex flex-wrap justify-center gap-2 mb-8"
+        >
+          {categories.map((cat) => (
+            <button
+              key={cat.id}
+              onClick={() => setActiveCategory(cat.id)}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                activeCategory === cat.id
+                  ? "bg-amber-500 text-slate-950"
+                  : "bg-slate-900 text-slate-400 border border-slate-800 hover:border-slate-700"
+              }`}
+            >
+              <span className="mr-1">{cat.icon}</span>
+              {locale === "en" ? cat.labelEn : cat.labelAr}
+            </button>
+          ))}
+        </motion.div>
+
+        {/* FAQ Grid - Two Columns on Desktop */}
+        <div className="grid md:grid-cols-2 gap-4">
+          <AnimatePresence mode="popLayout">
+            {filteredFaqs.map((faq, index) => (
+              <motion.div
+                key={faq.id}
+                layout
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ delay: index * 0.05 }}
+                className="group"
+              >
+                <button
+                  onClick={() => setOpenItem(openItem === faq.id ? null : faq.id)}
+                  className={`w-full text-left p-5 rounded-xl transition-all ${
+                    openItem === faq.id
+                      ? "bg-gradient-to-r from-amber-500/20 to-amber-600/10 border border-amber-500/30"
+                      : "bg-slate-900/50 border border-slate-800 hover:border-slate-700"
+                  }`}
+                >
+                  <div className="flex items-start gap-4">
+                    <div className={`w-10 h-10 rounded-lg flex items-center justify-center text-lg shrink-0 ${
+                      openItem === faq.id ? "bg-amber-500/20" : "bg-slate-800"
+                    }`}>
+                      {faq.icon}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className={`font-semibold mb-1 ${openItem === faq.id ? "text-white" : "text-slate-300 group-hover:text-white"}`}>
+                        {faq.question[locale]}
+                      </h3>
+                      <AnimatePresence>
+                        {openItem === faq.id && (
+                          <motion.p
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            exit={{ opacity: 0, height: 0 }}
+                            className="text-slate-400 text-sm mt-2 leading-relaxed"
+                          >
+                            {faq.answer[locale]}
+                          </motion.p>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                    <ChevronDown className={`w-5 h-5 text-slate-500 shrink-0 transition-transform ${
+                      openItem === faq.id ? "rotate-180" : ""
+                    }`} />
+                  </div>
+                </button>
+              </motion.div>
+            ))}
+          </AnimatePresence>
         </div>
 
-        {/* Accordion */}
-        <Accordion type="single" collapsible className="w-full">
-          {faqs.map((faq, index) => (
-            <AccordionItem key={index} value={`item-${index}`} className="border-border/50 hover:border-primary/50 transition-colors">
-              <AccordionTrigger className="text-lg font-semibold text-foreground hover:text-primary transition-colors py-6">
-                <div className="flex items-center gap-4 text-left">
-                  <span className="text-2xl">{faq.icon}</span>
-                  <span>{dir === "rtl" ? faq.titleAr : faq.titleEn}</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="text-base text-muted-foreground leading-relaxed pb-6">
-                {dir === "rtl" ? faq.contentAr : faq.contentEn}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+        {/* No Results */}
+        {filteredFaqs.length === 0 && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="text-center py-12"
+          >
+            <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-slate-900 flex items-center justify-center">
+              <Search className="w-8 h-8 text-slate-500" />
+            </div>
+            <p className="text-slate-400 mb-4">
+              {locale === "en" ? "No questions found" : "لم يتم العثور على أسئلة"}
+            </p>
+            <button
+              onClick={() => { setSearchQuery(""); setActiveCategory("all"); }}
+              className="text-amber-400 hover:text-amber-300 font-medium"
+            >
+              {locale === "en" ? "Clear filters" : "مسح الفلاتر"}
+            </button>
+          </motion.div>
+        )}
 
-        {/* Still Have Questions */}
-        <div className="mt-16 glass rounded-3xl p-10 border border-border/40 text-center">
-          <h3 className="text-2xl font-bold mb-3 text-foreground">{t.faq.stillQuestions}</h3>
-          <p className="text-muted-foreground mb-6">
-            {t.faq.stillQuestionsDesc}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        {/* Contact CTA - Compact */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-10 bg-gradient-to-r from-amber-500/10 via-amber-500/5 to-emerald-500/10 border border-amber-500/20 rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-4"
+        >
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center">
+              <Sparkles className="w-6 h-6 text-white" />
+            </div>
+            <div>
+              <h3 className="font-semibold text-white">
+                {locale === "en" ? "Still have questions?" : "لا تزال لديك أسئلة؟"}
+              </h3>
+              <p className="text-sm text-slate-400">
+                {locale === "en" ? "Get instant answers from our team" : "احصل على إجابات فورية من فريقنا"}
+              </p>
+            </div>
+          </div>
+          <div className="flex gap-3">
             <a
               href="https://wa.me/8615587237864"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-3 rounded-lg bg-green-600 hover:bg-green-700 text-white font-semibold transition-colors"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-medium transition-colors"
             >
-              💬 {t.faq.chatWhatsApp}
+              <MessageCircle className="w-4 h-4" />
+              {locale === "en" ? "WhatsApp" : "واتساب"}
             </a>
             <a
               href="tel:+8615587237864"
-              className="inline-flex items-center justify-center px-8 py-3 rounded-lg border-2 border-primary text-primary hover:bg-primary/10 font-semibold transition-colors"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-slate-700 text-slate-300 hover:bg-slate-800 hover:text-white transition-colors"
             >
-              📞 {t.faq.callUs}
+              <Phone className="w-4 h-4" />
+              {locale === "en" ? "Call" : "اتصال"}
             </a>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   )
