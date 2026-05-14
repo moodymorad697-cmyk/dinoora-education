@@ -3,7 +3,6 @@
 import { GraduationCap, Stamp, FileStack, Home, Plane, HeartHandshake, ArrowRight, Sparkles } from "lucide-react"
 import { useLanguage } from "@/lib/language-context"
 import { Button } from "@/components/ui/button"
-import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
 
@@ -14,7 +13,7 @@ export function Services() {
     {
       Icon: GraduationCap,
       key: "admission" as const,
-      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80",
+      image: "https://images.unsplash.com/photo-1562774053-701939374585?w=600&q=80",
       features: locale === "en" ? ["500+ Universities", "Priority Application", "Full Guidance"] : ["500+ جامعة", "تطبيق ذو أولوية", "إرشاد كامل"],
     },
     {
@@ -111,11 +110,10 @@ export function Services() {
                 >
                   {/* Service Image */}
                   <div className="relative h-48 overflow-hidden">
-                    <Image
+                    <img
                       src={service.image}
                       alt={data.title}
-                      fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-700"
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent" />
                     
