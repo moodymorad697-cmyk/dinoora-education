@@ -3,7 +3,7 @@
 import { Star, Quote } from "lucide-react"
 import { useLanguage } from "@/lib/language-context"
 import Image from "next/image"
-import { AnimatedBackground } from "@/components/ui/animated-background"
+import { motion } from "framer-motion"
 
 const testimonials = [
   {
@@ -149,15 +149,22 @@ export function Testimonials() {
         {/* Stats Row */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
-            { value: "500+", label: locale === "ar" ? "طالب ناجح" : "Successful Students" },
+            { value: "2,500+", label: locale === "ar" ? "طالب ناجح" : "Successful Students" },
             { value: "$2M+", label: locale === "ar" ? "منح تم تأمينها" : "Scholarships Secured" },
-            { value: "95%", label: locale === "ar" ? "نسبة القبول" : "Acceptance Rate" },
-            { value: "50+", label: locale === "ar" ? "جامعة شريكة" : "Partner Universities" },
+            { value: "98%", label: locale === "ar" ? "نسبة القبول" : "Acceptance Rate" },
+            { value: "500+", label: locale === "ar" ? "جامعة شريكة" : "Partner Universities" },
           ].map((stat, index) => (
-            <div key={index} className="text-center">
+            <motion.div 
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="text-center p-4 rounded-2xl bg-card/30 border border-border/50"
+            >
               <div className="text-3xl md:text-4xl font-bold gradient-text">{stat.value}</div>
               <div className="text-sm text-muted-foreground mt-1">{stat.label}</div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

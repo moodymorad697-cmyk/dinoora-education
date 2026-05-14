@@ -14,42 +14,66 @@ export function Programs() {
       key: "engineering" as const,
       gradient: "from-blue-500/20 to-cyan-500/20",
       iconBg: "bg-blue-500/10 text-blue-400 group-hover:bg-blue-500",
-      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&q=80", // Engineering
+      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&q=80",
+      duration: { en: "4 Years", ar: "4 سنوات" },
+      language: { en: "English/Chinese", ar: "إنجليزية/صينية" },
+      scholarship: { en: "Up to 100%", ar: "حتى 100%" },
+      majors: { en: ["Civil Engineering", "Mechanical Engineering", "Electrical Engineering", "Computer Engineering"], ar: ["هندسة مدنية", "هندسة ميكانيكية", "هندسة كهربائية", "هندسة حاسوب"] }
     },
     {
       icon: Stethoscope,
       key: "medicine" as const,
       gradient: "from-red-500/20 to-rose-500/20",
       iconBg: "bg-red-500/10 text-red-400 group-hover:bg-red-500",
-      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&q=80", // Medicine
+      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=500&q=80",
+      duration: { en: "5-6 Years", ar: "5-6 سنوات" },
+      language: { en: "English", ar: "إنجليزية" },
+      scholarship: { en: "Up to 100%", ar: "حتى 100%" },
+      majors: { en: ["MBBS (English Medium)", "Pharmacy", "Nursing", "Traditional Chinese Medicine"], ar: ["طب بشري (إنجليزي)", "صيدلة", "تمريض", "طب صيني تقليدي"] }
     },
     {
       icon: BarChart3,
       key: "business" as const,
       gradient: "from-emerald-500/20 to-teal-500/20",
       iconBg: "bg-emerald-500/10 text-emerald-400 group-hover:bg-emerald-500",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&q=80", // Business
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&q=80",
+      duration: { en: "2-4 Years", ar: "2-4 سنوات" },
+      language: { en: "English", ar: "إنجليزية" },
+      scholarship: { en: "Up to 75%", ar: "حتى 75%" },
+      majors: { en: ["MBA", "International Finance", "Marketing", "E-Commerce"], ar: ["MBA", "مالية دولية", "تسويق", "تجارة إلكترونية"] }
     },
     {
       icon: Brain,
       key: "it" as const,
       gradient: "from-purple-500/20 to-violet-500/20",
       iconBg: "bg-purple-500/10 text-purple-400 group-hover:bg-purple-500",
-      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&q=80", // IT/Tech
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=500&q=80",
+      duration: { en: "4 Years", ar: "4 سنوات" },
+      language: { en: "English", ar: "إنجليزية" },
+      scholarship: { en: "Up to 100%", ar: "حتى 100%" },
+      majors: { en: ["Artificial Intelligence", "Data Science", "Cybersecurity", "Software Engineering"], ar: ["ذكاء اصطناعي", "علم البيانات", "أمن سيبراني", "هندسة البرمجيات"] }
     },
     {
       icon: Building2,
       key: "architecture" as const,
       gradient: "from-amber-500/20 to-orange-500/20",
       iconBg: "bg-amber-500/10 text-amber-400 group-hover:bg-amber-500",
-      image: "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=500&q=80", // Architecture
+      image: "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=500&q=80",
+      duration: { en: "4-5 Years", ar: "4-5 سنوات" },
+      language: { en: "English/Chinese", ar: "إنجليزية/صينية" },
+      scholarship: { en: "Up to 50%", ar: "حتى 50%" },
+      majors: { en: ["Architecture", "Urban Planning", "Interior Design", "Landscape Architecture"], ar: ["عمارة", "تخطيط حضري", "تصميم داخلي", "عمارة المناظر الطبيعية"] }
     },
     {
       icon: Palette,
       key: "arts" as const,
       gradient: "from-pink-500/20 to-fuchsia-500/20",
       iconBg: "bg-pink-500/10 text-pink-400 group-hover:bg-pink-500",
-      image: "https://images.unsplash.com/photo-1549887534-f55a8f08a8f7?w=500&q=80", // Arts
+      image: "https://images.unsplash.com/photo-1549887534-f55a8f08a8f7?w=500&q=80",
+      duration: { en: "4 Years", ar: "4 سنوات" },
+      language: { en: "English/Chinese", ar: "إنجليزية/صينية" },
+      scholarship: { en: "Up to 50%", ar: "حتى 50%" },
+      majors: { en: ["Fine Arts", "Graphic Design", "Film Production", "Digital Media"], ar: ["فنون تشكيلية", "تصميم جرافيك", "إنتاج سينمائي", "وسائط رقمية"] }
     },
   ]
 
@@ -136,32 +160,37 @@ export function Programs() {
                   {/* Description */}
                   <p className="text-muted-foreground text-sm leading-relaxed mb-6">{data.description}</p>
                   
-                  {/* Stats */}
-                  <div className="flex flex-wrap gap-4 mb-6 text-xs">
-                    <div className="flex items-center gap-1.5 text-muted-foreground">
-                      <Clock className="w-3.5 h-3.5 text-primary" />
-                      <span>{data.stats.duration}</span>
+                  {/* Stats Row */}
+                  <div className="flex flex-wrap gap-3 mb-4 text-xs">
+                    <div className="flex items-center gap-1.5 px-2 py-1 rounded-full bg-secondary/50 border border-border/50">
+                      <Clock className="w-3 h-3 text-primary" />
+                      <span className="text-muted-foreground">{program.duration[locale]}</span>
                     </div>
-                    <div className="flex items-center gap-1.5 text-muted-foreground">
-                      <Globe className="w-3.5 h-3.5 text-primary" />
-                      <span>{data.stats.language}</span>
+                    <div className="flex items-center gap-1.5 px-2 py-1 rounded-full bg-secondary/50 border border-border/50">
+                      <Globe className="w-3 h-3 text-primary" />
+                      <span className="text-muted-foreground">{program.language[locale]}</span>
                     </div>
-                    <div className="flex items-center gap-1.5 text-muted-foreground">
-                      <Award className="w-3.5 h-3.5 text-primary" />
-                      <span>{data.stats.scholarship}</span>
+                    <div className="flex items-center gap-1.5 px-2 py-1 rounded-full bg-amber-500/10 border border-amber-500/30">
+                      <Award className="w-3 h-3 text-amber-400" />
+                      <span className="text-amber-400 font-medium">{program.scholarship[locale]}</span>
                     </div>
                   </div>
                   
-                  {/* Courses */}
-                  <div className="flex flex-wrap gap-2">
-                    {data.courses.map((course: string) => (
+                  {/* Majors */}
+                  <div className="flex flex-wrap gap-1.5">
+                    {program.majors[locale].slice(0, 3).map((major: string) => (
                       <span
-                        key={course}
-                        className="rounded-full bg-secondary/50 border border-border/50 px-3 py-1 text-xs text-foreground"
+                        key={major}
+                        className="rounded-full bg-primary/10 border border-primary/20 px-2.5 py-1 text-xs text-primary"
                       >
-                        {course}
+                        {major}
                       </span>
                     ))}
+                    {program.majors[locale].length > 3 && (
+                      <span className="rounded-full bg-secondary/30 px-2.5 py-1 text-xs text-muted-foreground">
+                        +{program.majors[locale].length - 3}
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>
