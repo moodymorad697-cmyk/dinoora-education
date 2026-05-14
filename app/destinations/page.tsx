@@ -1,6 +1,6 @@
 "use client"
 
-import { ArrowLeft, Globe } from "lucide-react"
+import { ArrowLeft, Globe, Sparkles, MapPin } from "lucide-react"
 import Link from "next/link"
 import { useLanguage } from "@/lib/language-context"
 import { Button } from "@/components/ui/button"
@@ -11,22 +11,35 @@ export default function DestinationsPage() {
   const { t, dir, locale } = useLanguage()
 
   return (
-    <main className="min-h-screen bg-background">
-      {/* Hero Section */}
+    <main className="min-h-screen bg-slate-950">
+      {/* Hero Section - Dark Gold Theme */}
       <section className="relative py-24 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-card/30 to-background" />
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[150px]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950" />
+        <div className="absolute inset-0" style={{
+          background: `
+            radial-gradient(ellipse 80% 50% at 50% 0%, rgba(251, 191, 36, 0.12) 0%, transparent 60%),
+            radial-gradient(ellipse 60% 40% at 20% 80%, rgba(251, 191, 36, 0.08) 0%, transparent 50%)
+          `
+        }} />
+        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-amber-500/30 to-transparent" />
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <Link href="/" className="inline-flex items-center gap-2 text-primary hover:text-primary/80 mb-8">
-            <ArrowLeft className="w-4 h-4" />
+          <Link href="/" className="inline-flex items-center gap-2 text-amber-400 hover:text-amber-300 mb-8 transition-colors">
+            <ArrowLeft className="w-5 h-5" />
             <span>{locale === "en" ? "Back Home" : "العودة للرئيسية"}</span>
           </Link>
 
-          <h1 className="text-4xl lg:text-6xl font-bold text-balance mb-6 text-foreground">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/30 mb-6">
+            <MapPin className="w-4 h-4 text-amber-400" />
+            <span className="text-sm font-semibold text-amber-300">
+              {locale === "en" ? "3 Amazing Destinations" : "3 وجهات رائعة"}
+            </span>
+          </div>
+
+          <h1 className="text-4xl lg:text-6xl font-bold text-balance mb-6 text-white">
             {t.destinations.title}
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl">
+          <p className="text-xl text-slate-400 max-w-2xl">
             {t.destinations.description}
           </p>
         </div>

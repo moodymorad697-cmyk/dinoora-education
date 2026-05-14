@@ -2,154 +2,168 @@
 
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/lib/language-context"
-import { config } from "@/lib/config"
-import { ArrowRight, MessageCircle, GraduationCap, Building2, Trophy, Clock } from "lucide-react"
-import Image from "next/image"
+import { ArrowRight, MessageCircle, GraduationCap, Building2, Trophy, Clock, Sparkles, Globe2 } from "lucide-react"
 import Link from "next/link"
-import { LazyParticleSystem } from "@/components/lazy/lazy-3d"
-import { LazyVideoBackground } from "@/components/lazy/lazy-backgrounds"
-import { AnimatedBackground } from "@/components/ui/animated-background"
 import { motion } from "framer-motion"
 
 export function Hero() {
-  const { t, dir } = useLanguage()
+  const { t, dir, locale } = useLanguage()
 
   const stats = [
-    { Icon: GraduationCap, value: config.stats.studentsPlaced, label: t.hero.studentsPlaced, gradient: "from-amber-500 to-orange-500" },
-    { Icon: Building2, value: config.stats.partnerUniversities, label: t.hero.partnerUniversities, gradient: "from-blue-500 to-cyan-500" },
-    { Icon: Trophy, value: config.stats.successRate, label: t.hero.successRate, gradient: "from-emerald-500 to-teal-500" },
-    { Icon: Clock, value: config.stats.yearsExperience, label: t.hero.yearsExperience, gradient: "from-purple-500 to-pink-500" },
+    { Icon: GraduationCap, value: "2,500+", label: locale === "en" ? "Students Placed" : "طالب تم توظيفهم", gradient: "from-amber-400 to-amber-600" },
+    { Icon: Building2, value: "500+", label: locale === "en" ? "Partner Universities" : "جامعات شريكة", gradient: "from-amber-500 to-yellow-500" },
+    { Icon: Trophy, value: "98%", label: locale === "en" ? "Success Rate" : "نسبة النجاح", gradient: "from-yellow-400 to-amber-500" },
+    { Icon: Clock, value: "10+", label: locale === "en" ? "Years Experience" : "سنوات خبرة", gradient: "from-amber-600 to-orange-500" },
   ]
 
-  const whatsappUrl = `https://wa.me/${config.contact.whatsapp.replace(/[^\d]/g, '')}?text=Hi%20DINOORA%2C%20I'm%20interested%20in%20studying%20abroad`
+  const whatsappUrl = `https://wa.me/8615587237864?text=${locale === "en" ? "Hi%20DINOORA" : "%D9%85%D8%B1%D8%AD%D8%A8%D8%A7"}`
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Premium Multi-Layer Background */}
-      <div className="absolute inset-0 z-0">
-        {/* Background image with overlay */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1562774053-701939374585?w=1600&q=85')",
-          }}
-        />
-
-        {/* Deep gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-950/95 via-indigo-950/85 to-purple-950/95" />
-
-        {/* Aurora mesh gradients */}
-        <div className="absolute inset-0 opacity-60" style={{
-          backgroundImage: `
-            radial-gradient(ellipse 70% 50% at 20% 30%, rgba(212, 168, 83, 0.20) 0%, transparent 50%),
-            radial-gradient(ellipse 60% 50% at 80% 70%, rgba(99, 102, 241, 0.20) 0%, transparent 50%),
-            radial-gradient(ellipse 50% 30% at 50% 100%, rgba(168, 85, 247, 0.15) 0%, transparent 60%)
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-950">
+      {/* Premium Dark Gold Background */}
+      <div className="absolute inset-0">
+        {/* Base dark gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950" />
+        
+        {/* Gold radial gradients - layered for depth */}
+        <div className="absolute inset-0" style={{
+          background: `
+            radial-gradient(ellipse 80% 50% at 50% -20%, rgba(251, 191, 36, 0.15) 0%, transparent 60%),
+            radial-gradient(ellipse 60% 40% at 80% 60%, rgba(245, 158, 11, 0.1) 0%, transparent 50%),
+            radial-gradient(ellipse 50% 50% at 20% 80%, rgba(251, 191, 36, 0.08) 0%, transparent 50%)
           `
         }} />
+        
+        {/* Animated gold glow */}
+        <motion.div 
+          className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-amber-500/20 rounded-full blur-[120px]"
+          animate={{ 
+            opacity: [0.2, 0.3, 0.2],
+            scale: [1, 1.1, 1]
+          }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        />
+        
+        {/* Secondary glow */}
+        <motion.div 
+          className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-amber-600/10 rounded-full blur-[150px]"
+          animate={{ 
+            opacity: [0.1, 0.2, 0.1],
+          }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+        />
 
-        {/* Bottom fade to background */}
-        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-background via-background/60 to-transparent" />
-
-        {/* Subtle noise texture via dotted grid */}
-        <div className="absolute inset-0 opacity-[0.04]" style={{
-          backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)',
-          backgroundSize: '32px 32px'
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0 opacity-[0.02]" style={{
+          backgroundImage: `
+            linear-gradient(rgba(251, 191, 36, 0.3) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(251, 191, 36, 0.3) 1px, transparent 1px)
+          `,
+          backgroundSize: '60px 60px'
         }} />
+
+        {/* Gold accent lines */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/50 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/30 to-transparent" />
       </div>
 
-      {/* Floating Animated Orbs */}
-      <div className="absolute top-1/4 -right-32 w-96 h-96 bg-amber-500/15 rounded-full blur-[150px] animate-pulse" />
-      <div className="absolute bottom-1/4 -left-32 w-96 h-96 bg-purple-500/15 rounded-full blur-[150px] animate-pulse" style={{ animationDelay: '1.5s' }} />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-500/8 rounded-full blur-[200px]" />
-
-      <div className="container relative z-10 px-4 py-20 md:py-32 mx-auto max-w-7xl">
+      <div className="container relative z-10 px-4 py-20 md:py-28 mx-auto max-w-7xl">
         <div className="max-w-5xl mx-auto text-center">
-          {/* Badge with Trust Badges */}
+          {/* Premium Badge */}
           <motion.div 
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-amber-500/10 border border-amber-500/30 mb-8 backdrop-blur-sm"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <motion.span 
-              className="w-2 h-2 bg-primary rounded-full"
-              animate={{ scale: [1, 1.5, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            />
-            <span className="text-sm font-medium text-foreground/90">{t.hero.badge}</span>
+            <Sparkles className="w-4 h-4 text-amber-400" />
+            <span className="text-sm font-semibold text-amber-300">
+              {locale === "en" ? "Your Gateway to World-Class Education" : "بوابتك للتعليم العالمي"}
+            </span>
           </motion.div>
 
-          {/* Main Heading */}
+          {/* Main Heading - Dark Gold Theme */}
           <motion.h1 
-            className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-8 text-balance"
+            className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
           >
-            <span className="text-foreground">{t.hero.title}</span>
+            <span className="text-white">{locale === "en" ? "Study at" : "ادرس في"}</span>
             <br />
-            <motion.span 
-              className="gradient-text inline-block"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              {t.hero.titleHighlight}
-            </motion.span>
-            <br />
-            <span className="text-foreground">{t.hero.titleEnd}</span>
+            <span className="bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 bg-clip-text text-transparent">
+              {locale === "en" ? "Top Global Universities" : "أفضل الجامعات العالمية"}
+            </span>
           </motion.h1>
 
-          {/* Description */}
+          {/* Subtitle */}
           <motion.p 
-            className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed font-medium"
+            className="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-8 leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
           >
-            {t.hero.description}
+            {locale === "en" 
+              ? "Complete support from admission to graduation in China, Malaysia & Turkey"
+              : "دعم كامل من القبول حتى التخرج في الصين وماليزيا وتركيا"
+            }
           </motion.p>
 
-          {/* CTA Buttons */}
+          {/* Feature Pills */}
+          <motion.div 
+            className="flex flex-wrap items-center justify-center gap-3 mb-10"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.7 }}
+          >
+            {[
+              locale === "en" ? "✓ Free Consultation" : "✓ استشارة مجانية",
+              locale === "en" ? "✓ Scholarship Guidance" : "✓ إرشاد المنح",
+              locale === "en" ? "✓ Visa Support" : "✓ دعم التأشيرة",
+              locale === "en" ? "✓ Accommodation Help" : "✓ مساعدة السكن",
+            ].map((item, i) => (
+              <span key={i} className="px-4 py-2 rounded-full bg-slate-800/50 border border-slate-700 text-slate-300 text-sm">
+                {item}
+              </span>
+            ))}
+          </motion.div>
+
+          {/* CTA Buttons - Gold Theme */}
           <motion.div 
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.8 }}
           >
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 size="lg"
-                className="gold-gradient text-primary-foreground hover:opacity-90 transition-all duration-300 px-8 py-6 text-lg font-semibold shadow-lg shadow-primary/25 w-full sm:w-auto hover:shadow-xl hover:shadow-primary/40"
+                className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold px-10 py-7 text-lg shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 transition-all duration-300"
                 asChild
               >
                 <Link href="#apply">
-                  {t.hero.applyNow}
-                  <ArrowRight className={`w-5 h-5 transition-transform group-hover:translate-x-1 ${dir === "rtl" ? "mr-2 rotate-180" : "ml-2"}`} />
+                  {locale === "en" ? "Start Your Application" : "ابدأ طلبك"}
+                  <ArrowRight className={`w-5 h-5 ${dir === "rtl" ? "mr-2" : "ml-2"}`} />
                 </Link>
               </Button>
             </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
+            
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-border/50 hover:bg-secondary/50 px-8 py-6 text-lg w-full sm:w-auto transition-all duration-300"
+                className="border-amber-500/50 bg-slate-900/50 text-amber-400 hover:bg-amber-500/10 hover:text-amber-300 px-8 py-7 text-lg transition-all duration-300"
                 asChild
               >
                 <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                   <MessageCircle className={`w-5 h-5 ${dir === "rtl" ? "ml-2" : "mr-2"}`} />
-                  {t.hero.chatWhatsApp}
+                  {locale === "en" ? "Chat on WhatsApp" : "تحدث على واتساب"}
                 </a>
               </Button>
             </motion.div>
           </motion.div>
 
-          {/* Premium Stats Grid */}
+          {/* Stats Grid - Dark Gold Theme */}
           <motion.div
             className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5"
             initial={{ opacity: 0, y: 30 }}
@@ -161,28 +175,25 @@ export function Hero() {
               return (
                 <motion.div
                   key={index}
-                  className="group relative rounded-2xl card-glow lift-gold backdrop-blur-xl bg-gradient-to-br from-white/[0.06] to-white/[0.02] border border-white/10 p-6 transition-all duration-500 overflow-hidden"
+                  className="group relative rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-amber-500/30 p-6 transition-all duration-500 overflow-hidden"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
                 >
-                  {/* Decorative gradient blob */}
-                  <div className={`absolute -top-12 -right-12 w-32 h-32 bg-gradient-to-br ${stat.gradient} opacity-10 rounded-full blur-2xl group-hover:opacity-25 transition-opacity duration-700`} />
+                  {/* Amber glow on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
 
                   <div className="relative">
                     {/* Icon */}
-                    <div className="relative inline-flex mb-4">
-                      <div className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} rounded-xl blur-lg opacity-40 group-hover:opacity-70 transition-opacity duration-500`} />
-                      <div className={`relative w-12 h-12 rounded-xl bg-gradient-to-br ${stat.gradient} flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:-rotate-3 transition-all duration-500`}>
-                        <Icon className="w-6 h-6 text-white" strokeWidth={2.2} />
-                      </div>
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500/20 to-amber-600/10 border border-amber-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                      <Icon className="w-6 h-6 text-amber-400" />
                     </div>
 
                     {/* Value */}
-                    <div className={`text-3xl md:text-4xl font-bold bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent mb-1`}>
+                    <div className="text-3xl md:text-4xl font-bold text-white mb-1">
                       {stat.value}
                     </div>
-                    <div className="text-sm md:text-base font-medium text-muted-foreground">{stat.label}</div>
+                    <div className="text-sm text-slate-400">{stat.label}</div>
                   </div>
                 </motion.div>
               )
@@ -191,15 +202,15 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Enhanced Scroll Indicator */}
+      {/* Scroll Indicator */}
       <motion.div 
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
       >
-        <div className="w-6 h-10 border-2 border-muted-foreground/30 rounded-full flex items-start justify-center p-1">
+        <div className="w-6 h-10 border-2 border-amber-500/30 rounded-full flex items-start justify-center p-1">
           <motion.div 
-            className="w-1.5 h-3 bg-primary rounded-full"
+            className="w-1.5 h-3 bg-amber-400 rounded-full"
             animate={{ y: [0, 12, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           />
