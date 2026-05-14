@@ -7,16 +7,16 @@ import { MapPin, Award, ArrowUpRight } from "lucide-react"
 const universities = [
   { name: "Tsinghua University", country: "China", ranking: "Top 20 World", image: "https://images.unsplash.com/photo-1562774053-701939374585?w=400&q=80", flag: "🇨🇳" },
   { name: "Peking University", country: "China", ranking: "Top 20 World", image: "https://images.unsplash.com/photo-1544531585-9847b68c8c86?w=400&q=80", flag: "🇨🇳" },
-  { name: "Fudan University", country: "China", ranking: "Top 50 World", image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&q=80", flag: "🇨🇳" },
+  { name: "Fudan University", country: "China", ranking: "Top 50 World", image: "https://images.unsplash.com/photo-1592288557716-c4c744e1760c?w=400&q=80", flag: "🇨🇳" },
   { name: "Shanghai Jiao Tong", country: "China", ranking: "Top 50 World", image: "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=400&q=80", flag: "🇨🇳" },
   { name: "Zhejiang University", country: "China", ranking: "Top 50 World", image: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=400&q=80", flag: "🇨🇳" },
   { name: "University of Malaya", country: "Malaysia", ranking: "Top 100 World", image: "https://images.unsplash.com/photo-1597211833712-5e41faa202ea?w=400&q=80", flag: "🇲🇾" },
-  { name: "Universiti Putra Malaysia", country: "Malaysia", ranking: "Top 150 World", image: "https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=400&q=80", flag: "🇲🇾" },
+  { name: "Universiti Putra Malaysia", country: "Malaysia", ranking: "Top 150 World", image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&q=80", flag: "🇲🇾" },
   { name: "Taylor's University", country: "Malaysia", ranking: "Top 300 World", image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=400&q=80", flag: "🇲🇾" },
   { name: "Bogazici University", country: "Turkey", ranking: "Top 200 World", image: "https://images.unsplash.com/photo-1531219572328-a0171b4448a3?w=400&q=80", flag: "🇹🇷" },
   { name: "Middle East Technical", country: "Turkey", ranking: "Top 300 World", image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&q=80", flag: "🇹🇷" },
-  { name: "Koc University", country: "Turkey", ranking: "Top 500 World", image: "https://images.unsplash.com/photo-1542744093-f92436d4567b?w=400&q=80", flag: "🇹🇷" },
-  { name: "Istanbul Technical", country: "Turkey", ranking: "Top 400 World", image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&q=80", flag: "🇹🇷" },
+  { name: "Koc University", country: "Turkey", ranking: "Top 500 World", image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&q=80", flag: "🇹🇷" },
+  { name: "Istanbul Technical", country: "Turkey", ranking: "Top 400 World", image: "https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=400&q=80", flag: "🇹🇷" },
 ]
 
 export function Universities() {
