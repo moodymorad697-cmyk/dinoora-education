@@ -10,7 +10,7 @@ import { Universities } from "@/components/universities"
 import { Testimonials } from "@/components/testimonials"
 import { FAQ } from "@/components/faq"
 import { CTA } from "@/components/cta"
-import { ApplicationForm } from "@/components/application-form"
+import { EnhancedApplicationForm } from "@/components/enhanced-application-form"
 import { Footer } from "@/components/footer"
 import { ProgressTracker } from "@/components/progress-tracker"
 import { ReferralSystem } from "@/components/referral-system"
@@ -36,7 +36,7 @@ export default function Home() {
       <ReferralSystem />
       <FAQ />
       <CTA />
-      <ApplicationForm />
+      <EnhancedApplicationForm />
       <Footer />
     </main>
   )
