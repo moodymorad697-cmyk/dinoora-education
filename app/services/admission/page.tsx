@@ -1,7 +1,8 @@
 "use client"
 
-import { ArrowLeft, ArrowRight, GraduationCap, CheckCircle, Zap, Users, Target, Phone, Mail, MessageCircle, Award, Clock, Globe } from "lucide-react"
+import { ArrowLeft, ArrowRight, GraduationCap, CheckCircle, Zap, Users, Target, Phone, Mail, MessageCircle, Award, Clock, Globe, Sparkles } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 import { useLanguage } from "@/lib/language-context"
 import { Button } from "@/components/ui/button"
 import { ApplicationForm } from "@/components/application-form"
@@ -69,19 +70,59 @@ export default function AdmissionPage() {
   ]
 
   const universities = [
-    { name: "Tsinghua University", rank: "#1 Asia", location: "Beijing" },
-    { name: "Peking University", rank: "#2 Asia", location: "Beijing" },
-    { name: "Fudan University", rank: "#3 Asia", location: "Shanghai" },
-    { name: "Zhejiang University", rank: "#4 Asia", location: "Hangzhou" },
+    { 
+      name: "Tsinghua University", 
+      rank: "#1 Asia", 
+      location: "Beijing",
+      image: "https://images.unsplash.com/photo-1562774053-701939374585?w=600&q=80"
+    },
+    { 
+      name: "Peking University", 
+      rank: "#2 Asia", 
+      location: "Beijing",
+      image: "https://images.unsplash.com/photo-1596522354195-e91ea3402eae?w=600&q=80"
+    },
+    { 
+      name: "Fudan University", 
+      rank: "#3 Asia", 
+      location: "Shanghai",
+      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80"
+    },
+    { 
+      name: "Zhejiang University", 
+      rank: "#4 Asia", 
+      location: "Hangzhou",
+      image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&q=80"
+    },
+  ]
+
+  const galleryImages = [
+    { src: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&q=80", alt: "Student Campus" },
+    { src: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&q=80", alt: "Study Group" },
+    { src: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=400&q=80", alt: "Graduation" },
   ]
 
   return (
     <main className="min-h-screen bg-slate-950">
-      {/* Header - Dark Gold Theme */}
+      {/* Hero - With Background Image */}
       <section className="relative py-24 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900/50 to-slate-950" />
-        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-amber-500/5 rounded-full blur-[150px]" />
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[150px]" />
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1600&q=85"
+            alt="University Campus"
+            fill
+            className="object-cover opacity-15"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/80 to-slate-950/60" />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-transparent to-slate-950" />
+        </div>
+        
+        <div className="absolute inset-0">
+          <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-amber-500/10 rounded-full blur-[150px]" />
+          <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[150px]" />
+        </div>
         <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-amber-500/50 to-transparent" />
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -90,13 +131,37 @@ export default function AdmissionPage() {
             <span className="font-medium">{locale === "en" ? "Back to Services" : "العودة للخدمات"}</span>
           </Link>
 
-          <div className="flex flex-col md:flex-row items-start md:items-center gap-6 mb-8">
-            <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-500/20 to-amber-600/10 border border-amber-500/20">
-              <GraduationCap className="h-10 w-10 text-amber-400" />
+          <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8">
+            <div className="flex-1">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/30 mb-6">
+                <Sparkles className="w-4 h-4 text-amber-400" />
+                <span className="text-sm font-semibold text-amber-300">
+                  {locale === "en" ? "Priority Admission" : "قبول ذو أولوية"}
+                </span>
+              </div>
+              <h1 className="text-4xl lg:text-6xl font-bold text-white mb-4">{service.title}</h1>
+              <p className="text-xl text-slate-400 max-w-2xl mb-6">{service.description}</p>
+              
+              {/* Stats Preview */}
+              <div className="flex flex-wrap gap-4">
+                <div className="px-4 py-2 rounded-lg bg-slate-900/80 border border-slate-800">
+                  <span className="text-amber-400 font-bold">500+</span>
+                  <span className="text-slate-400 text-sm ml-2">{locale === "en" ? "Universities" : "جامعة"}</span>
+                </div>
+                <div className="px-4 py-2 rounded-lg bg-slate-900/80 border border-slate-800">
+                  <span className="text-amber-400 font-bold">100%</span>
+                  <span className="text-slate-400 text-sm ml-2">{locale === "en" ? "Success Rate" : "نسبة النجاح"}</span>
+                </div>
+              </div>
             </div>
-            <div>
-              <h1 className="text-4xl lg:text-6xl font-bold text-white mb-3">{service.title}</h1>
-              <p className="text-xl text-slate-400 max-w-2xl">{service.description}</p>
+            
+            {/* Gallery Preview */}
+            <div className="hidden lg:flex gap-2">
+              {galleryImages.map((img, i) => (
+                <div key={i} className="relative w-24 h-32 rounded-xl overflow-hidden border border-slate-700 hover:border-amber-500/50 transition-colors">
+                  <Image src={img.src} alt={img.alt} fill className="object-cover" />
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -149,10 +214,27 @@ export default function AdmissionPage() {
 
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {universities.map((uni, i) => (
-              <div key={i} className="group p-6 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-amber-500/30 transition-all duration-300">
-                <div className="text-amber-400 text-sm font-bold mb-2">{uni.rank}</div>
-                <h3 className="text-white font-bold mb-1">{uni.name}</h3>
-                <p className="text-slate-400 text-sm">{uni.location}</p>
+              <div key={i} className="group rounded-xl bg-slate-900/50 border border-slate-800 hover:border-amber-500/30 transition-all duration-300 overflow-hidden">
+                {/* University Image */}
+                <div className="relative h-32 overflow-hidden">
+                  <Image 
+                    src={uni.image} 
+                    alt={uni.name}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent" />
+                  <div className="absolute top-2 left-2 px-2 py-1 rounded bg-amber-500/20 backdrop-blur-sm border border-amber-500/30">
+                    <span className="text-amber-300 text-xs font-bold">{uni.rank}</span>
+                  </div>
+                </div>
+                <div className="p-4">
+                  <h3 className="text-white font-bold mb-1 group-hover:text-amber-400 transition-colors">{uni.name}</h3>
+                  <div className="flex items-center gap-1 text-slate-400 text-sm">
+                    <Globe className="w-3 h-3" />
+                    {uni.location}
+                  </div>
+                </div>
               </div>
             ))}
           </div>
