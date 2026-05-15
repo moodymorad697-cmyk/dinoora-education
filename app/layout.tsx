@@ -11,12 +11,15 @@ import {
   WebsiteSchema, 
   LocalBusinessSchema 
 } from '@/components/structured-data'
+import { PerformanceOptimizations } from '@/components/performance-optimizations'
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
   variable: '--font-sans',
   display: 'swap',
+  preload: true,
+  fallback: ['system-ui', 'arial'],
 });
 
 const outfit = Outfit({
@@ -24,6 +27,8 @@ const outfit = Outfit({
   weight: ["600", "700", "800", "900"],
   variable: '--font-display',
   display: 'swap',
+  preload: true,
+  fallback: ['system-ui', 'arial'],
 });
 
 const cairo = Cairo({
@@ -31,6 +36,8 @@ const cairo = Cairo({
   weight: ["400", "500", "600", "700", "800"],
   variable: '--font-arabic',
   display: 'swap',
+  preload: true,
+  fallback: ['system-ui', 'arial'],
 });
 
 export const metadata: Metadata = {
@@ -187,15 +194,32 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="ar" dir="rtl" suppressHydrationWarning>
+    <html lang="ar" dir="rtl" suppressHydrationWarning className="scroll-smooth">
       <head>
+        {/* Preconnect to external domains for faster loading */}
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
+        {/* Preload critical fonts */}
+        <link 
+          rel="preload" 
+          href="https://fonts.gstatic.com/s/plusjakartasans/v8/ldt_5tm3pEkaK_PJ__RWuhZ-3DqvI1ospYUJDBQ.woff2" 
+          as="font" 
+          type="font/woff2" 
+          crossOrigin="anonymous" 
+        />
+        
+        {/* Structured Data */}
         <OrganizationSchema />
         <WebsiteSchema />
         <LocalBusinessSchema />
       </head>
-      <body className={`${jakarta.variable} ${outfit.variable} ${cairo.variable} antialiased font-sans`} suppressHydrationWarning>
+      <body className={`${jakarta.variable} ${outfit.variable} ${cairo.variable} antialiased font-sans`} suppressHydrationWarning style={{ textRendering: 'optimizeLegibility' }}>
         <ThemeProvider>
           <LanguageProvider>
+            <PerformanceOptimizations />
             <div className="min-h-screen bg-background">
               {children}
             </div>
