@@ -68,16 +68,16 @@ export function StatsShowcase() {
   const stats = [
     {
       icon: Users,
-      value: 2000,
+      value: 500,
       suffix: "+",
-      label: locale === "en" ? "Scholarship Applications" : "طلبات منح دراسية",
+      label: locale === "en" ? "Students Helped" : "طالب تم مساعدتهم",
       color: "from-amber-500 to-orange-500",
     },
     {
       icon: GraduationCap,
-      value: 500,
+      value: 50,
       suffix: "+",
-      label: locale === "en" ? "Partner Universities" : "جامعة شريكة",
+      label: locale === "en" ? "Prestigious Universities" : "جامعة مرموقة",
       color: "from-blue-500 to-cyan-500",
     },
     {
@@ -170,7 +170,7 @@ export function StatsShowcase() {
               ))}
             </div>
             <span className="text-sm text-slate-300">
-              {locale === "en" ? "4.9/5 from 2,000+ reviews" : "4.9/5 من 2,000+ تقييم"}
+              {locale === "en" ? "4.8/5 from 500+ reviews" : "4.8/5 من 500+ تقييم"}
             </span>
           </div>
           

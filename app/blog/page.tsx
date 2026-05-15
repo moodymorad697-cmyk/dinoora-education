@@ -7,6 +7,7 @@ import {
   Clock, 
   Calendar, 
   ArrowRight,
+  ArrowLeft,
   GraduationCap,
   Building2,
   Globe,
@@ -179,6 +180,15 @@ export default function BlogPage() {
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl" />
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Back to Home Link */}
+          <Link 
+            href="/" 
+            className="inline-flex items-center gap-2 text-slate-400 hover:text-amber-400 transition-colors mb-6"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            {locale === "en" ? "Back to Home" : "العودة للرئيسية"}
+          </Link>
+        
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

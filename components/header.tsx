@@ -50,7 +50,11 @@ export function Header() {
             <div className="flex items-center gap-5 text-white/70">
               <a href="tel:+8615587237864" className="hidden sm:inline-flex items-center gap-1.5 hover:text-amber-400 transition-colors">
                 <Phone className="w-3 h-3" />
-                <span className="font-medium">+86 15587237864</span>
+                <span className="font-medium">China: +86 15587237864</span>
+              </a>
+              <a href="tel:+60174110146" className="hidden sm:inline-flex items-center gap-1.5 hover:text-amber-400 transition-colors">
+                <Phone className="w-3 h-3" />
+                <span className="font-medium">Malaysia: +60 174110146</span>
               </a>
               <a href="mailto:info@dinoora.com" className="hidden md:inline-flex items-center gap-1.5 hover:text-amber-400 transition-colors">
                 <Mail className="w-3 h-3" />
@@ -82,11 +86,12 @@ export function Header() {
         <div className="flex items-center justify-between gap-6">
           {/* Logo - Repositioned to center area with better prominence */}
           <Link href="/" className="flex items-center gap-3 group flex-shrink-0 order-2 lg:order-1">
-            <div className="relative w-40 h-12 md:w-48 md:h-16 overflow-hidden group-hover:scale-105 transition-transform duration-300 bg-gradient-to-r from-amber-500/10 to-transparent rounded-lg p-1">
+            <div className="relative w-44 h-14 md:w-52 md:h-18 overflow-hidden group-hover:scale-105 transition-transform duration-300 bg-gradient-to-r from-amber-500/20 to-primary/10 rounded-lg p-2 border border-amber-500/30">
               <img
                 src="/images/logo.png"
                 alt="DINOORA Education"
                 className="w-full h-full object-contain"
+                style={{ filter: 'brightness(1.2) contrast(1.1)' }}
               />
             </div>
           </Link>
@@ -135,7 +140,7 @@ export function Header() {
                 asChild
                 className="text-muted-foreground hover:text-foreground transition-all hover:bg-secondary/50 rounded-lg h-9 w-9"
               >
-                <a href="tel:+8615587237864" aria-label="Call us">
+                <a href="tel:+8615587237864" aria-label="Call China">
                   <Phone className="w-4 h-4" />
                 </a>
               </Button>
@@ -145,7 +150,27 @@ export function Header() {
                 asChild
                 className="text-muted-foreground hover:text-foreground transition-all hover:bg-secondary/50 rounded-lg h-9 w-9"
               >
-                <a href="https://wa.me/8615587237864" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                <a href="tel:+60174110146" aria-label="Call Malaysia">
+                  <Phone className="w-4 h-4" />
+                </a>
+              </Button>
+              <Button
+                variant="ghost"
+                size="icon"
+                asChild
+                className="text-muted-foreground hover:text-foreground transition-all hover:bg-secondary/50 rounded-lg h-9 w-9"
+              >
+                <a href="https://wa.me/8615587237864" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp China">
+                  <MessageCircle className="w-4 h-4" />
+                </a>
+              </Button>
+              <Button
+                variant="ghost"
+                size="icon"
+                asChild
+                className="text-muted-foreground hover:text-foreground transition-all hover:bg-secondary/50 rounded-lg h-9 w-9"
+              >
+                <a href="https://wa.me/60174110146" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Malaysia">
                   <MessageCircle className="w-4 h-4" />
                 </a>
               </Button>
@@ -209,7 +234,7 @@ export function Header() {
                 >
                   <a href="tel:+8615587237864" onClick={() => setIsMobileMenuOpen(false)}>
                     <Phone className="w-4 h-4 mr-2" />
-                    {t.nav.callUs || "Call Us"}
+                    China: +86 15587237864
                   </a>
                 </Button>
                 <Button
@@ -220,7 +245,7 @@ export function Header() {
                 >
                   <a href="https://wa.me/8615587237864" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>
                     <MessageCircle className="w-4 h-4 mr-2" />
-                    WhatsApp
+                    WhatsApp (China)
                   </a>
                 </Button>
               </div>

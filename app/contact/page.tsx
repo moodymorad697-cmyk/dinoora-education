@@ -26,7 +26,7 @@ const offices = [
     flag: "🇨🇳",
     address: "Room 201, 2nd Floor, Building 2, No. 37, Getang Village, Jiangdong Street, Yiwu City, Zhejiang Province, China",
     phone: "+86 155 8723 7864",
-    email: "maomoody524@gmail.com",
+    email: "info@dinoora.com",
     hours: { en: "9:00 AM - 6:00 PM (GMT+8)", ar: "9:00 ص - 6:00 م (توقيت الصين)" },
     mapsLink: "https://maps.google.com/?q=Yiwu+City+Zhejiang+Province+China",
     color: "from-amber-500 to-orange-500"
@@ -35,8 +35,8 @@ const offices = [
     country: { en: "Malaysia Office", ar: "المكتب الماليزي" },
     flag: "🇲🇾",
     address: "Tower 5, SkyPark @CYBERJAYA, Level 4 - 07, Cyberjaya, Selangor, Malaysia",
-    phone: "+86 155 8723 7864",
-    email: "maomoody524@gmail.com",
+    phone: "+60 174110146",
+    email: "info@dinoora.com",
     hours: { en: "9:00 AM - 6:00 PM (GMT+8)", ar: "9:00 ص - 6:00 م (توقيت ماليزيا)" },
     mapsLink: "https://maps.google.com/?q=SkyPark+Cyberjaya+Malaysia",
     color: "from-emerald-500 to-teal-500"
@@ -56,8 +56,8 @@ const contactMethods = [
     icon: Mail,
     title: { en: "Email", ar: "البريد" },
     desc: { en: "Detailed inquiries", ar: "استفسارات تفصيلية" },
-    value: "maomoody524@gmail.com",
-    link: "mailto:maomoody524@gmail.com",
+    value: "info@dinoora.com",
+    link: "mailto:info@dinoora.com",
     color: "from-blue-500 to-cyan-500"
   },
   {
@@ -105,8 +105,10 @@ export default function ContactPage() {
     e.preventDefault()
     setIsSubmitting(true)
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500))
+    // Send to WhatsApp
+    const message = `*New Contact Form Submission*\n\n*Name:* ${formData.name}\n*Email:* ${formData.email}\n*Phone:* ${formData.phone}\n*Subject:* ${formData.subject}\n*Message:* ${formData.message}`
+    const whatsappUrl = `https://wa.me/8615587237864?text=${encodeURIComponent(message)}`
+    window.open(whatsappUrl, '_blank')
     
     setIsSubmitting(false)
     setIsSubmitted(true)

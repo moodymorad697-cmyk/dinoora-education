@@ -28,23 +28,23 @@ export function TrustBadges() {
   const badges = [
     {
       icon: Shield,
-      title: locale === "ar" ? "موثق رسمياً" : "Officially Verified",
-      desc: locale === "ar" ? "شركة مرخصة من الجهات الحكومية" : "Licensed by government authorities"
+      title: locale === "ar" ? "خدمة موثوقة" : "Trusted Service",
+      desc: locale === "ar" ? "نساعد الطلاب في رحلتهم التعليمية" : "Helping students in their educational journey"
     },
     {
       icon: Award,
-      title: locale === "ar" ? "خبرة 5+ سنوات" : "5+ Years Experience",
+      title: locale === "ar" ? "خبرة متخصصة" : "Specialized Experience",
       desc: locale === "ar" ? "في خدمات الاستشارات التعليمية" : "In educational consultancy services"
     },
     {
       icon: Users,
-      title: locale === "ar" ? "2000+ طالب" : "2000+ Students",
+      title: locale === "ar" ? "500+ طالب" : "500+ Students",
       desc: locale === "ar" ? "ساعدناهم في تحقيق أحلامهم" : "We helped them achieve their dreams"
     },
     {
       icon: Globe,
-      title: locale === "ar" ? "تغطية عالمية" : "Global Coverage",
-      desc: locale === "ar" ? "نتعامل مع 50+ دولة" : "We serve 50+ countries"
+      title: locale === "ar" ? "3 دول" : "3 Countries",
+      desc: locale === "ar" ? "الصين، ماليزيا، تركيا" : "China, Malaysia, Turkey"
     },
     {
       icon: Building2,
@@ -101,10 +101,10 @@ export function Certifications() {
   const { locale } = useLanguage()
   
   const certifications = [
-    { name: "ISO 9001:2015", desc: locale === "ar" ? "جودة الخدمات" : "Quality Management" },
-    { name: "ICEF", desc: locale === "ar" ? "معتمد دولياً" : "Internationally Certified" },
-    { name: "NAFSA", desc: locale === "ar" ? "عضو فخري" : "Honorary Member" },
-    { name: "CHESICC", desc: locale === "ar" ? "شريك معتمد في الصين" : "Certified China Partner" },
+    { name: locale === "ar" ? "خدمة عملاء 24/7" : "24/7 Customer Service", desc: locale === "ar" ? "دعم متواصل" : "Continuous Support" },
+    { name: locale === "ar" ? "استشارة مجانية" : "Free Consultation", desc: locale === "ar" ? "أول استشارة مجانية" : "First consultation free" },
+    { name: locale === "ar" ? "دعم واتساب" : "WhatsApp Support", desc: locale === "ar" ? "رد فوري" : "Instant response" },
+    { name: locale === "ar" ? "فريق متخصص" : "Expert Team", desc: locale === "ar" ? "خبراء متعددي اللغات" : "Multilingual experts" },
   ]
   
   const partners = [
@@ -144,11 +144,11 @@ export function Certifications() {
             </div>
           </div>
           
-          {/* Partner Universities */}
+          {/* Prestigious Universities */}
           <div>
             <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
               <GraduationCap className="w-6 h-6 text-primary" />
-              {locale === "ar" ? "جامعات شريكة بارزة" : "Featured Partner Universities"}
+              {locale === "ar" ? "جامعات مرموقة" : "Prestigious Universities"}
             </h3>
             <div className="grid grid-cols-2 gap-3">
               {partners.map((partner, index) => (
@@ -162,7 +162,7 @@ export function Certifications() {
               ))}
             </div>
             <p className="mt-4 text-sm text-slate-500 text-center">
-              {locale === "ar" ? "و 494+ جامعة أخرى..." : "And 494+ more universities..."}
+              {locale === "ar" ? "و جامعات أخرى مرموقة..." : "And other prestigious universities..."}
             </p>
           </div>
         </div>
@@ -177,19 +177,19 @@ export function TrustStats() {
   
   const stats = [
     { 
-      value: "98%", 
+      value: "85%", 
       label: locale === "ar" ? "نسبة رضا العملاء" : "Client Satisfaction",
       icon: ThumbsUp
     },
     { 
-      value: "$2M+", 
-      label: locale === "ar" ? "قيمة المنح المؤمنة" : "Scholarships Secured",
-      icon: TrendingUp
+      value: "50+", 
+      label: locale === "ar" ? "جامعة مرموقة" : "Prestigious Universities",
+      icon: Building2
     },
     { 
-      value: "500+", 
-      label: locale === "ar" ? "جامعة شريكة" : "Partner Universities",
-      icon: Building2
+      value: "3", 
+      label: locale === "ar" ? "دول نخدمها" : "Countries We Serve",
+      icon: Globe
     },
     { 
       value: "24/7", 

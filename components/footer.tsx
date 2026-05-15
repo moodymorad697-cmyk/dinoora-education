@@ -262,7 +262,21 @@ export function Footer() {
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 text-white shadow-lg shrink-0">
                     <Phone className="h-5 w-5" />
                   </div>
-                  <span className="text-foreground text-sm font-semibold group-hover:text-blue-400 transition-colors">+86 15587237864</span>
+                  <div className="flex flex-col">
+                    <span className="text-xs text-muted-foreground">China</span>
+                    <span className="text-foreground text-sm font-semibold group-hover:text-blue-400 transition-colors">+86 15587237864</span>
+                  </div>
+                </a>
+              </li>
+              <li className="group">
+                <a href="tel:+60174110146" className="flex items-center gap-3 rounded-xl bg-white/[0.03] border border-white/5 p-4 hover:bg-white/[0.05] hover:border-emerald-500/30 transition-all duration-300" dir="ltr">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-emerald-500 to-teal-500 text-white shadow-lg shrink-0">
+                    <Phone className="h-5 w-5" />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-xs text-muted-foreground">Malaysia</span>
+                    <span className="text-foreground text-sm font-semibold group-hover:text-emerald-400 transition-colors">+60 174110146</span>
+                  </div>
                 </a>
               </li>
               <li className="group">

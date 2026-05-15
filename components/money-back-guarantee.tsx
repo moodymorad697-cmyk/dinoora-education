@@ -11,20 +11,20 @@ export function MoneyBackGuarantee() {
   const conditions = [
     {
       icon: CheckCircle,
-      title: { en: "100% Acceptance Guarantee", ar: "ضمان قبول 100%" },
-      desc: { en: "If we fail to get you accepted, full refund", ar: "إذا لم نحصل لك على قبول، استرداد كامل" },
+      title: { en: "No Acceptance = Full Refund", ar: "لا قبول = استرداد كامل" },
+      desc: { en: "If we fail to secure university acceptance, get 100% refund of service fees", ar: "إذا فشلنا في تأمين قبول جامعي، احصل على استرداد 100% من رسوم الخدمة" },
       valid: true,
     },
     {
       icon: XCircle,
       title: { en: "Not Valid If", ar: "غير ساري إذا" },
-      desc: { en: "You withdraw after application submission", ar: "انسحبت بعد تقديم الطلب" },
+      desc: { en: "You withdraw after application submission or provide false information", ar: "انسحبت بعد تقديم الطلب أو قدمت معلومات غير صحيحة" },
       valid: false,
     },
     {
       icon: CheckCircle,
-      title: { en: "30-Day Processing", ar: "معالجة خلال 30 يوم" },
-      desc: { en: "Refund processed within 30 days of request", ar: "استرداد خلال 30 يوم من الطلب" },
+      title: { en: "7-Day Processing", ar: "معالجة خلال 7 أيام" },
+      desc: { en: "Refund processed within 7 business days of request", ar: "استرداد خلال 7 أيام عمل من الطلب" },
       valid: true,
     },
   ]
@@ -33,17 +33,17 @@ export function MoneyBackGuarantee() {
     {
       icon: Phone,
       title: { en: "Contact Support", ar: "تواصل مع الدعم" },
-      desc: { en: "Explain your situation via WhatsApp or email", ar: "اشرح موقفك عبر واتساب أو البريد" },
+      desc: { en: "Explain your situation via WhatsApp at +86 15587237864", ar: "اشرح موقفك عبر واتساب على +86 15587237864" },
     },
     {
       icon: RefreshCw,
-      title: { en: "Review Process", ar: "مراجعة الطلب" },
-      desc: { en: "We review your case within 3-5 business days", ar: "نراجع حالتك خلال 3-5 أيام عمل" },
+      title: { en: "Quick Review", ar: "مراجعة سريعة" },
+      desc: { en: "We review your case within 2-3 business days", ar: "نراجع حالتك خلال 2-3 أيام عمل" },
     },
     {
       icon: Award,
       title: { en: "Get Refunded", ar: "احصل على الاسترداد" },
-      desc: { en: "Full amount returned to your original payment method", ar: "المبلغ كاملاً إلى طريقة الدفع الأصلية" },
+      desc: { en: "Full refund processed within 7 business days", ar: "استرداد كامل خلال 7 أيام عمل" },
     },
   ]
 
@@ -99,8 +99,8 @@ export function MoneyBackGuarantee() {
                 className="text-xl text-emerald-400 font-semibold mb-4"
               >
                 {locale === "en" 
-                  ? "No Acceptance? Get a Full Refund!" 
-                  : "لم تحصل على قبول؟ استرد كامل المبلغ!"
+                  ? "Risk-Free Application Process" 
+                  : "عملية تقديم بدون مخاطرة"
                 }
               </motion.p>
               <motion.p
@@ -111,8 +111,8 @@ export function MoneyBackGuarantee() {
                 className="text-slate-300 text-lg max-w-2xl"
               >
                 {locale === "en" 
-                  ? "We're confident in our services. If we fail to secure your university acceptance, we'll refund 100% of your service fees. No questions asked."
-                  : "نحن واثقون من خدماتنا. إذا فشلنا في تأمين قبولك الجامعي، سنسترد 100% من رسوم الخدمة. بدون أسئلة."
+                  ? "We guarantee our admission services. If we fail to secure at least one university acceptance, you'll receive a full refund of your service fees. Simple and transparent."
+                  : "نحن نضمن خدمات القبول لدينا. إذا فشلنا في تأمين قبول واحد على الأقل، ستحصل على استرداد كامل لرسوم الخدمة. بسيط وشفاف."
                 }
               </motion.p>
             </div>

@@ -679,7 +679,9 @@ Contact us for free consultation: +86 155 8723 7864`,
 }
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
-  const locale: 'en' | 'ar' = 'en' // Default to English, can be enhanced with URL param or client-side detection
+  // Get locale from URL or default to English
+  const searchParams = await Promise.resolve({})
+  const locale: 'en' | 'ar' = 'en' // Default to English
   const { slug } = await params
   const article = articles[slug]
 
@@ -697,13 +699,22 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <section className="relative py-16 border-b border-slate-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Back Link */}
-          <Link 
-            href="/blog" 
-            className="inline-flex items-center gap-2 text-slate-400 hover:text-amber-400 transition-colors mb-6"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            {locale === "en" ? "Back to Blog" : "العودة للمدونة"}
-          </Link>
+          <div className="flex items-center gap-3 mb-6">
+            <Link 
+              href="/blog" 
+              className="inline-flex items-center gap-2 text-slate-400 hover:text-amber-400 transition-colors"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              {locale === "en" ? "Back to Blog" : "العودة للمدونة"}
+            </Link>
+            <span className="text-slate-600">|</span>
+            <Link 
+              href="/" 
+              className="inline-flex items-center gap-2 text-slate-400 hover:text-amber-400 transition-colors"
+            >
+              {locale === "en" ? "Home" : "الرئيسية"}
+            </Link>
+          </div>
 
           {/* Category & Country */}
           <div className="flex flex-wrap gap-2 mb-4">
