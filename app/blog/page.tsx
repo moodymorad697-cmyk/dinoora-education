@@ -77,6 +77,66 @@ const blogPosts = [
     featured: true,
     image: "/blog/turkiye-burslari.jpg",
     icon: Globe
+  },
+  {
+    slug: "beijing-student-guide",
+    title: { 
+      en: "Complete Guide to Student Life in Beijing 2024-2025", 
+      ar: "الدليل الشامل للحياة الطلابية في بكين 2024-2025" 
+    },
+    excerpt: {
+      en: "Everything you need to know about studying and living in Beijing - universities, accommodation, food, transportation, and top tips for international students.",
+      ar: "كل ما تحتاج معرفته عن الدراسة والعيش في بكين - الجامعات، السكن، الطعام، المواصلات، وأفضل النصائح للطلاب الدوليين."
+    },
+    country: "china",
+    countryName: { en: "China", ar: "الصين" },
+    category: "living",
+    categoryName: { en: "Student Life", ar: "حياة الطلاب" },
+    readingTime: 15,
+    date: "2024-01-15",
+    featured: true,
+    image: "/blog/beijing.jpg",
+    icon: GraduationCap
+  },
+  {
+    slug: "kuala-lumpur-student-guide",
+    title: { 
+      en: "Complete Guide to Student Life in Kuala Lumpur 2024-2025", 
+      ar: "الدليل الشامل للحياة الطلابية في كوالالمبور 2024-2025" 
+    },
+    excerpt: {
+      en: "Comprehensive guide to studying in KL - top universities, affordable living, halal food, transportation, and student activities.",
+      ar: "دليل شامل للدراسة في كوالالمبور - أفضل الجامعات، معيشة ميسورة، طعام حلال، مواصلات، وأنشطة الطلاب."
+    },
+    country: "malaysia",
+    countryName: { en: "Malaysia", ar: "ماليزيا" },
+    category: "living",
+    categoryName: { en: "Student Life", ar: "حياة الطلاب" },
+    readingTime: 18,
+    date: "2024-01-20",
+    featured: true,
+    image: "/blog/kuala-lumpur.jpg",
+    icon: Building2
+  },
+  {
+    slug: "istanbul-student-guide",
+    title: { 
+      en: "Complete Guide to Student Life in Istanbul 2024-2025", 
+      ar: "الدليل الشامل للحياة الطلابية في إسطنبول 2024-2025" 
+    },
+    excerpt: {
+      en: "Discover Istanbul's universities, affordable living, rich culture, halal food, and everything international students need to know.",
+      ar: "اكتشف جامعات إسطنبول، المعيشة الميسورة، الثقافة الغنية، الطعام الحلال، وكل ما يحتاجه الطلاب الدوليين معرفته."
+    },
+    country: "turkey",
+    countryName: { en: "Turkey", ar: "تركيا" },
+    category: "living",
+    categoryName: { en: "Student Life", ar: "حياة الطلاب" },
+    readingTime: 20,
+    date: "2024-01-25",
+    featured: true,
+    image: "/blog/istanbul.jpg",
+    icon: Globe
   }
 ]
 

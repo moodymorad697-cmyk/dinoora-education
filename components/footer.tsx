@@ -266,11 +266,11 @@ export function Footer() {
                 </a>
               </li>
               <li className="group">
-                <a href="mailto:maomoody524@gmail.com" className="flex items-center gap-3 rounded-xl bg-white/[0.03] border border-white/5 p-4 hover:bg-white/[0.05] hover:border-purple-500/30 transition-all duration-300">
+                <a href="mailto:info@dinoora.com" className="flex items-center gap-3 rounded-xl bg-white/[0.03] border border-white/5 p-4 hover:bg-white/[0.05] hover:border-purple-500/30 transition-all duration-300">
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 text-white shadow-lg shrink-0">
                     <Mail className="h-5 w-5" />
                   </div>
-                  <span className="text-foreground text-sm font-semibold break-all group-hover:text-purple-400 transition-colors">maomoody524@gmail.com</span>
+                  <span className="text-foreground text-sm font-semibold group-hover:text-purple-400 transition-colors">info@dinoora.com</span>
                 </a>
               </li>
               <li className="group">

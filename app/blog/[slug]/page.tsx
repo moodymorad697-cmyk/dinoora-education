@@ -19,6 +19,9 @@ export function generateStaticParams() {
     { slug: "csc-scholarship-complete-guide" },
     { slug: "emgs-guide" },
     { slug: "turkiye-burslari-guide" },
+    { slug: "beijing-student-guide" },
+    { slug: "kuala-lumpur-student-guide" },
+    { slug: "istanbul-student-guide" },
   ]
 }
 
@@ -397,6 +400,280 @@ Contact us for free consultation: +86 155 8723 7864`,
 **78%** نسبة نجاح مع طلبات Türkiye Bursları.
 
 تواصل معنا للاستشارة المجانية: +86 155 8723 7864`
+    }
+  },
+  "beijing-student-guide": {
+    title: {
+      en: "Complete Guide to Student Life in Beijing 2024-2025",
+      ar: "الدليل الشامل للحياة الطلابية في بكين 2024-2025"
+    },
+    country: "china",
+    countryName: { en: "China", ar: "الصين" },
+    category: "living",
+    categoryName: { en: "Student Life", ar: "حياة الطلاب" },
+    readingTime: 15,
+    date: "2024-01-15",
+    author: "DINOORA Team",
+    icon: GraduationCap,
+    content: {
+      en: `## Why Choose Beijing?
+
+### World-Class Universities
+- Peking University (北京大学) - Founded 1898, China's top university. [pku.edu.cn](https://www.pku.edu.cn)
+- Tsinghua University (清华大学) - China's MIT-equivalent. [tsinghua.edu.cn](https://www.tsinghua.edu.cn)
+- Beijing Language and Culture University - Premier for international students. [blcu.edu.cn](https://www.blcu.edu.cn)
+
+### Affordable Education
+- Tuition: $3,000 - $8,000 USD/year
+- Living costs: $400 - $800 USD/month
+- Scholarships: CSC, Beijing Government Scholarship
+
+## Cost of Living (2024)
+
+| Expense | Monthly Cost (USD) |
+|---------|-------------------|
+| Rent (shared) | $200 - $400 |
+| Food | $150 - $250 |
+| Transportation | $30 - $50 |
+| Internet & Phone | $20 - $40 |
+| Entertainment | $50 - $100 |
+| **Total** | **$450 - $840** |
+
+## Transportation
+- Subway: $0.50 - $1 per trip. Get [Beijing Municipal Card](https://www.bjsubway.com)
+- Bus: $0.30 - $0.60 per trip
+- Didi: China's Uber. Download [Didi App](https://www.didiglobal.com)
+
+## Food
+- University Cafeterias: $2 - $4 per meal
+- Street Food: $1 - $3 per dish (Jiaozi, Jianbing, Roujiamo)
+- Halal Food: Niujie (牛街) Muslim quarter
+
+## Must-Visit Sites
+- Forbidden City (故宫) - $15 entry. [dpm.org.cn](https://www.dpm.org.cn)
+- Great Wall (长城) - Multiple sections. [visitbeijing.com.cn](https://www.visitbeijing.com.cn)
+- Summer Palace (颐和园) - $8 entry
+
+**Contact DINOORA:** +86 15587237864`,
+      ar: `## لماذا بكين؟
+
+### جامعات عالمية
+- جامعة بكين (北京大学) - تأسست 1898، أفضل جامعة في الصين. [pku.edu.cn](https://www.pku.edu.cn)
+- جامعة تسينغهوا (清华大学) - معهد ماساتشوستس الصيني. [tsinghua.edu.cn](https://www.tsinghua.edu.cn)
+- جامعة بكين للغة والثقافة - الأولى للطلاب الدوليين. [blcu.edu.cn](https://www.blcu.edu.cn)
+
+### تعليم ميسور
+- الرسوم: 3,000 - 8,000 دولار/سنة
+- تكاليف المعيشة: 400 - 800 دولار/شهر
+- منح: CSC، منحة حكومة بكين
+
+## تكاليف المعيشة (2024)
+
+| البند | شهرياً (دولار) |
+|-------|----------------|
+| الإيجار (مشترك) | 200 - 400 |
+| الطعام | 150 - 250 |
+| المواصلات | 30 - 50 |
+| الإنترنت والهاتف | 20 - 40 |
+| الترفيه | 50 - 100 |
+| **المجموع** | **450 - 840** |
+
+## المواصلات
+- المترو: 0.50 - 1 دولار لكل رحلة. احصل على [بطاقة بكين](https://www.bjsubway.com)
+- الحافلات: 0.30 - 0.60 دولار لكل رحلة
+- Didi: أوبر الصين. حمل [تطبيق Didi](https://www.didiglobal.com)
+
+## الطعام
+- مقاصف الجامعات: 2 - 4 دولار لكل وجبة
+- طعام الشارع: 1 - 3 دولار (زلابية، كريب، برجر صيني)
+- طعام حلال: نيوجي (牛街) حي المسلمين
+
+## مواقع يجب زيارتها
+- المدينة المحرمة (故宫) - 15 دولار للدخول. [dpm.org.cn](https://www.dpm.org.cn)
+- الجدار العظيم (长城) - أقسام متعددة. [visitbeijing.com.cn](https://www.visitbeijing.com.cn)
+- قصر الصيف (颐和园) - 8 دولار للدخول
+
+**تواصل مع DINOORA:** +86 15587237864`
+    }
+  },
+  "kuala-lumpur-student-guide": {
+    title: {
+      en: "Complete Guide to Student Life in Kuala Lumpur 2024-2025",
+      ar: "الدليل الشامل للحياة الطلابية في كوالالمبور 2024-2025"
+    },
+    country: "malaysia",
+    countryName: { en: "Malaysia", ar: "ماليزيا" },
+    category: "living",
+    categoryName: { en: "Student Life", ar: "حياة الطلاب" },
+    readingTime: 18,
+    date: "2024-01-20",
+    author: "DINOORA Team",
+    icon: Building2,
+    content: {
+      en: `## Why Choose Kuala Lumpur?
+
+### Top Universities
+- University of Malaya (UM) - Malaysia's #1, QS #65. [um.edu.my](https://www.um.edu.my)
+- Taylor's University - Top private university. [taylors.edu.my](https://www.taylors.edu.my)
+- Monash University Malaysia - Australian branch. [monash.edu](https://www.monash.edu)
+
+### Affordable Living
+- Tuition: $3,000 - $12,000 USD/year
+- Living costs: $400 - $700 USD/month
+- Halal food everywhere
+
+## Cost of Living (2024)
+
+| Expense | Monthly Cost (USD) |
+|---------|-------------------|
+| Rent (shared) | $150 - $300 |
+| Food | $150 - $250 |
+| Transportation | $30 - $60 |
+| Internet & Phone | $20 - $40 |
+| Entertainment | $50 - $100 |
+| **Total** | **$400 - $750** |
+
+## Transportation
+- MRT/LRT: $0.30 - $1 per trip. Get [MyRapid Card](https://www.myrapid.com.my)
+- Grab: Malaysia's Uber. Download [Grab App](https://www.grab.com)
+
+## Food
+- Hawker Centers: $2 - $5 per meal. Try Nasi Lemak, Roti Canai
+- Halal Food: Available everywhere (Malaysia is Muslim-majority)
+
+## Must-Visit Sites
+- Petronas Twin Towers - $15 entry. [petronastwintowers.com.my](https://www.petronastwintowers.com.my)
+- Batu Caves - Free entry. [batucaves.com.my](https://www.batucaves.com.my)
+- KLCC Park - Free
+
+**Contact DINOORA:** +86 15587237864`,
+      ar: `## لماذا كوالالمبور؟
+
+### أفضل الجامعات
+- جامعة مالايا (UM) - #1 في ماليزيا، QS #65. [um.edu.my](https://www.um.edu.my)
+- جامعة تايلورز - أفضل جامعة خاصة. [taylors.edu.my](https://www.taylors.edu.my)
+- جامعة موناش ماليزيا - فرع أسترالي. [monash.edu](https://www.monash.edu)
+
+### معيشة ميسورة
+- الرسوم: 3,000 - 12,000 دولار/سنة
+- تكاليف المعيشة: 400 - 700 دولار/شهر
+- طعام حلال في كل مكان
+
+## تكاليف المعيشة (2024)
+
+| البند | شهرياً (دولار) |
+|-------|----------------|
+| الإيجار (مشترك) | 150 - 300 |
+| الطعام | 150 - 250 |
+| المواصلات | 30 - 60 |
+| الإنترنت والهاتف | 20 - 40 |
+| الترفيه | 50 - 100 |
+| **المجموع** | **400 - 750** |
+
+## المواصلات
+- MRT/LRT: 0.30 - 1 دولار لكل رحلة. احصل على [بطاقة MyRapid](https://www.myrapid.com.my)
+- Grab: أوبر ماليزيا. حمل [تطبيق Grab](https://www.grab.com)
+
+## الطعام
+- مراكز الطعام: 2 - 5 دولار لكل وجبة. جرّب Nasi Lemak، Roti Canai
+- طعام حلال: متوفر في كل مكان
+
+## مواقع يجب زيارتها
+- أبراج بتروناس التوأم - 15 دولار للدخول. [petronastwintowers.com.my](https://www.petronastwintowers.com.my)
+- كهوف باتو - دخول مجاني. [batucaves.com.my](https://www.batucaves.com.my)
+- حديقة KLCC - مجانية
+
+**تواصل مع DINOORA:** +86 15587237864`
+    }
+  },
+  "istanbul-student-guide": {
+    title: {
+      en: "Complete Guide to Student Life in Istanbul 2024-2025",
+      ar: "الدليل الشامل للحياة الطلابية في إسطنبول 2024-2025"
+    },
+    country: "turkey",
+    countryName: { en: "Turkey", ar: "تركيا" },
+    category: "living",
+    categoryName: { en: "Student Life", ar: "حياة الطلاب" },
+    readingTime: 20,
+    date: "2024-01-25",
+    author: "DINOORA Team",
+    icon: Globe,
+    content: {
+      en: `## Why Choose Istanbul?
+
+### Top Universities
+- Boğaziçi University - Turkey's #1, founded 1863. [boun.edu.tr](https://www.boun.edu.tr)
+- Istanbul Technical University - Leading engineering. [itu.edu.tr](https://www.itu.edu.tr)
+- Sabancı University - Modern research university. [sabanciuniv.edu](https://www.sabanciuniv.edu)
+
+### Affordable Living
+- Tuition: $2,000 - $8,000/year (public universities)
+- Living costs: $350 - $650 USD/month
+- Türkiye Bursları scholarship available
+
+## Cost of Living (2024)
+
+| Expense | Monthly Cost (USD) |
+|---------|-------------------|
+| Rent (shared) | $150 - $300 |
+| Food | $150 - $250 |
+| Transportation | $30 - $50 |
+| Internet & Phone | $20 - $35 |
+| Entertainment | $40 - $80 |
+| **Total** | **$390 - $715** |
+
+## Transportation
+- Public Transport: Metro, tram, bus, ferry. Get [Istanbulkart](https://www.istanbulkart.istanbul)
+- Ride-hailing: [BiTaksi](https://www.bitaksi.com), [Uber](https://www.uber.com)
+
+## Food
+- Street Food: $1 - $3 per dish. Try Döner Kebab, Simit, Balık Ekmek
+- Halal Food: Available everywhere
+
+## Must-Visit Sites
+- Hagia Sophia - Free. [muze.gov.tr](https://muze.gov.tr)
+- Blue Mosque - Free. [bluemosqueistanbul.com](https://www.bluemosqueistanbul.com)
+- Grand Bazaar - Free. [grandbazaaristanbul.org](https://www.grandbazaaristanbul.org)
+
+**Contact DINOORA:** +86 15587237864`,
+      ar: `## لماذا إسطنبول؟
+
+### أفضل الجامعات
+- جامعة بوجازيتشي - #1 في تركيا. [boun.edu.tr](https://www.boun.edu.tr)
+- جامعة إسطنبول التقنية - رائدة الهندسة. [itu.edu.tr](https://www.itu.edu.tr)
+- جامعة صابانجي - جامعة بحثية حديثة. [sabanciuniv.edu](https://www.sabanciuniv.edu)
+
+### معيشة ميسورة
+- الرسوم: 2,000 - 8,000 دولار/سنة (الجامعات الحكومية)
+- تكاليف المعيشة: 350 - 650 دولار/شهر
+- منحة Türkiye Bursları متاحة
+
+## تكاليف المعيشة (2024)
+
+| البند | شهرياً (دولار) |
+|-------|----------------|
+| الإيجار (مشترك) | 150 - 300 |
+| الطعام | 150 - 250 |
+| المواصلات | 30 - 50 |
+| الإنترنت والهاتف | 20 - 35 |
+| الترفيه | 40 - 80 |
+| **المجموع** | **390 - 715** |
+
+## المواصلات
+- النقل العام: مترو، ترام، حافلات، عبارات. احصل على [Istanbulkart](https://www.istanbulkart.istanbul)
+- استدعاء السيارات: [BiTaksi](https://www.bitaksi.com)، [Uber](https://www.uber.com)
+
+## الطعام
+- طعام الشارع: 1 - 3 دولار. جرّب Döner Kebab، Simit، Balık Ekmek
+- طعام حلال: متوفر في كل مكان
+
+## مواقع يجب زيارتها
+- آيا صوفيا - مجانية. [muze.gov.tr](https://muze.gov.tr)
+- الجامع الأزرق - مجانية. [bluemosqueistanbul.com](https://www.bluemosqueistanbul.com)
+- البازار الكبير - مجاني. [grandbazaaristanbul.org](https://www.grandbazaaristanbul.org)
+
+**تواصل مع DINOORA:** +86 15587237864`
     }
   }
 }

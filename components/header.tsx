@@ -27,11 +27,13 @@ export function Header() {
   }, [])
 
   const navItems = [
-    { href: "/about", label: locale === "ar" ? "عنّا" : "About", Icon: Users, highlight: false },
-    { href: "/pricing", label: locale === "ar" ? "الأسعار" : "Pricing", Icon: DollarSign, highlight: false },
+    { href: "/", label: locale === "ar" ? "الرئيسية" : "Home", Icon: Star, highlight: true },
     { href: "#services", label: t.nav.services, Icon: Briefcase, highlight: false },
-    { href: "#destinations", label: t.nav.destinations, Icon: MapPin, highlight: false },
+    { href: "/destinations/china", label: locale === "ar" ? "الصين" : "China", Icon: Globe, highlight: false },
+    { href: "/destinations/malaysia", label: locale === "ar" ? "ماليزيا" : "Malaysia", Icon: MapPin, highlight: false },
+    { href: "/destinations/turkey", label: locale === "ar" ? "تركيا" : "Turkey", Icon: Building2, highlight: false },
     { href: "/blog", label: locale === "ar" ? "المدونة" : "Blog", Icon: Newspaper, highlight: false },
+    { href: "/about", label: locale === "ar" ? "عنّا" : "About", Icon: Users, highlight: false },
     { href: "/contact", label: locale === "ar" ? "تواصل" : "Contact", Icon: HeadphonesIcon, highlight: false },
   ]
 
@@ -78,9 +80,9 @@ export function Header() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-6">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group flex-shrink-0">
-            <div className="relative w-44 h-14 md:w-56 md:h-20 overflow-hidden group-hover:scale-105 transition-transform duration-300">
+          {/* Logo - Repositioned to center area with better prominence */}
+          <Link href="/" className="flex items-center gap-3 group flex-shrink-0 order-2 lg:order-1">
+            <div className="relative w-40 h-12 md:w-48 md:h-16 overflow-hidden group-hover:scale-105 transition-transform duration-300 bg-gradient-to-r from-amber-500/10 to-transparent rounded-lg p-1">
               <img
                 src="/images/logo.png"
                 alt="DINOORA Education"
@@ -89,8 +91,8 @@ export function Header() {
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-0.5 flex-shrink-0">
+          {/* Desktop Navigation - Left Side */}
+          <nav className="hidden lg:flex items-center gap-1 flex-shrink-0 order-1">
             {navItems.map((item) => {
               const Icon = item.Icon
               return (
@@ -109,8 +111,8 @@ export function Header() {
             })}
           </nav>
 
-          {/* Right Side Actions */}
-          <div className="hidden lg:flex items-center gap-3">
+          {/* Right Side Actions - Order 3 */}
+          <div className="hidden lg:flex items-center gap-3 order-3">
             {/* Enhanced Search Bar */}
             <EnhancedSearch isOpen={isSearchOpen} setIsOpen={setIsSearchOpen} />
 

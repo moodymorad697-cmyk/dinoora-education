@@ -46,8 +46,8 @@ const packages = [
   },
   {
     name: { en: "Standard Package", ar: "الباقة القياسية" },
-    price: { en: "$499", ar: "499$" },
-    originalPrice: { en: "$699", ar: "699$" },
+    price: { en: "$199", ar: "199$" },
+    originalPrice: { en: "$299", ar: "299$" },
     description: { 
       en: "Complete support for single country",
       ar: "دعم كامل لدولة واحدة"
@@ -57,17 +57,19 @@ const packages = [
       included: [
         { en: "Everything in Free Consultation", ar: "كل ما في الاستشارة المجانية" },
         { en: "Profile evaluation & optimization", ar: "تقييم وتحسين الملف" },
-        { en: "3 university recommendations", ar: "3 توصيات جامعية" },
+        { en: "5 university recommendations", ar: "5 توصيات جامعية" },
         { en: "Document review & formatting", ar: "مراجعة وتنسيق الوثائق" },
-        { en: "Application submission (3 universities)", ar: "تقديم الطلبات (3 جامعات)" },
-        { en: "Email support", ar: "دعم عبر البريد" },
+        { en: "Application submission (5 universities)", ar: "تقديم الطلبات (5 جامعات)" },
+        { en: "WhatsApp & Email support", ar: "دعم عبر الواتساب والبريد" },
         { en: "Application tracking", ar: "تتبع الطلبات" },
+        { en: "Scholarship guidance", ar: "إرشادات المنح الدراسية" },
+        { en: "Pre-departure briefing", ar: "جلسة تعريفية قبل السفر" },
       ],
       excluded: [
         { en: "Guaranteed acceptance", ar: "ضمان القبول" },
         { en: "Visa application support", ar: "دعم تقديم التأشيرة" },
         { en: "Airport pickup", ar: "استقبال المطار" },
-        { en: "Accommodation assistance", ar: "مساعدة السكن" },
+        { en: "Accommodation booking", ar: "حجز السكن" },
       ]
     },
     cta: { en: "Choose Standard", ar: "اختر القياسية" },
@@ -75,29 +77,31 @@ const packages = [
   },
   {
     name: { en: "Premium Package", ar: "الباقة الممتازة" },
-    price: { en: "$999", ar: "999$" },
-    originalPrice: { en: "$1,499", ar: "1,499$" },
+    price: { en: "$399", ar: "399$" },
+    originalPrice: { en: "$599", ar: "599$" },
     description: { 
-      en: "Comprehensive support with guarantees",
-      ar: "دعم شامل مع ضمانات"
+      en: "Comprehensive support with visa & guarantees",
+      ar: "دعم شامل مع التأشيرة والضمانات"
     },
     icon: Building2,
     features: {
       included: [
         { en: "Everything in Standard Package", ar: "كل ما في الباقة القياسية" },
-        { en: "5 university recommendations", ar: "5 توصيات جامعية" },
-        { en: "Application submission (5 universities)", ar: "تقديم الطلبات (5 جامعات)" },
+        { en: "8 university recommendations", ar: "8 توصيات جامعية" },
+        { en: "Application submission (8 universities)", ar: "تقديم الطلبات (8 جامعات)" },
         { en: "Personal statement writing", ar: "كتابة بيان شخصي" },
         { en: "Recommendation letter guidance", ar: "إرشادات خطابات التوصية" },
-        { en: "Interview preparation", ar: "التحضير للمقابلة" },
-        { en: "Visa application support", ar: "دعم تقديم التأشيرة" },
-        { en: "Accommodation guidance", ar: "إرشادات السكن" },
-        { en: "Priority WhatsApp support", ar: "دعم واتساب ذو أولوية" },
-        { en: "100% acceptance guarantee*", ar: "ضمان قبول 100%*" },
+        { en: "Interview preparation & mock interviews", ar: "تحضير ومقابلات تجريبية" },
+        { en: "Complete visa application support", ar: "دعم كامل لتقديم التأشيرة" },
+        { en: "Document translation (up to 10 pages)", ar: "ترجمة وثائق (حتى 10 صفحات)" },
+        { en: "Accommodation search & booking help", ar: "مساعدة البحث والحجز للسكن" },
+        { en: "Scholarship applications (2 universities)", ar: "تقديم منح (جامعتين)" },
+        { en: "Priority WhatsApp support (response in 2 hours)", ar: "دعم واتساب أولوي (رد في ساعتين)" },
+        { en: "95% acceptance guarantee*", ar: "ضمان قبول 95%*" },
       ],
       excluded: [
         { en: "Airport pickup & city tour", ar: "استقبال المطار وجولة في المدينة" },
-        { en: "SIM card & bank account setup", ar: "شرائح وجهاز وبطاقة بنكية" },
+        { en: "SIM card & bank account setup", ar: "إعداد شرائح وبطاقة بنكية" },
       ]
     },
     cta: { en: "Choose Premium", ar: "اختر الممتازة" },
@@ -105,27 +109,30 @@ const packages = [
   },
   {
     name: { en: "VIP Package", ar: "الباقة VIP" },
-    price: { en: "$1,999", ar: "1,999$" },
-    originalPrice: { en: "$2,999", ar: "2,999$" },
+    price: { en: "$699", ar: "699$" },
+    originalPrice: { en: "$999", ar: "999$" },
     description: { 
-      en: "White-glove service for ultimate peace of mind",
-      ar: "خدمة VIP لراحة البال الكاملة"
+      en: "Complete care from start to settlement",
+      ar: "رعاية كاملة من البداية حتى الاستقرار"
     },
     icon: Globe,
     features: {
       included: [
         { en: "Everything in Premium Package", ar: "كل ما في الباقة الممتازة" },
         { en: "Unlimited university applications", ar: "تقديمات جامعية غير محدودة" },
-        { en: "Multi-country applications", ar: "تقديمات لعدة دول" },
-        { en: "Dedicated consultant", ar: "مستشار مخصص" },
-        { en: "24/7 WhatsApp support", ar: "دعم واتساب 24/7" },
-        { en: "Airport pickup service", ar: "خدمة استقبال المطار" },
-        { en: "Accommodation booking assistance", ar: "مساعدة حجز السكن" },
-        { en: "SIM card & bank account setup", ar: "إعداد شرائح وبطاقة بنكية" },
-        { en: "University registration support", ar: "دعم تسجيل الجامعة" },
-        { en: "1-year follow-up support", ar: "دعم متابعة لمدة سنة" },
-        { en: "100% acceptance guarantee*", ar: "ضمان قبول 100%*" },
-        { en: "Money-back guarantee**", ar: "ضمان استرداد المال**" },
+        { en: "Multi-country applications (up to 3)", ar: "تقديمات لعدة دول (حتى 3)" },
+        { en: "Dedicated personal consultant", ar: "مستشار شخصي مخصص" },
+        { en: "24/7 WhatsApp & phone support", ar: "دعم واتساب وهاتف 24/7" },
+        { en: "Airport pickup + city orientation tour", ar: "استقبال المطار + جولة توعية" },
+        { en: "Guaranteed accommodation booking", ar: "حجز مضمون للسكن" },
+        { en: "SIM card + local bank account setup", ar: "إعداد شريحة + حساب بنكي محلي" },
+        { en: "University registration accompaniment", ar: "مرافقة تسجيل الجامعة" },
+        { en: "Medical insurance arrangement", ar: "ترتيب التأمين الطبي" },
+        { en: "Part-time job search assistance", ar: "مساعدة البحث عن عمل جزئي" },
+        { en: "2-year follow-up support", ar: "دعم متابعة لمدة سنتين" },
+        { en: "Document translation (unlimited)", ar: "ترجمة وثائق (غير محدودة)" },
+        { en: "98% acceptance guarantee*", ar: "ضمان قبول 98%*" },
+        { en: "Money-back guarantee if not accepted**", ar: "ضمان استرداد إذا لم يُقبل**" },
       ],
       excluded: []
     },
