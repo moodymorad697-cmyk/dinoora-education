@@ -17,7 +17,24 @@ export const config = {
     whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '+8615587237864',
     email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'maomoody524@gmail.com',
     phone: process.env.NEXT_PUBLIC_PHONE_NUMBER || '+8615587237864',
-    address: 'Yiwu City, Zhejiang Province, China',
+    addresses: {
+      china: {
+        office: 'Room 201, 2nd Floor, Building 2, No. 37',
+        area: 'Getang Village, Jiangdong Street',
+        city: 'Yiwu City, Jinhua City',
+        province: 'Zhejiang Province',
+        country: 'China',
+        mapsLink: 'https://maps.google.com/?q=Yiwu+City+Zhejiang+Province+China',
+      },
+      malaysia: {
+        office: 'Tower 5, SkyPark @CYBERJAYA',
+        level: 'Level 4 - 07',
+        city: 'Cyberjaya',
+        state: 'Selangor',
+        country: 'Malaysia',
+        mapsLink: 'https://maps.google.com/?q=SkyPark+Cyberjaya+Malaysia',
+      },
+    },
   },
 
   social: {
@@ -44,9 +61,9 @@ export const config = {
   ],
 
   stats: {
-    studentsPlaced: '500+',
-    partnerUniversities: '50+',
-    successRate: '95%',
+    scholarshipApplications: '2000+',
+    partnerUniversities: '500+',
+    successRate: '98%',
     yearsExperience: '5+',
   },
 } as const

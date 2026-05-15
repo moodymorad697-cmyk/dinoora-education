@@ -220,18 +220,41 @@ export function Footer() {
               {t.footer.contactUs}
             </h3>
             <ul className="space-y-3">
+              {/* China Office */}
               <li className="group rounded-xl bg-white/[0.03] border border-white/5 p-4 hover:bg-white/[0.05] hover:border-amber-500/30 transition-all duration-300">
                 <div className="flex items-start gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-amber-500 to-orange-500 text-white shadow-lg shrink-0">
                     <MapPin className="h-5 w-5" />
                   </div>
-                  <span className="text-muted-foreground text-sm leading-relaxed">
-                    {locale === "ar" ? (
-                      <>الغرفة 201، الطابق الثاني، المبنى 2<br />رقم 37، قرية جيتانج، شارع جيانج دونج<br />مدينة ييوو، تشجيانج</>
-                    ) : (
-                      <>Room 201, 2nd Floor, Building 2<br />No. 37, Getang Village, Jiangdong St.<br />Yiwu, Zhejiang Province</>
-                    )}
-                  </span>
+                  <div className="flex-1">
+                    <p className="text-xs text-primary font-semibold mb-1">{locale === "ar" ? "🇨🇳 الصين" : "🇨🇳 China"}</p>
+                    <span className="text-muted-foreground text-sm leading-relaxed">
+                      {locale === "ar" ? (
+                        <>الغرفة 201، الطابق الثاني، المبنى 2<br />رقم 37، قرية جيتانج، شارع جيانج دونج<br />مدينة ييوو، مقاطعة تشجيانج</>
+                      ) : (
+                        <>Room 201, 2nd Floor, Building 2<br />No. 37, Getang Village, Jiangdong St.<br />Yiwu City, Zhejiang Province</>
+                      )}
+                    </span>
+                  </div>
+                </div>
+              </li>
+              
+              {/* Malaysia Office */}
+              <li className="group rounded-xl bg-white/[0.03] border border-white/5 p-4 hover:bg-white/[0.05] hover:border-emerald-500/30 transition-all duration-300">
+                <div className="flex items-start gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-emerald-500 to-teal-500 text-white shadow-lg shrink-0">
+                    <MapPin className="h-5 w-5" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-xs text-emerald-400 font-semibold mb-1">{locale === "ar" ? "🇲🇾 ماليزيا" : "🇲🇾 Malaysia"}</p>
+                    <span className="text-muted-foreground text-sm leading-relaxed">
+                      {locale === "ar" ? (
+                        <>Tower 5, SkyPark @CYBERJAYA<br />المستوى 4 - 07<br />سايبرجايا، سيلانجور</>
+                      ) : (
+                        <>Tower 5, SkyPark @CYBERJAYA<br />Level 4 - 07<br />Cyberjaya, Selangor</>
+                      )}
+                    </span>
+                  </div>
                 </div>
               </li>
               <li className="group">

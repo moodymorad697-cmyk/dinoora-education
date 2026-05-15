@@ -9,34 +9,44 @@ import { Programs } from "@/components/programs"
 import { Universities } from "@/components/universities"
 import { Testimonials } from "@/components/testimonials"
 import { FAQ } from "@/components/faq"
-import { CTA } from "@/components/cta"
 import { EnhancedApplicationForm } from "@/components/enhanced-application-form"
 import { Footer } from "@/components/footer"
-import { ProgressTracker } from "@/components/progress-tracker"
-import { ReferralSystem } from "@/components/referral-system"
-import { MoneyBackGuarantee } from "@/components/money-back-guarantee"
+import { TrustBadges, TrustStats, Certifications, Guarantees, SocialProof } from "@/components/trust-signals"
 import { StatsShowcase } from "@/components/stats-showcase"
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-background">
       <Header />
+      
+      {/* Core Sections */}
       <Hero />
+      <TrustBadges />
       <WhyChooseUs />
-      <StatsShowcase />
-      <ProgressTracker currentStep={3} />
+      <TrustStats />
+      
+      {/* Process & Services */}
       <HowItWorks />
       <ProcessTimeline />
       <Services />
+      
+      {/* Destinations & Programs */}
       <Destinations />
       <Programs />
       <Universities />
+      
+      {/* Trust Building */}
+      <Certifications />
       <Testimonials />
-      <MoneyBackGuarantee />
-      <ReferralSystem />
+      <Guarantees />
+      <SocialProof />
+      
+      {/* Information */}
       <FAQ />
-      <CTA />
+      
+      {/* Final CTA - Only one application form at the end */}
       <EnhancedApplicationForm />
+      
       <Footer />
     </main>
   )

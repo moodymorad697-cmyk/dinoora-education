@@ -94,7 +94,7 @@ export const translations = {
       steps: {
         submit: {
           title: "Expert Consultation",
-          description: "Share your goals, budget, and preferences. We'll create a personalized university shortlist within 24 hours.",
+          description: "Share your goals, budget, and preferences. We'll create a personalized university shortlist within 1-2 business days.",
         },
         match: {
           title: "University Matching",
@@ -332,12 +332,12 @@ export const translations = {
     applicationForm: {
       label: "Application Process",
       title: "Begin Your Journey Today",
-      description: "Complete this form and receive a personalized university recommendation within 24 hours. Our experts will contact you to discuss scholarships and the best programs for your goals.",
+      description: "Complete this form and receive a personalized university recommendation within 1-2 business days. Our experts will contact you to discuss scholarships and the best programs for your goals.",
       benefits: {
         consultation: "One-on-one consultation with education experts",
         recommendations: "Personalized university shortlist based on your profile",
         costs: "Complete cost breakdown and scholarship opportunities",
-        response: "Guaranteed response within 24 hours",
+        response: "Fast response within 1-2 business days",
       },
       form: {
         fullName: "Full Name",
@@ -356,7 +356,7 @@ export const translations = {
       },
       success: {
         title: "✅ Message Sent Successfully!",
-        description: "Your application has been sent to our WhatsApp (+86 155 8723 7864). Our expert advisors will contact you within 24 hours with personalized university recommendations and scholarship information. Thank you for choosing DINOORA!",
+        description: "Your application has been sent to our WhatsApp (+86 155 8723 7864). Our expert advisors will contact you within 1-2 business days with personalized university recommendations and scholarship information. Thank you for choosing DINOORA!",
         submitAnother: "Submit Another Application",
       },
     },
@@ -472,7 +472,7 @@ export const translations = {
     },
     // Quote Page
     quote: {
-      badge: "Get a Quote in 24 Hours",
+      badge: "Get a Quote in 1-2 Business Days",
       title: "Request Your Detailed Quote",
       description: "Tell us your needs and get a customized quote for shipping your products from China. We offer competitive and transparent pricing with no hidden fees.",
       features: {
@@ -500,11 +500,11 @@ export const translations = {
         additionalNotes: "Additional Notes",
         submit: "Get Your Quote",
         submitting: "Sending...",
-        agreement: "Your request will be sent directly to our WhatsApp. We respond within 24 hours.",
+        agreement: "Your request will be sent directly to our WhatsApp. We respond within 1-2 business days.",
       },
       success: {
         title: "Request Sent Successfully!",
-        description: "Your quote request has been sent to our WhatsApp (+86 155 8723 7864). We will contact you within 24 hours with a detailed quote.",
+        description: "Your quote request has been sent to our WhatsApp (+86 155 8723 7864). We will contact you within 1-2 business days with a detailed quote.",
         anotherRequest: "Send Another Request",
         chatWhatsApp: "Chat on WhatsApp",
       },
@@ -512,7 +512,7 @@ export const translations = {
         title: "Frequently Asked Questions",
         subtitle: "Here are answers to some common questions",
         q1: "How long does it take to get a quote?",
-        a1: "We provide detailed quotes within 24 hours. For complex projects, we may need up to 48 hours to ensure accurate pricing.",
+        a1: "We provide detailed quotes within 1-2 business days. For complex projects, we may need up to 3-5 business days to ensure accurate pricing.",
         q2: "How long is the quote valid?",
         a2: "Our quotes are valid for 30 days. After that, prices may change based on current shipping rates.",
         q3: "Can I modify my request after submitting?",
@@ -635,7 +635,7 @@ export const translations = {
       steps: {
         submit: {
           title: "استشارة خبراء",
-          description: "شاركنا أهدافك وميزانيتك وتفضيلاتك. سنعد قائمة جامعات مخصصة خلال 24 ساعة.",
+          description: "شاركنا أهدافك وميزانيتك وتفضيلاتك. سنعد قائمة جامعات مخصصة خلال 1-2 يوم عمل.",
         },
         match: {
           title: "مطابقة الجامعات",
@@ -873,12 +873,12 @@ export const translations = {
     applicationForm: {
       label: "عملية التقديم",
       title: "ابدأ رحلتك اليوم",
-      description: "أكمل هذا النموذج واحصل على توصية جامعية مخصصة خلال 24 ساعة. سيتواصل معك خبراؤنا لمناقشة المنح وأفضل البرامج لأهدافك.",
+      description: "أكمل هذا النموذج واحصل على توصية جامعية مخصصة خلال 1-2 يوم عمل. سيتواصل معك خبراؤنا لمناقشة المنح وأفضل البرامج لأهدافك.",
       benefits: {
         consultation: "استشارة فردية مع خبراء التعليم",
         recommendations: "قائمة جامعات مخصصة بناءً على ملفك",
         costs: "تفصيل كامل للتكاليف وفرص المنح",
-        response: "رد مضمون خلال 24 ساعة",
+        response: "رد سريع خلال 1-2 يوم عمل",
       },
       form: {
         fullName: "الاسم الكامل",
@@ -897,7 +897,7 @@ export const translations = {
       },
       success: {
         title: "✅ تم إرسال الرسالة بنجاح!",
-        description: "تم إرسال طلبك إلى واتسابنا (+86 155 8723 7864). سيتواصل معك مستشارونا الخبراء خلال 24 ساعة بتوصيات جامعية مخصصة ومعلومات المنح. شكراً لاختيارك دينورا!",
+        description: "تم إرسال طلبك إلى واتسابنا (+86 155 8723 7864). سيتواصل معك مستشارونا الخبراء خلال 1-2 يوم عمل بتوصيات جامعية مخصصة ومعلومات المنح. شكراً لاختيارك دينورا!",
         submitAnother: "تقديم طلب آخر",
       },
     },
@@ -986,11 +986,11 @@ export const translations = {
         additionalNotes: "ملاحظات إضافية",
         submit: "احصل على عرض السعر",
         submitting: "جاري الإرسال...",
-        agreement: "سيتم إرسال طلبك مباشرة إلى واتسابنا. نرد خلال 24 ساعة.",
+        agreement: "سيتم إرسال طلبك مباشرة إلى واتسابنا. نرد خلال 1-2 يوم عمل.",
       },
       success: {
         title: "تم إرسال طلبك بنجاح!",
-        description: "تم إرسال طلب عرض السعر إلى واتسابنا (+86 155 8723 7864). سنتواصل معك خلال 24 ساعة بعرض سعر مفصل. شكراً لاختيارك دينورا!",
+        description: "تم إرسال طلب عرض السعر إلى واتسابنا (+86 155 8723 7864). سنتواصل معك خلال 1-2 يوم عمل بعرض سعر مفصل. شكراً لاختيارك دينورا!",
         anotherRequest: "إرسال طلب آخر",
         chatWhatsApp: "تواصل عبر واتساب",
       },
@@ -998,7 +998,7 @@ export const translations = {
         title: "الأسئلة الشائعة",
         subtitle: "إليك إجابات على بعض الأسئلة الشائعة",
         q1: "كم يستغرق الحصول على عرض سعر؟",
-        a1: "نحن نقدم عروض أسعار مفصلة خلال 24 ساعة. للمشاريع المعقدة، قد نحتاج إلى 48 ساعة لضمان دقة التسعير.",
+        a1: "نحن نقدم عروض أسعار مفصلة خلال 1-2 يوم عمل. للمشاريع المعقدة، قد نحتاج إلى 3-5 أيام عمل لضمان دقة التسعير.",
         q2: "هل العرض ساري لمدة طويلة؟",
         a2: "عروض الأسعار لدينا صالحة لمدة 30 يوماً. بعد ذلك، قد تتغير الأسعار بناءً على أسعار الشحن الحالية.",
         q3: "هل يمكنني تعديل طلبي بعد تقديمه؟",

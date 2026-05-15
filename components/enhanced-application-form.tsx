@@ -113,8 +113,8 @@ Thank you for applying to DINOORA Education!`
             </h2>
             <p className="mt-4 text-slate-400 leading-relaxed max-w-md mx-auto">
               {locale === "en" 
-                ? "Our team will contact you within 24 hours to discuss your options."
-                : "سيتواصل فريقنا معك خلال 24 ساعة لمناقشة خياراتك."
+                ? "Our team will contact you within 1-2 business days to discuss your options."
+                : "سيتواصل فريقنا معك خلال 1-2 يوم عمل لمناقشة خياراتك."
               }
             </p>
             <Button
@@ -215,7 +215,7 @@ Thank you for applying to DINOORA Education!`
                 { en: "One-on-one consultation with education experts", ar: "استشارة فردية مع خبراء التعليم" },
                 { en: "Personalized university shortlist based on your profile", ar: "قائمة جامعات مخصصة بناءً على ملفك" },
                 { en: "Complete cost breakdown and scholarship opportunities", ar: "تفصيل كامل للتكاليف وفرص المنح" },
-                { en: "Guaranteed response within 24 hours", ar: "رد مضمون خلال 24 ساعة" },
+                { en: "Fast response within 1-2 business days", ar: "رد سريع خلال 1-2 يوم عمل" },
               ].map((item, index) => (
                 <motion.div
                   key={index}
@@ -267,8 +267,8 @@ Thank you for applying to DINOORA Education!`
                 </h3>
                 <p className="text-slate-400 text-sm mb-8">
                   {locale === "en" 
-                    ? "Complete this form and receive a personalized university recommendation within 24 hours."
-                    : "أكمل هذا النموذج واحصل على توصية جامعية مخصصة خلال 24 ساعة."
+                    ? "Complete this form and receive a personalized university recommendation within 1-2 business days."
+                    : "أكمل هذا النموذج واحصل على توصية جامعية مخصصة خلال 1-2 يوم عمل."
                   }
                 </p>
 

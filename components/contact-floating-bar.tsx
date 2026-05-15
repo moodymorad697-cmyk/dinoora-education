@@ -10,8 +10,10 @@ export function ContactFloatingBar() {
   const phone = "+8615587237864"
   const email = "maomoody524@gmail.com"
   const whatsapp = "8615587237864"
-  const addressChina = "Room 201, 2nd Floor, Building 2, No. 37, Getang Village, Jiangdong Street, Yiwu City, Jinhua City, Zhejiang Province"
-  const mapsLink = "https://maps.google.com/?q=Yiwu+City+Zhejiang+Province+China"
+  const addressChina = "Room 201, 2nd Floor, Building 2, No. 37, Getang Village, Jiangdong Street, Yiwu City, Zhejiang Province, China"
+  const addressMalaysia = "Tower 5, SkyPark @CYBERJAYA, Level 4 - 07, Cyberjaya, Selangor, Malaysia"
+  const mapsLinkChina = "https://maps.google.com/?q=Yiwu+City+Zhejiang+Province+China"
+  const mapsLinkMalaysia = "https://maps.google.com/?q=SkyPark+Cyberjaya+Malaysia"
 
   const contactItems = [
     {
@@ -38,7 +40,7 @@ export function ContactFloatingBar() {
     {
       icon: MapPin,
       label: locale === "ar" ? "الموقع" : "Location",
-      href: mapsLink,
+      href: mapsLinkChina,
       value: locale === "ar" ? "عنواننا" : "Our location",
       color: "from-purple-600 to-purple-400",
       isModal: true
@@ -70,7 +72,7 @@ export function ContactFloatingBar() {
               item.isModal ? (
                 <div key={index} className="group relative flex-shrink-0">
                   <a
-                    href={mapsLink}
+                    href={mapsLinkChina}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="relative flex flex-col items-center justify-center w-20 h-20 rounded-2xl transition-all duration-300 overflow-hidden"
@@ -112,14 +114,29 @@ export function ContactFloatingBar() {
                           </div>
                         </div>
 
+                        {/* China Office */}
                         <div className="flex gap-3 rounded-lg bg-primary/5 p-3 border border-primary/20">
                           <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-purple-600 to-purple-400 text-white flex-shrink-0">
                             <MapPin className="h-5 w-5" />
                           </div>
                           <div className="flex-1">
-                            <p className="text-xs font-bold text-muted-foreground">{locale === "ar" ? "الموقع" : "Address"}</p>
+                            <p className="text-xs font-bold text-muted-foreground">{locale === "ar" ? "🇨🇳 المكتب الصيني" : "🇨🇳 China Office"}</p>
                             <p className="text-xs text-foreground leading-relaxed font-medium mb-2">{addressChina}</p>
-                            <a href={mapsLink} target="_blank" rel="noopener noreferrer" className="text-xs text-primary hover:text-primary/80 font-semibold inline-block hover:underline">
+                            <a href={mapsLinkChina} target="_blank" rel="noopener noreferrer" className="text-xs text-primary hover:text-primary/80 font-semibold inline-block hover:underline">
+                              {locale === "ar" ? "📍 افتح في Google Maps" : "📍 Open in Google Maps"}
+                            </a>
+                          </div>
+                        </div>
+
+                        {/* Malaysia Office */}
+                        <div className="flex gap-3 rounded-lg bg-emerald-500/5 p-3 border border-emerald-500/20">
+                          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-emerald-600 to-emerald-400 text-white flex-shrink-0">
+                            <MapPin className="h-5 w-5" />
+                          </div>
+                          <div className="flex-1">
+                            <p className="text-xs font-bold text-muted-foreground">{locale === "ar" ? "🇲🇾 المكتب الماليزي" : "🇲🇾 Malaysia Office"}</p>
+                            <p className="text-xs text-foreground leading-relaxed font-medium mb-2">{addressMalaysia}</p>
+                            <a href={mapsLinkMalaysia} target="_blank" rel="noopener noreferrer" className="text-xs text-primary hover:text-primary/80 font-semibold inline-block hover:underline">
                               {locale === "ar" ? "📍 افتح في Google Maps" : "📍 Open in Google Maps"}
                             </a>
                           </div>

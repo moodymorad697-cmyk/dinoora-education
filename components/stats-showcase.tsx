@@ -68,9 +68,9 @@ export function StatsShowcase() {
   const stats = [
     {
       icon: Users,
-      value: 2500,
+      value: 2000,
       suffix: "+",
-      label: locale === "en" ? "Students Placed" : "طالب تم توظيفهم",
+      label: locale === "en" ? "Scholarship Applications" : "طلبات منح دراسية",
       color: "from-amber-500 to-orange-500",
     },
     {

@@ -31,11 +31,22 @@ export function OrganizationSchema() {
       "availableLanguage": ["English", "Arabic", "Chinese"],
       "areaServed": ["SA", "AE", "EG", "JO", "IQ", "PS", "QA", "KW", "OM", "BH", "YE", "LY", "TN", "DZ", "MA", "SD", "MR", "SO", "DJ", "ET", "KE", "TZ", "UG", "RW", "BI", "MW", "ZM", "ZW", "BW", "NA", "MZ", "MG", "MU", "SC", "KM", "NG", "GH", "CI", "SN", "CM", "BF", "ML", "NE", "TD", "CF", "GA", "CG", "CD", "AO", "GQ", "GW", "LR", "SL", "GN", "BJ", "TG", "BJ", "TG"]
     },
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "CN",
-      "addressRegion": "Beijing"
-    },
+    "address": [
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "Room 201, 2nd Floor, Building 2, No. 37, Getang Village, Jiangdong Street",
+        "addressLocality": "Yiwu City",
+        "addressRegion": "Zhejiang Province",
+        "addressCountry": "CN"
+      },
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "Tower 5, SkyPark @CYBERJAYA, Level 4 - 07",
+        "addressLocality": "Cyberjaya",
+        "addressRegion": "Selangor",
+        "addressCountry": "MY"
+      }
+    ],
     "areaServed": {
       "@type": "Country",
       "name": "Global"
@@ -127,14 +138,22 @@ export function LocalBusinessSchema() {
     "url": "https://dinoora.com",
     "telephone": "+8615587237864",
     "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "International Education Center",
-      "addressLocality": "Beijing",
-      "addressRegion": "Beijing",
-      "postalCode": "100000",
-      "addressCountry": "CN"
-    },
+    "address": [
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "Room 201, 2nd Floor, Building 2, No. 37, Getang Village, Jiangdong Street",
+        "addressLocality": "Yiwu City",
+        "addressRegion": "Zhejiang Province",
+        "addressCountry": "CN"
+      },
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "Tower 5, SkyPark @CYBERJAYA, Level 4 - 07",
+        "addressLocality": "Cyberjaya",
+        "addressRegion": "Selangor",
+        "addressCountry": "MY"
+      }
+    ],
     "geo": {
       "@type": "GeoCoordinates",
       "latitude": 39.9042,

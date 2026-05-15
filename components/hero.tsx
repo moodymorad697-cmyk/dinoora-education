@@ -1,16 +1,15 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/lib/language-context"
-import { ArrowRight, MessageCircle, GraduationCap, Building2, Trophy, Users, Sparkles, Globe2 } from "lucide-react"
-import Link from "next/link"
+import { GraduationCap, Building2, Trophy, Users, Sparkles, Globe2 } from "lucide-react"
 import { motion } from "framer-motion"
+import { WhatsAppButton, ApplyButton } from "@/components/unified-cta"
 
 export function Hero() {
   const { t, dir, locale } = useLanguage()
 
   const stats = [
-    { Icon: GraduationCap, value: "2,500+", label: locale === "en" ? "Students Placed" : "طالب تم توظيفهم" },
+    { Icon: GraduationCap, value: "2,000+", label: locale === "en" ? "Scholarship Applications" : "طلبات منح دراسية" },
     { Icon: Building2, value: "500+", label: locale === "en" ? "Partner Universities" : "جامعات شريكة" },
     { Icon: Trophy, value: "98%", label: locale === "en" ? "Success Rate" : "نسبة النجاح" },
     { Icon: Users, value: "24/7", label: locale === "en" ? "Multilingual Support" : "دعم متعدد اللغات" },
@@ -24,7 +23,6 @@ export function Hero() {
       : "مستشارون ناطقون بالعربية والصينية والإنجليزية يفهمون ثقافتك واحتياجاتك. دعم على مدار الساعة طوال رحلتك."
   }
 
-  const whatsappUrl = `https://wa.me/8615587237864?text=${locale === "en" ? "Hi%20DINOORA" : "%D9%85%D8%B1%D8%AD%D8%A8%D8%A7"}`
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-950">
@@ -154,7 +152,7 @@ export function Hero() {
             ))}
           </motion.div>
 
-          {/* CTA Buttons - Gold Theme */}
+          {/* Unified CTA Buttons */}
           <motion.div 
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
             initial={{ opacity: 0, y: 30 }}
@@ -162,30 +160,20 @@ export function Hero() {
             transition={{ duration: 1, delay: 0.8 }}
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold px-10 py-7 text-lg shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 transition-all duration-300"
-                asChild
-              >
-                <Link href="#apply">
-                  {locale === "en" ? "Start Your Application" : "ابدأ طلبك"}
-                  <ArrowRight className={`w-5 h-5 ${dir === "rtl" ? "mr-2" : "ml-2"}`} />
-                </Link>
-              </Button>
+              <ApplyButton 
+                size="lg" 
+                label={locale === "en" ? "Start Your Application" : "ابدأ طلبك"}
+                className="px-10 py-7 text-lg"
+              />
             </motion.div>
             
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button
+              <WhatsAppButton 
+                variant="outline" 
                 size="lg"
-                variant="outline"
-                className="border-amber-500/50 bg-slate-900/50 text-amber-400 hover:bg-amber-500/10 hover:text-amber-300 px-8 py-7 text-lg transition-all duration-300"
-                asChild
-              >
-                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className={`w-5 h-5 ${dir === "rtl" ? "ml-2" : "mr-2"}`} />
-                  {locale === "en" ? "Chat on WhatsApp" : "تحدث على واتساب"}
-                </a>
-              </Button>
+                label={locale === "en" ? "Chat on WhatsApp" : "تحدث على واتساب"}
+                className="px-8 py-7 text-lg border-amber-500/50 bg-slate-900/50 text-amber-400 hover:bg-amber-500/10 hover:text-amber-300"
+              />
             </motion.div>
           </motion.div>
 
