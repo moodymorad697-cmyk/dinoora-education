@@ -78,15 +78,15 @@ export function Header() {
       <header
       className={`fixed left-0 right-0 z-50 transition-all duration-500 bg-slate-950 border-b border-slate-800 ${
         isScrolled
-          ? "top-0 py-3 shadow-2xl shadow-black/20"
-          : "top-9 py-4"
+          ? "top-0 py-4 shadow-2xl shadow-black/20"
+          : "top-9 py-5"
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-6">
-          {/* Logo - Repositioned to center area with better prominence */}
+          {/* Logo - Full visibility and better prominence */}
           <Link href="/" className="flex items-center gap-3 group flex-shrink-0 order-2 lg:order-1">
-            <div className="relative w-44 h-14 md:w-52 md:h-18 overflow-hidden group-hover:scale-105 transition-transform duration-300 bg-gradient-to-r from-amber-500/20 to-primary/10 rounded-lg p-2 border border-amber-500/30">
+            <div className="relative w-56 h-16 md:w-64 md:h-20 group-hover:scale-105 transition-transform duration-300 bg-gradient-to-r from-amber-500/20 to-primary/10 rounded-lg p-3 border border-amber-500/30 flex items-center justify-center">
               <img
                 src="/images/logo.png"
                 alt="DINOORA Education"

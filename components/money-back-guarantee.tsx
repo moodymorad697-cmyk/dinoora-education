@@ -11,20 +11,20 @@ export function MoneyBackGuarantee() {
   const conditions = [
     {
       icon: CheckCircle,
-      title: { en: "No Acceptance = Full Refund", ar: "لا قبول = استرداد كامل" },
-      desc: { en: "If we fail to secure university acceptance, get 100% refund of service fees", ar: "إذا فشلنا في تأمين قبول جامعي، احصل على استرداد 100% من رسوم الخدمة" },
+      title: { en: "100% Acceptance Guarantee", ar: "ضمان قبول 100%" },
+      desc: { en: "If we fail to get you accepted, full refund", ar: "إذا لم نحصل لك على قبول، استرداد كامل" },
       valid: true,
     },
     {
       icon: XCircle,
       title: { en: "Not Valid If", ar: "غير ساري إذا" },
-      desc: { en: "You withdraw after application submission or provide false information", ar: "انسحبت بعد تقديم الطلب أو قدمت معلومات غير صحيحة" },
+      desc: { en: "You withdraw after application submission", ar: "انسحبت بعد تقديم الطلب" },
       valid: false,
     },
     {
       icon: CheckCircle,
-      title: { en: "7-Day Processing", ar: "معالجة خلال 7 أيام" },
-      desc: { en: "Refund processed within 7 business days of request", ar: "استرداد خلال 7 أيام عمل من الطلب" },
+      title: { en: "30-Day Processing", ar: "معالجة خلال 30 يوم" },
+      desc: { en: "Refund processed within 30 days of request", ar: "استرداد خلال 30 يوم من الطلب" },
       valid: true,
     },
   ]
@@ -33,17 +33,17 @@ export function MoneyBackGuarantee() {
     {
       icon: Phone,
       title: { en: "Contact Support", ar: "تواصل مع الدعم" },
-      desc: { en: "Explain your situation via WhatsApp at +86 15587237864", ar: "اشرح موقفك عبر واتساب على +86 15587237864" },
+      desc: { en: "Explain your situation via WhatsApp or email", ar: "اشرح موقفك عبر واتساب أو البريد" },
     },
     {
       icon: RefreshCw,
-      title: { en: "Quick Review", ar: "مراجعة سريعة" },
-      desc: { en: "We review your case within 2-3 business days", ar: "نراجع حالتك خلال 2-3 أيام عمل" },
+      title: { en: "Review Process", ar: "مراجعة الطلب" },
+      desc: { en: "We review your case within 3-5 business days", ar: "نراجع حالتك خلال 3-5 أيام عمل" },
     },
     {
       icon: Award,
       title: { en: "Get Refunded", ar: "احصل على الاسترداد" },
-      desc: { en: "Full refund processed within 7 business days", ar: "استرداد كامل خلال 7 أيام عمل" },
+      desc: { en: "Full amount returned to your original payment method", ar: "المبلغ كاملاً إلى طريقة الدفع الأصلية" },
     },
   ]
 
@@ -99,8 +99,8 @@ export function MoneyBackGuarantee() {
                 className="text-xl text-emerald-400 font-semibold mb-4"
               >
                 {locale === "en" 
-                  ? "Risk-Free Application Process" 
-                  : "عملية تقديم بدون مخاطرة"
+                  ? "No Acceptance? Get a Full Refund!" 
+                  : "لم تحصل على قبول؟ استرد كامل المبلغ!"
                 }
               </motion.p>
               <motion.p
@@ -111,8 +111,8 @@ export function MoneyBackGuarantee() {
                 className="text-slate-300 text-lg max-w-2xl"
               >
                 {locale === "en" 
-                  ? "We guarantee our admission services. If we fail to secure at least one university acceptance, you'll receive a full refund of your service fees. Simple and transparent."
-                  : "نحن نضمن خدمات القبول لدينا. إذا فشلنا في تأمين قبول واحد على الأقل، ستحصل على استرداد كامل لرسوم الخدمة. بسيط وشفاف."
+                  ? "We're confident in our services. If we fail to secure your university acceptance, we'll refund 100% of your service fees. No questions asked."
+                  : "نحن واثقون من خدماتنا. إذا فشلنا في تأمين قبولك الجامعي، سنسترد 100% من رسوم الخدمة. بدون أسئلة."
                 }
               </motion.p>
             </div>
@@ -130,7 +130,7 @@ export function MoneyBackGuarantee() {
                 </a>
               </Button>
               <p className="text-xs text-slate-500 text-center">
-                {locale === "en" ? "Secure payment • Instant support" : "دفع آمن • دعم فوري"}
+                {locale === "en" ? "SSL Secure • Verified by 2500+ students • 5+ years experience" : "SSL آمن • موثق من 2500+ طالب • 5+ سنوات خبرة"}
               </p>
             </div>
           </div>
@@ -168,11 +168,10 @@ export function MoneyBackGuarantee() {
         </div>
 
         {/* Refund Process */}
-        <div className="bg-slate-900/50 border border-slate-800 rounded-2xl p-8">
-          <h3 className="text-2xl font-bold text-white text-center mb-8">
+        <div className="mb-12">
+          <h3 className="text-2xl font-bold text-white mb-8 text-center">
             {locale === "en" ? "How Refund Works" : "كيف يعمل الاسترداد"}
           </h3>
-          
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {processSteps.map((step, index) => {
               const Icon = step.icon
@@ -183,18 +182,21 @@ export function MoneyBackGuarantee() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="text-center"
+                  className="relative"
                 >
-                  <div className="relative mb-4">
-                    <div className="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-amber-500/20 to-amber-600/10 border border-amber-500/30 flex items-center justify-center">
-                      <Icon className="w-8 h-8 text-amber-400" />
+                  <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-primary/50 transition-all">
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center mb-4 shadow-lg shadow-emerald-500/30">
+                      <Icon className="w-8 h-8 text-white" />
                     </div>
-                    <div className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-amber-500 flex items-center justify-center text-slate-950 text-sm font-bold">
+                    <div className="absolute top-8 left-1/2 transform translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-emerald-500 text-slate-950 font-bold flex items-center justify-center text-sm">
                       {index + 1}
                     </div>
+                    <h4 className="text-lg font-bold text-white mb-2">{step.title[locale]}</h4>
+                    <p className="text-sm text-slate-400">{step.desc[locale]}</p>
                   </div>
-                  <h4 className="font-semibold text-white mb-2">{step.title[locale]}</h4>
-                  <p className="text-sm text-slate-400">{step.desc[locale]}</p>
+                  {index < processSteps.length - 1 && (
+                    <div className="hidden md:block absolute top-8 left-1/2 w-full h-0.5 bg-gradient-to-r from-emerald-500/30 to-transparent" />
+                  )}
                 </motion.div>
               )
             })}

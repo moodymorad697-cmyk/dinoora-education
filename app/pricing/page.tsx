@@ -17,6 +17,7 @@ import {
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { WhatsAppButton } from "@/components/unified-cta"
+import { ReferralProgram } from "@/components/referral-program"
 
 const packages = [
   {
@@ -440,7 +441,7 @@ export default function PricingPage() {
           <div className="flex flex-wrap items-center justify-center gap-4">
             <WhatsAppButton size="lg" />
             <Button variant="outline" size="lg" asChild className="border-slate-700">
-              <a href="mailto:maomoody524@gmail.com">
+              <a href="mailto:info@dinoora.com">
                 <MessageCircle className="w-5 h-5 mr-2" />
                 {locale === "en" ? "Email Us" : "راسلنا"}
               </a>
@@ -448,6 +449,9 @@ export default function PricingPage() {
           </div>
         </div>
       </section>
+
+      {/* Referral Program */}
+      <ReferralProgram />
     </main>
   )
 }
