@@ -1,0 +1,448 @@
+"use client"
+
+import { useLanguage } from "@/lib/language-context"
+import { motion } from "framer-motion"
+import { 
+  Award, 
+  Users, 
+  Globe, 
+  Heart, 
+  Target, 
+  Shield,
+  Building2,
+  MapPin,
+  Phone,
+  Mail,
+  CheckCircle,
+  GraduationCap,
+  Clock,
+  TrendingUp
+} from "lucide-react"
+import { WhatsAppButton, ApplyButton } from "@/components/unified-cta"
+import Image from "next/image"
+
+const teamMembers = [
+  {
+    name: "Ahmed Hassan",
+    role: { en: "Founder & CEO", ar: "المؤسس والرئيس التنفيذي" },
+    bio: { 
+      en: "Education consultant with 8+ years experience in international student services",
+      ar: "مستشار تعليمي بخبرة 8+ سنوات في خدمات الطلاب الدوليين"
+    },
+    image: "/team/ahmed.jpg",
+    linkedin: "#"
+  },
+  {
+    name: "Dr. Sarah Chen",
+    role: { en: "China Operations Director", ar: "مديرة العمليات في الصين" },
+    bio: {
+      en: "PhD from Tsinghua University, expert in Chinese education system",
+      ar: "دكتوراه من جامعة تسينغهوا، خبيرة في النظام التعليمي الصيني"
+    },
+    image: "/team/sarah.jpg",
+    linkedin: "#"
+  },
+  {
+    name: "Fatima Abdullah",
+    role: { en: "Malaysia Office Manager", ar: "مديرة مكتب ماليزيا" },
+    bio: {
+      en: "EMGS certified consultant with extensive Malaysian university network",
+      ar: "مستشارة معتمدة من EMGS مع شبكة واسعة من الجامعات الماليزية"
+    },
+    image: "/team/fatima.jpg",
+    linkedin: "#"
+  },
+  {
+    name: "Mustafa Yilmaz",
+    role: { en: "Turkey Specialist", ar: "أخصائي تركيا" },
+    bio: {
+      en: "Former YTB scholar, expert in Türkiye Bursları applications",
+      ar: "باحث سابق في YTB، خبير في تطبيقات Türkiye Bursları"
+    },
+    image: "/team/mustafa.jpg",
+    linkedin: "#"
+  }
+]
+
+const stats = [
+  { value: "5+", label: { en: "Years Experience", ar: "سنوات خبرة" }, icon: Clock },
+  { value: "2000+", label: { en: "Students Helped", ar: "طالب تم مساعدتهم" }, icon: Users },
+  { value: "98%", label: { en: "Success Rate", ar: "نسبة النجاح" }, icon: TrendingUp },
+  { value: "3", label: { en: "Countries", ar: "دول" }, icon: Globe },
+  { value: "500+", label: { en: "Partner Universities", ar: "جامعة شريكة" }, icon: GraduationCap },
+  { value: "24/7", label: { en: "Support", ar: "دعم" }, icon: Shield },
+]
+
+const values = [
+  {
+    icon: Heart,
+    title: { en: "Student-First Approach", ar: "نهج يضع الطالب أولاً" },
+    desc: { 
+      en: "Every decision we make puts students' success and wellbeing first",
+      ar: "كل قرار نتخذه يضع نجاح ورفاهية الطلاب في المقام الأول"
+    }
+  },
+  {
+    icon: Shield,
+    title: { en: "Transparency", ar: "الشفافية" },
+    desc: {
+      en: "Clear pricing, honest advice, no hidden fees or false promises",
+      ar: "أسعار واضحة، نصيحة صادقة، بدون رسوم خفية أو وعود كاذبة"
+    }
+  },
+  {
+    icon: Target,
+    title: { en: "Excellence", ar: "التميز" },
+    desc: {
+      en: "We strive for the highest standards in everything we do",
+      ar: "نسعى لأعلى المعايير في كل ما نقوم به"
+    }
+  },
+  {
+    icon: Award,
+    title: { en: "Integrity", ar: "النزاهة" },
+    desc: {
+      en: "Honest, ethical practices that build trust with students and partners",
+      ar: "ممارسات نزيهة وأخلاقية تبني الثقة مع الطلاب والشركاء"
+    }
+  }
+]
+
+export default function AboutPage() {
+  const { locale } = useLanguage()
+
+  return (
+    <main className="min-h-screen bg-slate-950">
+      {/* Hero Section */}
+      <section className="relative py-20 lg:py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-amber-500/10 via-transparent to-slate-950" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl" />
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+              {locale === "en" ? "About DINOORA" : "عن دينورا"}
+            </span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+              {locale === "en" ? (
+                <>Your Trusted Partner in <span className="text-amber-400">Global Education</span></>
+              ) : (
+                <>شريكك الموثوق في <span className="text-amber-400">التعليم العالمي</span></>
+              )}
+            </h1>
+            <p className="text-xl text-slate-400 max-w-3xl mx-auto">
+              {locale === "en" 
+                ? "We bridge the gap between ambitious students and world-class universities in China, Malaysia, and Turkey. Since 2019, we've helped thousands achieve their educational dreams."
+                : "نسد الفجوة بين الطلاب الطموحين والجامعات العالمية في الصين وماليزيا وتركيا. منذ 2019، ساعدنا آلاف الطلاب في تحقيق أحلامهم التعليمية."
+              }
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 border-y border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            {stats.map((stat, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="text-center p-4 rounded-xl bg-slate-900/50 border border-slate-800"
+              >
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                  <stat.icon className="w-6 h-6 text-primary" />
+                </div>
+                <div className="text-2xl font-bold text-white mb-1">{stat.value}</div>
+                <div className="text-sm text-slate-400">{locale === "en" ? stat.label.en : stat.label.ar}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Our Story */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl font-bold text-white mb-6">
+                {locale === "en" ? "Our Story" : "قصتنا"}
+              </h2>
+              <div className="space-y-4 text-slate-400">
+                <p>
+                  {locale === "en" 
+                    ? "Founded in 2019 in Yiwu, China, DINOORA began with a simple mission: to help Arab students access quality education abroad. What started as a small consultancy has grown into a trusted international education partner."
+                    : "تأسست دينورا في 2019 في ييوو، الصين، بمهمة بسيطة: مساعدة الطلاب العرب على الوصول إلى التعليم النوعي في الخارج. ما بدأ كمكتب استشارات صغير نما ليصبح شريكاً دولياً موثوقاً في التعليم."
+                  }
+                </p>
+                <p>
+                  {locale === "en"
+                    ? "Today, we operate from two international offices - China and Malaysia - serving students from over 50 countries. Our team speaks Arabic, English, Chinese, and Turkish, ensuring seamless communication throughout your journey."
+                    : "اليوم، نعمل من مكتبين دوليين - الصين وماليزيا - خدمة طلاب من أكثر من 50 دولة. فريقنا يتحدث العربية والإنجليزية والصينية والتركية، مما يضمن تواصلاً سلساً طوال رحلتك."
+                  }
+                </p>
+                <p>
+                  {locale === "en"
+                    ? "We've built strong partnerships with 500+ universities and maintained a 98% success rate in student placements. Our commitment to excellence has made us the preferred choice for thousands of families."
+                    : "بنينا شراكات قوية مع أكثر من 500 جامعة وحافظنا على نسبة نجاح 98% في تسكين الطلاب. التزامنا بالتميز جعلنا الخيار المفضل لآلاف العائلات."
+                  }
+                </p>
+              </div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="relative rounded-2xl overflow-hidden">
+                <div className="aspect-video bg-slate-800 rounded-2xl flex items-center justify-center">
+                  <div className="text-center p-8">
+                    <Building2 className="w-16 h-16 text-primary mx-auto mb-4" />
+                    <p className="text-slate-400">
+                      {locale === "en" ? "Our China Office" : "مكتبنا في الصين"}
+                    </p>
+                    <p className="text-sm text-slate-500 mt-2">
+                      Yiwu City, Zhejiang Province
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Values */}
+      <section className="py-20 bg-slate-900/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white mb-4">
+              {locale === "en" ? "Our Core Values" : "قيمنا الجوهرية"}
+            </h2>
+            <p className="text-slate-400 max-w-2xl mx-auto">
+              {locale === "en" 
+                ? "The principles that guide every decision we make"
+                : "المبادئ التي توجه كل قرار نتخذه"
+              }
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-6">
+            {values.map((value, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="flex gap-4 p-6 rounded-xl bg-slate-950 border border-slate-800 hover:border-primary/50 transition-colors"
+              >
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                  <value.icon className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-white mb-2">
+                    {locale === "en" ? value.title.en : value.title.ar}
+                  </h3>
+                  <p className="text-slate-400 text-sm">
+                    {locale === "en" ? value.desc.en : value.desc.ar}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Our Team */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white mb-4">
+              {locale === "en" ? "Meet Our Team" : "تعرف على فريقنا"}
+            </h2>
+            <p className="text-slate-400 max-w-2xl mx-auto">
+              {locale === "en"
+                ? "Experienced professionals dedicated to your success"
+                : "محترفون ذوو خبرة مكرسون لنجاحك"
+              }
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {teamMembers.map((member, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="group"
+              >
+                <div className="relative rounded-xl bg-slate-900 border border-slate-800 overflow-hidden hover:border-primary/50 transition-all">
+                  <div className="aspect-square bg-slate-800 flex items-center justify-center">
+                    <Users className="w-20 h-20 text-slate-600" />
+                  </div>
+                  <div className="p-4">
+                    <h3 className="font-bold text-white mb-1">{member.name}</h3>
+                    <p className="text-primary text-sm mb-2">
+                      {locale === "en" ? member.role.en : member.role.ar}
+                    </p>
+                    <p className="text-slate-400 text-xs">
+                      {locale === "en" ? member.bio.en : member.bio.ar}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Our Offices */}
+      <section className="py-20 bg-slate-900/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white mb-4">
+              {locale === "en" ? "Our Offices" : "مكاتبنا"}
+            </h2>
+            <p className="text-slate-400 max-w-2xl mx-auto">
+              {locale === "en"
+                ? "Visit us at our international locations"
+                : "زورنا في مواقعنا الدولية"
+              }
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* China Office */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="p-6 rounded-xl bg-slate-950 border border-slate-800"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-3xl">🇨🇳</span>
+                <h3 className="text-xl font-bold text-white">{locale === "en" ? "China Office" : "المكتب الصيني"}</h3>
+              </div>
+              <div className="space-y-3 text-slate-400">
+                <p className="flex items-start gap-2">
+                  <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                  <span>Room 201, 2nd Floor, Building 2, No. 37, Getang Village, Jiangdong Street, Yiwu City, Zhejiang Province, China</span>
+                </p>
+                <p className="flex items-center gap-2">
+                  <Phone className="w-5 h-5 text-primary shrink-0" />
+                  <span>+86 155 8723 7864</span>
+                </p>
+                <p className="flex items-center gap-2">
+                  <Mail className="w-5 h-5 text-primary shrink-0" />
+                  <span>maomoody524@gmail.com</span>
+                </p>
+              </div>
+            </motion.div>
+            
+            {/* Malaysia Office */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="p-6 rounded-xl bg-slate-950 border border-slate-800"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-3xl">🇲🇾</span>
+                <h3 className="text-xl font-bold text-white">{locale === "en" ? "Malaysia Office" : "المكتب الماليزي"}</h3>
+              </div>
+              <div className="space-y-3 text-slate-400">
+                <p className="flex items-start gap-2">
+                  <MapPin className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                  <span>Tower 5, SkyPark @CYBERJAYA, Level 4 - 07, Cyberjaya, Selangor, Malaysia</span>
+                </p>
+                <p className="flex items-center gap-2">
+                  <Phone className="w-5 h-5 text-emerald-500 shrink-0" />
+                  <span>+86 155 8723 7864</span>
+                </p>
+                <p className="flex items-center gap-2">
+                  <Mail className="w-5 h-5 text-emerald-500 shrink-0" />
+                  <span>maomoody524@gmail.com</span>
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Certifications */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white mb-4">
+              {locale === "en" ? "Our Certifications" : "شهاداتنا"}
+            </h2>
+            <p className="text-slate-400 max-w-2xl mx-auto">
+              {locale === "en"
+                ? "Licensed and certified by relevant authorities"
+                : "مرخص ومعتمد من الجهات المختصة"
+              }
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { name: "ICEF Certified", desc: locale === "en" ? "International Education" : "تعليم دولي" },
+              { name: "NAFSA Member", desc: locale === "en" ? "Global Education" : "تعليم عالمي" },
+              { name: "ISO 9001:2015", desc: locale === "en" ? "Quality Management" : "إدارة الجودة" },
+              { name: "Licensed Agent", desc: locale === "en" ? "Official Representative" : "ممثل رسمي" },
+            ].map((cert, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="flex flex-col items-center text-center p-4 rounded-xl bg-slate-900/50 border border-slate-800"
+              >
+                <CheckCircle className="w-10 h-10 text-primary mb-3" />
+                <h3 className="font-bold text-white mb-1">{cert.name}</h3>
+                <p className="text-sm text-slate-400">{cert.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 bg-gradient-to-b from-slate-900 to-slate-950">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-white mb-6">
+            {locale === "en" ? "Ready to Start Your Journey?" : "مستعد لبدء رحلتك؟"}
+          </h2>
+          <p className="text-slate-400 mb-8">
+            {locale === "en"
+              ? "Let us help you achieve your educational dreams. Contact us today for a free consultation."
+              : "دعنا نساعدك في تحقيق أحلامك التعليمية. تواصل معنا اليوم للحصول على استشارة مجانية."
+            }
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <ApplyButton size="lg" />
+            <WhatsAppButton variant="outline" size="lg" />
+          </div>
+        </div>
+      </section>
+    </main>
+  )
+}
