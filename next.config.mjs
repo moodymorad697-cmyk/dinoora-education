@@ -32,9 +32,10 @@ const nextConfig = {
   experimental: {
     optimizeCss: true,
     scrollRestoration: true,
-    legacyBrowsers: false,
-    turbo: {},
   },
+  
+  // Turbopack configuration (Next.js 16+)
+  turbopack: {},
   
   // Headers for caching and security
   async headers() {
