@@ -9,6 +9,7 @@ import {
   Menu, X, Globe, GraduationCap, Search, Phone, MessageCircle,
   Star, ListChecks, Briefcase, MapPin, BookOpen, Building2, Quote,
   Mail, Clock, Sparkles, TrendingUp, Award, ArrowRight, Target,
+  Users, DollarSign, HeadphonesIcon,
 } from "lucide-react"
 
 export function Header() {
@@ -26,13 +27,12 @@ export function Header() {
   }, [])
 
   const navItems = [
-    { href: "#why-us", label: t.nav.whyUs, Icon: Star, highlight: false },
-    { href: "#how-it-works", label: t.nav.howItWorks, Icon: ListChecks, highlight: false },
+    { href: "/about", label: locale === "ar" ? "عنّا" : "About", Icon: Users, highlight: false },
+    { href: "/pricing", label: locale === "ar" ? "الأسعار" : "Pricing", Icon: DollarSign, highlight: false },
     { href: "#services", label: t.nav.services, Icon: Briefcase, highlight: false },
     { href: "#destinations", label: t.nav.destinations, Icon: MapPin, highlight: false },
     { href: "#programs", label: t.nav.programs, Icon: BookOpen, highlight: false },
-    { href: "#universities", label: locale === "ar" ? "الجامعات" : "Universities", Icon: Building2, highlight: false },
-    { href: "#testimonials", label: t.nav.testimonials, Icon: Quote, highlight: false },
+    { href: "/contact", label: locale === "ar" ? "تواصل" : "Contact", Icon: HeadphonesIcon, highlight: false },
   ]
 
   const toggleLanguage = () => {
