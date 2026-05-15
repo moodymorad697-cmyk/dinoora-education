@@ -9,7 +9,7 @@ import {
   Menu, X, Globe, GraduationCap, Search, Phone, MessageCircle,
   Star, ListChecks, Briefcase, MapPin, BookOpen, Building2, Quote,
   Mail, Clock, Sparkles, TrendingUp, Award, ArrowRight, Target,
-  Users, DollarSign, HeadphonesIcon,
+  Users, DollarSign, HeadphonesIcon, Newspaper,
 } from "lucide-react"
 
 export function Header() {
@@ -31,7 +31,7 @@ export function Header() {
     { href: "/pricing", label: locale === "ar" ? "الأسعار" : "Pricing", Icon: DollarSign, highlight: false },
     { href: "#services", label: t.nav.services, Icon: Briefcase, highlight: false },
     { href: "#destinations", label: t.nav.destinations, Icon: MapPin, highlight: false },
-    { href: "#programs", label: t.nav.programs, Icon: BookOpen, highlight: false },
+    { href: "/blog", label: locale === "ar" ? "المدونة" : "Blog", Icon: Newspaper, highlight: false },
     { href: "/contact", label: locale === "ar" ? "تواصل" : "Contact", Icon: HeadphonesIcon, highlight: false },
   ]
 
