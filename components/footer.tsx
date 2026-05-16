@@ -62,17 +62,17 @@ export function Footer() {
   const socialLinks = [
     {
       icon: Instagram,
-      href: "https://instagram.com/dinoora.education",
+      href: "https://www.instagram.com/dinoora_education?igsh=YndmNTRubWYwbW80&utm_source=qr",
       label: "Instagram"
     },
     {
       icon: Facebook,
-      href: "https://facebook.com/dinoora.education",
+      href: "https://www.facebook.com/share/17mLtvZn95/?mibextid=wwXIfr",
       label: "Facebook"
     },
     {
       icon: Music,
-      href: "https://tiktok.com/@dinoora.education",
+      href: "https://www.tiktok.com/@kingmorad0?is_from_webapp=1&sender_device=pc",
       label: "TikTok"
     },
   ]
