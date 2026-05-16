@@ -123,7 +123,7 @@ export function SuccessStats() {
       icon: GraduationCap
     },
     { 
-      value: "85%", 
+      value: "98%", 
       label: locale === "ar" ? "رضا العملاء" : "Client Satisfaction",
       icon: TrendingUp
     }

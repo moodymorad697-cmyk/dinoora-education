@@ -11,7 +11,7 @@ export function Hero() {
   const stats = [
     { Icon: GraduationCap, value: "500+", label: locale === "en" ? "Scholarship Applications" : "طلبات منح دراسية", color: "text-amber-400" },
     { Icon: Building2, value: "50+", label: locale === "en" ? "Prestigious Universities" : "جامعات مرموقة", color: "text-emerald-400" },
-    { Icon: Trophy, value: "85%", label: locale === "en" ? "Client Satisfaction" : "رضا العملاء", color: "text-primary" },
+    { Icon: Trophy, value: "98%", label: locale === "en" ? "Success Rate" : "نسبة النجاح", color: "text-primary" },
     { Icon: Users, value: "3", label: locale === "en" ? "Countries We Serve" : "دول نخدمها", color: "text-cyan-400" },
   ]
 

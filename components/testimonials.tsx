@@ -151,7 +151,7 @@ export function Testimonials() {
           {[
             { value: "500+", label: locale === "ar" ? "طلب منحة" : "Scholarship Applications" },
             { value: "50+", label: locale === "ar" ? "جامعة مرموقة" : "Prestigious Universities" },
-            { value: "85%", label: locale === "ar" ? "رضا العملاء" : "Client Satisfaction" },
+            { value: "98%", label: locale === "ar" ? "نسبة النجاح" : "Success Rate" },
             { value: "3", label: locale === "ar" ? "دول نخدمها" : "Countries We Serve" },
           ].map((stat, index) => (
             <motion.div 

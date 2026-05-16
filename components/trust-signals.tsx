@@ -142,7 +142,7 @@ export function TrustStats() {
   const { locale } = useLanguage()
   
   const stats = [
-    { value: "85%", label: locale === "en" ? "Client Satisfaction" : "رضا العملاء", color: "text-primary" },
+    { value: "98%", label: locale === "en" ? "Success Rate" : "نسبة النجاح", color: "text-primary" },
     { value: "98%", label: locale === "en" ? "Success Rate" : "نسبة النجاح", color: "text-emerald-400" },
     { value: "500+", label: locale === "en" ? "Students Placed" : "طالب تم قبولهم", color: "text-amber-400" },
     { value: "50+", label: locale === "en" ? "Universities" : "جامعة", color: "text-cyan-400" },

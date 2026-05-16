@@ -71,7 +71,7 @@ const teamMembers = [
 const stats = [
   { value: "3+", label: { en: "Years Experience", ar: "سنوات خبرة" }, icon: Clock },
   { value: "500+", label: { en: "Students Helped", ar: "طالب تم مساعدتهم" }, icon: Users },
-  { value: "85%", label: { en: "Client Satisfaction", ar: "رضا العملاء" }, icon: TrendingUp },
+  { value: "98%", label: { en: "Success Rate", ar: "نسبة النجاح" }, icon: TrendingUp },
   { value: "3", label: { en: "Countries", ar: "دول" }, icon: Globe },
   { value: "50+", label: { en: "Prestigious Universities", ar: "جامعة مرموقة" }, icon: GraduationCap },
   { value: "24/7", label: { en: "Support", ar: "دعم" }, icon: Shield },
@@ -205,8 +205,8 @@ export default function AboutPage() {
                 </p>
                 <p>
                   {locale === "en"
-                    ? "We've built strong partnerships with 50+ prestigious universities and maintained an 85% client satisfaction rate. Our commitment to excellence has made us the preferred choice for hundreds of families seeking quality education in China and Malaysia."
-                    : "بنينا شراكات قوية مع أكثر من 50 جامعة مرموقة وحافظنا على معدل رضا العملاء 85%. التزامنا بالتميز جعلنا الخيار المفضل لمئات العائلات التي تسعى للحصول على تعليم نوعي في الصين وماليزيا."
+                    ? "We've built strong partnerships with 50+ prestigious universities and maintained a 98% success rate. Our commitment to excellence has made us the preferred choice for hundreds of families seeking quality education in China and Malaysia."
+                    : "بنينا شراكات قوية مع أكثر من 50 جامعة مرموقة وحافظنا على معدل نجاح 98%. التزامنا بالتميز جعلنا الخيار المفضل لمئات العائلات التي تسعى للحصول على تعليم نوعي في الصين وماليزيا."
                   }
                 </p>
               </div>
@@ -285,7 +285,7 @@ export default function AboutPage() {
               {
                 icon: Shield,
                 title: { en: "Trusted Service", ar: "خدمة موثوقة" },
-                desc: { en: "85% client satisfaction rate", ar: "معدل رضا العملاء 85%" }
+                desc: { en: "98% success rate", ar: "معدل نجاح 98%" }
               },
               {
                 icon: MessageCircle,
@@ -522,7 +522,7 @@ export default function AboutPage() {
                 {
                   year: "2024",
                   title: { en: "Continuing Excellence", ar: "الاستمرار في التميز" },
-                  desc: { en: "Maintaining 85% client satisfaction rate while expanding our university network", ar: "الحفاظ على معدل رضا العملاء 85% مع توسيع شبكة جامعاتنا" }
+                  desc: { en: "Maintaining 98% success rate while expanding our university network", ar: "الحفاظ على معدل نجاح 98% مع توسيع شبكة جامعاتنا" }
                 }
               ].map((milestone, index) => (
                 <motion.div
@@ -577,7 +577,7 @@ export default function AboutPage() {
               },
               {
                 question: { en: "Do you help with scholarships?", ar: "هل تساعدون في المنح الدراسية؟" },
-                answer: { en: "Yes! We specialize in helping students secure scholarships including CSC, Türkiye Bursları, and university-specific scholarships. Our success rate is 85%.", ar: "نعم! نتخصص في مساعدة الطلاب على الحصول على منح بما في ذلك CSC، Türkiye Bursları، والمنح الخاصة بالجامعات. معدل نجاحنا 85%." }
+                answer: { en: "Yes! We specialize in helping students secure scholarships including CSC, Türkiye Bursları, and university-specific scholarships. Our success rate is 98%.", ar: "نعم! نتخصص في مساعدة الطلاب على الحصول على منح بما في ذلك CSC، Türkiye Bursları، والمنح الخاصة بالجامعات. معدل نجاحنا 98%." }
               },
               {
                 question: { en: "What if my application is rejected?", ar: "ماذا إذا تم رفض طلبي؟" },
