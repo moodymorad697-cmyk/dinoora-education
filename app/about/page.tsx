@@ -644,10 +644,6 @@ export default function AboutPage() {
                   <Phone className="w-5 h-5 text-primary shrink-0" />
                   <span>+86 155 8723 7864</span>
                 </p>
-                <p className="flex items-center gap-2">
-                  <Mail className="w-5 h-5 text-primary shrink-0" />
-                  <span>maomoody524@gmail.com</span>
-                </p>
               </div>
             </motion.div>
             
@@ -670,10 +666,6 @@ export default function AboutPage() {
                 <p className="flex items-center gap-2">
                   <Phone className="w-5 h-5 text-emerald-500 shrink-0" />
                   <span>+86 155 8723 7864</span>
-                </p>
-                <p className="flex items-center gap-2">
-                  <Mail className="w-5 h-5 text-emerald-500 shrink-0" />
-                  <span>maomoody524@gmail.com</span>
                 </p>
               </div>
             </motion.div>

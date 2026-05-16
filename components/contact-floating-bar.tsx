@@ -8,7 +8,6 @@ export function ContactFloatingBar() {
   const { locale } = useLanguage()
 
   const phone = "+8615587237864"
-  const email = "maomoody524@gmail.com"
   const whatsapp = "8615587237864"
   const addressChina = "Room 201, 2nd Floor, Building 2, No. 37, Getang Village, Jiangdong Street, Yiwu City, Zhejiang Province, China"
   const addressMalaysia = "Tower 5, SkyPark @CYBERJAYA, Level 4 - 07, Cyberjaya, Selangor, Malaysia"
@@ -24,10 +23,10 @@ export function ContactFloatingBar() {
       color: "from-blue-600 to-blue-400"
     },
     {
-      icon: Mail,
-      label: locale === "ar" ? "البريد" : "Email",
-      href: `mailto:${email}`,
-      value: email,
+      icon: MessageCircle,
+      label: locale === "ar" ? "واتساب" : "WhatsApp",
+      href: `https://wa.me/${whatsapp}`,
+      value: whatsapp,
       color: "from-red-600 to-red-400"
     },
     {
@@ -101,16 +100,6 @@ export function ContactFloatingBar() {
                           <div className="flex-1">
                             <p className="text-xs font-bold text-muted-foreground">{locale === "ar" ? "الهاتف" : "Phone"}</p>
                             <a href={`tel:${phone.replace(/\s+/g, '')}`} className="text-sm font-bold text-primary hover:text-primary/80 transition-colors">{phone}</a>
-                          </div>
-                        </div>
-
-                        <div className="flex gap-3">
-                          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-red-600 to-red-400 text-white flex-shrink-0">
-                            <Mail className="h-5 w-5" />
-                          </div>
-                          <div className="flex-1">
-                            <p className="text-xs font-bold text-muted-foreground">{locale === "ar" ? "البريد" : "Email"}</p>
-                            <a href={`mailto:${email}`} className="text-sm font-bold text-primary hover:text-primary/80 transition-colors break-all">{email}</a>
                           </div>
                         </div>
 
