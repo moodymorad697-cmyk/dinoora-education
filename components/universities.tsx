@@ -3,6 +3,7 @@
 import { useLanguage } from "@/lib/language-context"
 import { motion } from "framer-motion"
 import { MapPin, Award, ArrowUpRight } from "lucide-react"
+import { UniversityFilter } from "@/components/university-filter"
 
 const universities = [
   { name: "Tsinghua University", country: "China", ranking: "Top 20 World", image: "https://images.unsplash.com/photo-1562774053-701939374585?w=400&q=80", flag: "🇨🇳" },
@@ -52,6 +53,9 @@ export function Universities() {
             }
           </p>
         </motion.div>
+
+        {/* University Filter */}
+        <UniversityFilter />
 
         {/* Universities Grid */}
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
