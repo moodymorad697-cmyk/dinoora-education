@@ -12,7 +12,7 @@ const services = [
     Icon: GraduationCap,
     image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80",
     features: {
-      en: ["500+ University Partnerships", "Priority Application Processing", "Program Selection Guidance", "Direct University Contact"],
+      en: ["500+ Prestigious Universities", "Priority Application Processing", "Program Selection Guidance", "Direct University Contact"],
       ar: ["500+ شراكة جامعية", "معالجة طلبات ذات أولوية", "إرشاد اختيار البرنامج", "تواصل مباشر مع الجامعات"]
     }
   },

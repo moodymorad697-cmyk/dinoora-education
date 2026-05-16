@@ -284,7 +284,7 @@ export function ReferralProgram() {
           </div>
           <h2 className="text-3xl font-bold text-white mb-4">
             {locale === "en" 
-              ? "Invite friends, earn rewards"
+              ? "Invite Friends, Earn Rewards"
               : "ادعُ أصدقاءك، اكسب مكافآت"
             }
           </h2>

@@ -156,7 +156,7 @@ export function WhyChooseUs() {
             <div className="inline-flex items-center gap-2 text-sm text-muted-foreground">
               <BadgeCheck className="w-4 h-4 text-primary" />
               <span className="font-semibold tracking-wider uppercase">
-                {t.whyChooseUs.label === "تميز دينورا" ? "اعتمادات وشراكات رسمية" : "Official Accreditations & Partnerships"}
+                {t.whyChooseUs.label === "تميز دينورا" ? "معدل النجاح" : "Success Rate"}
               </span>
             </div>
           </div>

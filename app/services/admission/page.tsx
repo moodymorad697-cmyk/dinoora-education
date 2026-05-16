@@ -202,7 +202,7 @@ export default function AdmissionPage() {
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-white text-center">
-            {locale === "en" ? "Partner Universities" : "الجامعات الشريكة"}
+            {locale === "en" ? "Prestigious Universities" : "جامعات مرموقة"}
           </h2>
           <p className="text-slate-400 text-center mb-12 max-w-2xl mx-auto">
             {locale === "en" 

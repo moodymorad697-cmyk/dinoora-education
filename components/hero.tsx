@@ -9,10 +9,10 @@ export function Hero() {
   const { t, dir, locale } = useLanguage()
 
   const stats = [
-    { Icon: GraduationCap, value: "500+", label: locale === "en" ? "Scholarship Applications" : "طلبات منح دراسية" },
-    { Icon: Building2, value: "50+", label: locale === "en" ? "Prestigious Universities" : "جامعات مرموقة" },
-    { Icon: Trophy, value: "85%", label: locale === "en" ? "Client Satisfaction" : "رضا العملاء" },
-    { Icon: Users, value: "3", label: locale === "en" ? "Countries We Serve" : "دول نخدمها" },
+    { Icon: GraduationCap, value: "500+", label: locale === "en" ? "Scholarship Applications" : "طلبات منح دراسية", color: "text-amber-400" },
+    { Icon: Building2, value: "50+", label: locale === "en" ? "Prestigious Universities" : "جامعات مرموقة", color: "text-emerald-400" },
+    { Icon: Trophy, value: "85%", label: locale === "en" ? "Client Satisfaction" : "رضا العملاء", color: "text-primary" },
+    { Icon: Users, value: "3", label: locale === "en" ? "Countries We Serve" : "دول نخدمها", color: "text-cyan-400" },
   ]
 
   // Multilingual support features
@@ -204,7 +204,7 @@ export function Hero() {
                     </div>
 
                     {/* Value */}
-                    <div className="text-3xl md:text-4xl font-bold text-white mb-1">
+                    <div className={`text-3xl md:text-4xl font-bold mb-1 ${stat.color || 'text-white'}`}>
                       {stat.value}
                     </div>
                     <div className="text-sm text-slate-400">{stat.label}</div>

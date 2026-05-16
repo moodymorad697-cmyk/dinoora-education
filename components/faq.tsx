@@ -49,7 +49,7 @@ const faqs = [
     category: "admission",
     question: { en: "Do you guarantee admission?", ar: "هل تضمن القبول؟" },
     answer: { 
-      en: "95%+ acceptance rate with our partner universities. If not accepted, get 100% money-back guarantee.", 
+      en: "95%+ acceptance rate with our prestigious universities. If not accepted, get 100% money-back guarantee.", 
       ar: "95%+ نسبة قبول مع جامعاتنا. إذا لم تقبل، استرداد 100% من المبلغ."
     },
     icon: "✅"

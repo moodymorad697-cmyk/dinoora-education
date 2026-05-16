@@ -96,11 +96,11 @@ export function TrustBadges() {
   )
 }
 
-// Certifications & Partnerships
+// Prestigious Universities
 export function Certifications() {
   const { locale } = useLanguage()
   
-  const partners = [
+  const universities = [
     "Tsinghua University",
     "Peking University",
     "University of Malaya",
@@ -118,13 +118,13 @@ export function Certifications() {
             {locale === "ar" ? "جامعات مرموقة" : "Prestigious Universities"}
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3 max-w-4xl mx-auto">
-            {partners.map((partner, index) => (
+            {universities.map((university, index) => (
               <div 
                 key={index}
                 className="flex items-center gap-2 p-3 rounded-lg bg-slate-950 border border-slate-800"
               >
                 <Building2 className="w-4 h-4 text-primary shrink-0" />
-                <span className="text-sm text-slate-300">{partner}</span>
+                <span className="text-sm text-slate-300">{university}</span>
               </div>
             ))}
           </div>
@@ -142,26 +142,10 @@ export function TrustStats() {
   const { locale } = useLanguage()
   
   const stats = [
-    { 
-      value: "85%", 
-      label: locale === "ar" ? "نسبة رضا العملاء" : "Client Satisfaction",
-      icon: ThumbsUp
-    },
-    { 
-      value: "50+", 
-      label: locale === "ar" ? "جامعة مرموقة" : "Prestigious Universities",
-      icon: Building2
-    },
-    { 
-      value: "3", 
-      label: locale === "ar" ? "دول نخدمها" : "Countries We Serve",
-      icon: Globe
-    },
-    { 
-      value: "24/7", 
-      label: locale === "ar" ? "دعم متواصل" : "Continuous Support",
-      icon: HeartHandshake
-    }
+    { value: "85%", label: locale === "en" ? "Client Satisfaction" : "رضا العملاء", color: "text-primary" },
+    { value: "98%", label: locale === "en" ? "Success Rate" : "نسبة النجاح", color: "text-emerald-400" },
+    { value: "500+", label: locale === "en" ? "Students Placed" : "طالب تم قبولهم", color: "text-amber-400" },
+    { value: "50+", label: locale === "en" ? "Universities" : "جامعة", color: "text-cyan-400" },
   ]
   
   return (
@@ -179,11 +163,8 @@ export function TrustStats() {
             >
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
               <div className="relative">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <stat.icon className="w-6 h-6 text-primary" />
-                </div>
-                <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
-                <div className="text-sm text-slate-400">{stat.label}</div>
+                <div className={`text-3xl font-bold mb-2 text-white`}>{stat.value}</div>
+                <div className={`text-sm ${stat.color}`}>{stat.label}</div>
               </div>
             </motion.div>
           ))}

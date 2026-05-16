@@ -44,7 +44,7 @@ export function Universities() {
             <span className="text-sm font-semibold text-primary">{t.universities.label}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground mb-4">
-            {locale === "en" ? "Partner Universities" : "الجامعات الشريكة"}
+            {locale === "en" ? "Prestigious Universities" : "جامعات مرموقة"}
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
             {locale === "en" 
