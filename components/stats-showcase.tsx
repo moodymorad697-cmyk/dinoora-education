@@ -173,13 +173,6 @@ export function StatsShowcase() {
               {locale === "en" ? "4.8/5 from 500+ reviews" : "4.8/5 من 500+ تقييم"}
             </span>
           </div>
-          
-          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 border border-slate-800">
-            <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span className="text-sm text-slate-300">
-              {locale === "en" ? "ISO 9001 Certified" : "معتمد ISO 9001"}
-            </span>
-          </div>
         </motion.div>
       </div>
     </section>

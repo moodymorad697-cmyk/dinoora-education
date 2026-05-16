@@ -19,8 +19,8 @@ export function OrganizationSchema() {
     "description": "Premium student recruitment and study abroad services for China, Malaysia, and Turkey. Expert admission, visa, and housing support.",
     "foundingDate": "2019",
     "sameAs": [
-      "https://facebook.com/dinoora",
-      "https://instagram.com/dinoora",
+      "https://facebook.com/dinoora.education",
+      "https://instagram.com/dinoora.education",
       "https://linkedin.com/company/dinoora",
       "https://twitter.com/dinoora"
     ],
@@ -166,8 +166,8 @@ export function LocalBusinessSchema() {
       "closes": "23:59"
     },
     "sameAs": [
-      "https://facebook.com/dinoora",
-      "https://instagram.com/dinoora",
+      "https://facebook.com/dinoora.education",
+      "https://instagram.com/dinoora.education",
       "https://linkedin.com/company/dinoora"
     ]
   }

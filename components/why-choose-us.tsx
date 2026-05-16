@@ -58,9 +58,6 @@ export function WhyChooseUs() {
   ]
 
   const badges = [
-    { label: "ISO 9001", sub: "Certified", color: "from-blue-500 to-cyan-500" },
-    { label: "ICEF", sub: "Accredited", color: "from-purple-500 to-pink-500" },
-    { label: "CSC", sub: "Partner", color: "from-amber-500 to-orange-500" },
     { label: "A+", sub: "Rating", color: "from-emerald-500 to-teal-500" },
   ]
 

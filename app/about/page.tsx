@@ -678,32 +678,10 @@ export default function AboutPage() {
             </h2>
             <p className="text-slate-400 max-w-2xl mx-auto">
               {locale === "en"
-                ? "Licensed and certified by relevant authorities"
-                : "مرخص ومعتمد من الجهات المختصة"
+                ? "Trusted partner for international education"
+                : "شريك موثوق للتعليم الدولي"
               }
             </p>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              { name: "ICEF Certified", desc: locale === "en" ? "International Education" : "تعليم دولي" },
-              { name: "NAFSA Member", desc: locale === "en" ? "Global Education" : "تعليم عالمي" },
-              { name: "ISO 9001:2015", desc: locale === "en" ? "Quality Management" : "إدارة الجودة" },
-              { name: "Licensed Agent", desc: locale === "en" ? "Official Representative" : "ممثل رسمي" },
-            ].map((cert, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="flex flex-col items-center text-center p-4 rounded-xl bg-slate-900/50 border border-slate-800"
-              >
-                <CheckCircle className="w-10 h-10 text-primary mb-3" />
-                <h3 className="font-bold text-white mb-1">{cert.name}</h3>
-                <p className="text-sm text-slate-400">{cert.desc}</p>
-              </motion.div>
-            ))}
           </div>
         </div>
       </section>

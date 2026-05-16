@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Mail, Phone, MapPin, MessageCircle, GraduationCap, Instagram, Facebook, Music, Youtube, Send, ArrowRight } from "lucide-react"
+import { Mail, Phone, MapPin, MessageCircle, GraduationCap, Instagram, Facebook, Music, Send, ArrowRight } from "lucide-react"
 import { useLanguage } from "@/lib/language-context"
 import { useState } from "react"
 
@@ -62,23 +62,18 @@ export function Footer() {
   const socialLinks = [
     {
       icon: Instagram,
-      href: process.env.NEXT_PUBLIC_INSTAGRAM_URL || "https://instagram.com",
+      href: "https://instagram.com/dinoora.education",
       label: "Instagram"
     },
     {
       icon: Facebook,
-      href: process.env.NEXT_PUBLIC_FACEBOOK_URL || "https://facebook.com",
+      href: "https://facebook.com/dinoora.education",
       label: "Facebook"
     },
     {
       icon: Music,
-      href: process.env.NEXT_PUBLIC_TIKTOK_URL || "https://tiktok.com",
+      href: "https://tiktok.com/@dinoora.education",
       label: "TikTok"
-    },
-    {
-      icon: Youtube,
-      href: "https://youtube.com/@dinoora",
-      label: "YouTube"
     },
   ]
 
