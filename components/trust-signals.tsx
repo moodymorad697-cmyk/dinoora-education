@@ -101,10 +101,10 @@ export function Certifications() {
   const { locale } = useLanguage()
   
   const certifications = [
-    { name: locale === "ar" ? "ICEF Certified" : "ICEF Certified", desc: locale === "ar" ? "تعليم دولي" : "International Education" },
-    { name: locale === "ar" ? "NAFSA Member" : "NAFSA Member", desc: locale === "ar" ? "تعليم عالمي" : "Global Education" },
+    { name: locale === "ar" ? "معتمد من ICEF" : "ICEF Certified", desc: locale === "ar" ? "تعليم دولي" : "International Education" },
+    { name: locale === "ar" ? "عضو NAFSA" : "NAFSA Member", desc: locale === "ar" ? "تعليم عالمي" : "Global Education" },
     { name: locale === "ar" ? "ISO 9001:2015" : "ISO 9001:2015", desc: locale === "ar" ? "إدارة الجودة" : "Quality Management" },
-    { name: locale === "ar" ? "Licensed Agent" : "Licensed Agent", desc: locale === "ar" ? "وكيل معتمد" : "Authorized Agent" },
+    { name: locale === "ar" ? "وكيل معتمد" : "Licensed Agent", desc: locale === "ar" ? "وكيل رسمي" : "Authorized Agent" },
   ]
   
   const partners = [

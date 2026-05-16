@@ -204,13 +204,13 @@ export default function AboutPage() {
                 <p>
                   {locale === "en"
                     ? "Today, we operate from two international offices - China and Malaysia - serving students from over 3 countries. Our team speaks Arabic, English, Chinese, and Turkish, ensuring seamless communication throughout your journey."
-                    : "اليوم، نعمل من مكتبين دوليين في الصين وماليزيا، ونخدم الطلاب من أكثر من 3 دول. يتحدث فريقنا العربية والإنجليزية والصينية والتركية، مما يضمن تواصلاً سلساً طوال رحلتك."
+                    : "اليوم، نعمل من مكتبين دوليين في الصين وماليزيا، ونخدم الطلاب من 3 دول. يتحدث فريقنا العربية والإنجليزية والصينية والتركية، مما يضمن تواصلاً سلساً طوال رحلتك."
                   }
                 </p>
                 <p>
                   {locale === "en"
                     ? "We've built strong partnerships with 50+ prestigious universities and maintained an 85% client satisfaction rate. Our commitment to excellence has made us the preferred choice for hundreds of families seeking quality education in China and Malaysia."
-                    : "بنينا شراكات قوية مع 50+ جامعة مرموقة وحافظنا على معدل رضا العملاء 85%. التزامنا بالتميز جعلنا الخيار المفضل لمئات العائلات التي تسعى للحصول على تعليم نوعي في الصين وماليزيا."
+                    : "بنينا شراكات قوية مع أكثر من 50 جامعة مرموقة وحافظنا على معدل رضا العملاء 85%. التزامنا بالتميز جعلنا الخيار المفضل لمئات العائلات التي تسعى للحصول على تعليم نوعي في الصين وماليزيا."
                   }
                 </p>
               </div>
@@ -281,12 +281,12 @@ export default function AboutPage() {
               {
                 icon: GraduationCap,
                 title: { en: "Expert Guidance", ar: "إرشاد خبير" },
-                desc: { en: "Years of experience in China & Malaysia admissions", ar: "سنوات من الخبرة في القبول في الصين وماليزيا" }
+                desc: { en: "Years of experience in China & Malaysia admissions", ar: "سنوات من الخبرة في القبول الجامعي في الصين وماليزيا" }
               },
               {
                 icon: Globe,
                 title: { en: "Global Network", ar: "شبكة عالمية" },
-                desc: { en: "Direct partnerships with 50+ prestigious universities", ar: "شراكات مباشرة مع 50+ جامعة مرموقة" }
+                desc: { en: "Direct partnerships with 50+ prestigious universities", ar: "شراكات مباشرة مع أكثر من 50 جامعة مرموقة" }
               },
               {
                 icon: Shield,
