@@ -149,10 +149,10 @@ export function Testimonials() {
         {/* Stats Row */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
-            { value: "2,000+", label: locale === "ar" ? "طلب منحة" : "Scholarship Applications" },
-            { value: "$2M+", label: locale === "ar" ? "منح تم تأمينها" : "Scholarships Secured" },
-            { value: "98%", label: locale === "ar" ? "نسبة القبول" : "Acceptance Rate" },
-            { value: "500+", label: locale === "ar" ? "جامعة شريكة" : "Partner Universities" },
+            { value: "500+", label: locale === "ar" ? "طلب منحة" : "Scholarship Applications" },
+            { value: "50+", label: locale === "ar" ? "جامعة مرموقة" : "Prestigious Universities" },
+            { value: "85%", label: locale === "ar" ? "رضا العملاء" : "Client Satisfaction" },
+            { value: "3", label: locale === "ar" ? "دول نخدمها" : "Countries We Serve" },
           ].map((stat, index) => (
             <motion.div 
               key={index}

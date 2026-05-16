@@ -9,10 +9,10 @@ export function Hero() {
   const { t, dir, locale } = useLanguage()
 
   const stats = [
-    { Icon: GraduationCap, value: "2,000+", label: locale === "en" ? "Scholarship Applications" : "طلبات منح دراسية" },
-    { Icon: Building2, value: "500+", label: locale === "en" ? "Partner Universities" : "جامعات شريكة" },
-    { Icon: Trophy, value: "98%", label: locale === "en" ? "Success Rate" : "نسبة النجاح" },
-    { Icon: Users, value: "24/7", label: locale === "en" ? "Multilingual Support" : "دعم متعدد اللغات" },
+    { Icon: GraduationCap, value: "500+", label: locale === "en" ? "Scholarship Applications" : "طلبات منح دراسية" },
+    { Icon: Building2, value: "50+", label: locale === "en" ? "Prestigious Universities" : "جامعات مرموقة" },
+    { Icon: Trophy, value: "85%", label: locale === "en" ? "Client Satisfaction" : "رضا العملاء" },
+    { Icon: Users, value: "3", label: locale === "en" ? "Countries We Serve" : "دول نخدمها" },
   ]
 
   // Multilingual support features

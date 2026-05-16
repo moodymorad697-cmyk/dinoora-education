@@ -65,11 +65,11 @@ const teamMembers = [
 ]
 
 const stats = [
-  { value: "5+", label: { en: "Years Experience", ar: "سنوات خبرة" }, icon: Clock },
-  { value: "2000+", label: { en: "Students Helped", ar: "طالب تم مساعدتهم" }, icon: Users },
-  { value: "98%", label: { en: "Success Rate", ar: "نسبة النجاح" }, icon: TrendingUp },
+  { value: "3+", label: { en: "Years Experience", ar: "سنوات خبرة" }, icon: Clock },
+  { value: "500+", label: { en: "Students Helped", ar: "طالب تم مساعدتهم" }, icon: Users },
+  { value: "85%", label: { en: "Client Satisfaction", ar: "رضا العملاء" }, icon: TrendingUp },
   { value: "3", label: { en: "Countries", ar: "دول" }, icon: Globe },
-  { value: "500+", label: { en: "Partner Universities", ar: "جامعة شريكة" }, icon: GraduationCap },
+  { value: "50+", label: { en: "Prestigious Universities", ar: "جامعة مرموقة" }, icon: GraduationCap },
   { value: "24/7", label: { en: "Support", ar: "دعم" }, icon: Shield },
 ]
 

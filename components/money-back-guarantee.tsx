@@ -211,7 +211,7 @@ export function MoneyBackGuarantee() {
           </div>
           <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 border border-slate-800">
             <CheckCircle className="w-4 h-4 text-emerald-400" />
-            <span className="text-sm text-slate-300">{locale === "en" ? "Trusted by 2000+ Students" : "موثوق من 2000+ طالب"}</span>
+            <span className="text-sm text-slate-300">{locale === "en" ? "Trusted by 500+ Students" : "موثوق من 500+ طالب"}</span>
           </div>
           <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 border border-slate-800">
             <Award className="w-4 h-4 text-amber-400" />

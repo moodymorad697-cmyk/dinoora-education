@@ -679,9 +679,6 @@ Contact us for free consultation: +86 155 8723 7864`,
 }
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
-  // Get locale from URL or default to English
-  const searchParams = await Promise.resolve({})
-  const locale: 'en' | 'ar' = 'en' // Default to English
   const { slug } = await params
   const article = articles[slug]
 
@@ -689,6 +686,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     notFound()
   }
 
+  // Default to English - locale handling will be done via client-side language toggle
+  const locale: 'en' | 'ar' = 'en'
   const ContentIcon = article.icon
   const content = article.content[locale]
   const lines = content.split('\n')
