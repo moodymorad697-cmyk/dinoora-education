@@ -686,7 +686,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     notFound()
   }
 
-  // Default to English - locale handling will be done via client-side language toggle
+  // Default to English
   const locale: 'en' | 'ar' = 'en'
   const ContentIcon = article.icon
   const content = article.content[locale]
@@ -752,7 +752,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <section className="py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="prose prose-invert prose-lg max-w-none">
-            {lines.map((line, index) => {
+            {lines.map((line: string, index: number) => {
               // Heading
               if (line.startsWith('## ')) {
                 return (
@@ -770,11 +770,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               }
               // Table row
               if (line.startsWith('|') && line.includes('|')) {
-                const cells = line.split('|').filter(c => c.trim()).map(c => c.trim())
+                const cells = line.split('|').filter((c: string) => c.trim()).map((c: string) => c.trim())
                 if (cells[0] !== '---' && cells[0] !== '--------' && cells[0] !== '-------') {
                   return (
                     <div key={index} className="grid grid-cols-2 gap-4 py-2 border-b border-slate-800">
-                      {cells.map((cell, i) => (
+                      {cells.map((cell: string, i: number) => (
                         <div key={i} className={i === 0 ? 'font-semibold text-white' : 'text-slate-300'}>
                           {cell}
                         </div>
@@ -819,7 +819,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 const parts = line.split('**')
                 return (
                   <p key={index} className="text-slate-300 my-2">
-                    {parts.map((part, i) => 
+                    {parts.map((part: string, i: number) => 
                       i % 2 === 1 ? <strong key={i} className="text-white">{part}</strong> : part
                     )}
                   </p>

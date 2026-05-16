@@ -3,23 +3,26 @@
 import { useLanguage } from "@/lib/language-context"
 import { motion } from "framer-motion"
 import { 
-  Award, 
   Users, 
+  GraduationCap, 
+  Building2, 
   Globe, 
-  Heart, 
-  Target, 
   Shield,
-  Building2,
+  Clock,
+  TrendingUp,
+  Heart,
   MapPin,
   Phone,
   Mail,
-  CheckCircle,
-  GraduationCap,
-  Clock,
-  TrendingUp
+  Home,
+  MessageCircle,
+  Target,
+  Award,
+  CheckCircle
 } from "lucide-react"
 import { WhatsAppButton, ApplyButton } from "@/components/unified-cta"
 import Image from "next/image"
+import Link from "next/link"
 
 const teamMembers = [
   {
@@ -113,18 +116,28 @@ export default function AboutPage() {
 
   return (
     <main className="min-h-screen bg-slate-950">
-      {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-amber-500/10 via-transparent to-slate-950" />
+      {/* Hero */}
+      <section className="relative py-20 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/10 to-transparent" />
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl" />
         
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Back to Home */}
+          <Link 
+            href="/"
+            className="inline-flex items-center gap-2 text-slate-400 hover:text-amber-400 transition-colors mb-6"
+          >
+            <Home className="w-4 h-4" />
+            {locale === "en" ? "Back to Home" : "العودة للرئيسية"}
+          </Link>
+          
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-          >
+            className="text-center"
+          >  
             <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
               {locale === "en" ? "About DINOORA" : "عن دينورا"}
             </span>
@@ -190,36 +203,16 @@ export default function AboutPage() {
                 </p>
                 <p>
                   {locale === "en"
-                    ? "Today, we operate from two international offices - China and Malaysia - serving students from over 50 countries. Our team speaks Arabic, English, Chinese, and Turkish, ensuring seamless communication throughout your journey."
-                    : "اليوم، نعمل من مكتبين دوليين - الصين وماليزيا - خدمة طلاب من أكثر من 50 دولة. فريقنا يتحدث العربية والإنجليزية والصينية والتركية، مما يضمن تواصلاً سلساً طوال رحلتك."
+                    ? "Today, we operate from two international offices - China and Malaysia - serving students from over 3 countries. Our team speaks Arabic, English, Chinese, and Turkish, ensuring seamless communication throughout your journey."
+                    : "اليوم، نعمل من مكتبين دوليين في الصين وماليزيا، ونخدم الطلاب من أكثر من 3 دول. يتحدث فريقنا العربية والإنجليزية والصينية والتركية، مما يضمن تواصلاً سلساً طوال رحلتك."
                   }
                 </p>
                 <p>
                   {locale === "en"
-                    ? "We've built strong partnerships with 500+ universities and maintained a 98% success rate in student placements. Our commitment to excellence has made us the preferred choice for thousands of families."
-                    : "بنينا شراكات قوية مع أكثر من 500 جامعة وحافظنا على نسبة نجاح 98% في تسكين الطلاب. التزامنا بالتميز جعلنا الخيار المفضل لآلاف العائلات."
+                    ? "We've built strong partnerships with 50+ prestigious universities and maintained an 85% client satisfaction rate. Our commitment to excellence has made us the preferred choice for hundreds of families seeking quality education in China and Malaysia."
+                    : "بنينا شراكات قوية مع 50+ جامعة مرموقة وحافظنا على معدل رضا العملاء 85%. التزامنا بالتميز جعلنا الخيار المفضل لمئات العائلات التي تسعى للحصول على تعليم نوعي في الصين وماليزيا."
                   }
                 </p>
-              </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative"
-            >
-              <div className="relative rounded-2xl overflow-hidden">
-                <div className="aspect-video bg-slate-800 rounded-2xl flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <Building2 className="w-16 h-16 text-primary mx-auto mb-4" />
-                    <p className="text-slate-400">
-                      {locale === "en" ? "Our China Office" : "مكتبنا في الصين"}
-                    </p>
-                    <p className="text-sm text-slate-500 mt-2">
-                      Yiwu City, Zhejiang Province
-                    </p>
-                  </div>
-                </div>
               </div>
             </motion.div>
           </div>
@@ -268,47 +261,156 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Our Team */}
+      {/* Why Choose Us */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-white mb-4">
-              {locale === "en" ? "Meet Our Team" : "تعرف على فريقنا"}
+              {locale === "en" ? "Why Choose DINOORA?" : "لماذا تختار دينورا؟"}
             </h2>
             <p className="text-slate-400 max-w-2xl mx-auto">
               {locale === "en"
-                ? "Experienced professionals dedicated to your success"
-                : "محترفون ذوو خبرة مكرسون لنجاحك"
+                ? "We combine deep local expertise with global reach to deliver exceptional results"
+                : "نجمع بين الخبرة المحلية العميقة والوصول العالمي لتقديم نتائج استثنائية"
               }
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {teamMembers.map((member, index) => (
+            {[
+              {
+                icon: GraduationCap,
+                title: { en: "Expert Guidance", ar: "إرشاد خبير" },
+                desc: { en: "Years of experience in China & Malaysia admissions", ar: "سنوات من الخبرة في القبول في الصين وماليزيا" }
+              },
+              {
+                icon: Globe,
+                title: { en: "Global Network", ar: "شبكة عالمية" },
+                desc: { en: "Direct partnerships with 50+ prestigious universities", ar: "شراكات مباشرة مع 50+ جامعة مرموقة" }
+              },
+              {
+                icon: Shield,
+                title: { en: "Trusted Service", ar: "خدمة موثوقة" },
+                desc: { en: "85% client satisfaction rate", ar: "معدل رضا العملاء 85%" }
+              },
+              {
+                icon: MessageCircle,
+                title: { en: "24/7 Support", ar: "دعم على مدار الساعة" },
+                desc: { en: "WhatsApp support in Arabic, Chinese & English", ar: "دعم واتساب بالعربية والصينية والإنجليزية" }
+              }
+            ].map((item, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="group"
+                className="p-6 rounded-xl bg-slate-900 border border-slate-800 hover:border-primary/50 transition-all"
               >
-                <div className="relative rounded-xl bg-slate-900 border border-slate-800 overflow-hidden hover:border-primary/50 transition-all">
-                  <div className="aspect-square bg-slate-800 flex items-center justify-center">
-                    <Users className="w-20 h-20 text-slate-600" />
-                  </div>
-                  <div className="p-4">
-                    <h3 className="font-bold text-white mb-1">{member.name}</h3>
-                    <p className="text-primary text-sm mb-2">
-                      {locale === "en" ? member.role.en : member.role.ar}
-                    </p>
-                    <p className="text-slate-400 text-xs">
-                      {locale === "en" ? member.bio.en : member.bio.ar}
-                    </p>
-                  </div>
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                  <item.icon className="w-6 h-6 text-primary" />
                 </div>
+                <h3 className="font-bold text-white mb-2">{locale === "en" ? item.title.en : item.title.ar}</h3>
+                <p className="text-slate-400 text-sm">{locale === "en" ? item.desc.en : item.desc.ar}</p>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Focus on China & Malaysia */}
+      <section className="py-20 bg-slate-900/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white mb-4">
+              {locale === "en" ? "Our Focus: China & Malaysia" : "تركيزنا: الصين وماليزيا"}
+            </h2>
+            <p className="text-slate-400 max-w-2xl mx-auto">
+              {locale === "en"
+                ? "Specialized expertise in two of Asia's leading education destinations"
+                : "خبرة متخصصة في وجهتين رائدتين للتعليم في آسيا"
+              }
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* China */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="p-8 rounded-2xl bg-slate-950 border border-slate-800"
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <span className="text-4xl">🇨🇳</span>
+                <h3 className="text-2xl font-bold text-white">{locale === "en" ? "China" : "الصين"}</h3>
+              </div>
+              <div className="space-y-4 text-slate-400">
+                <p>
+                  {locale === "en"
+                    ? "China offers world-class universities with affordable tuition and generous government scholarships. Our China office in Yiwu provides direct access to universities and scholarship programs."
+                    : "تقدم الصين جامعات عالمية المستوى مع رسوم دراسية ميسورة ومنح حكومية سخية. مكتبنا في ييوو يوفر وصولاً مباشراً للجامعات وبرامج المنح."
+                  }
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                    <span>{locale === "en" ? "CSC Government Scholarships" : "منح حكومية CSC"}</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                    <span>{locale === "en" ? "Top-ranked universities like Peking & Tsinghua" : "جامعات مرموقة مثل بكين وتسينغهوا"}</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                    <span>{locale === "en" ? "Affordable living costs" : "تكاليف معيشة ميسورة"}</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                    <span>{locale === "en" ? "Safe and welcoming environment" : "بيئة آمنة ومرحبة"}</span>
+                  </li>
+                </ul>
+              </div>
+            </motion.div>
+
+            {/* Malaysia */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="p-8 rounded-2xl bg-slate-950 border border-slate-800"
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <span className="text-4xl">🇲🇾</span>
+                <h3 className="text-2xl font-bold text-white">{locale === "en" ? "Malaysia" : "ماليزيا"}</h3>
+              </div>
+              <div className="space-y-4 text-slate-400">
+                <p>
+                  {locale === "en"
+                    ? "Malaysia is a multicultural hub with excellent universities and a straightforward visa process. Our Malaysia office in Kuala Lumpur ensures smooth transitions for international students."
+                    : "ماليزيا مركز متعدد الثقافات بجامعات ممتازة وعملية تأشيرة مباشرة. مكتبنا في كوالالمبور يضمن انتقالاً سلساً للطلاب الدوليين."
+                  }
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                    <span>{locale === "en" ? "EMGS streamlined visa process" : "عملية تأشيرة مبسطة عبر EMGS"}</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                    <span>{locale === "en" ? "Top universities like University of Malaya" : "جامعات مرموقة مثل جامعة مالايا"}</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                    <span>{locale === "en" ? "English-taught programs" : "برامج باللغة الإنجليزية"}</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                    <span>{locale === "en" ? "Halal food and Muslim-friendly environment" : "طعام حلال وبيئة مسلمة"}</span>
+                  </li>
+                </ul>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
