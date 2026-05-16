@@ -2,8 +2,7 @@
 
 import { useLanguage } from "@/lib/language-context"
 import { motion } from "framer-motion"
-import { MapPin, Award, ArrowUpRight } from "lucide-react"
-import { UniversityFilter } from "@/components/university-filter"
+import { GraduationCap, MapPin, ExternalLink, ArrowRight, Award } from "lucide-react"
 
 const universities = [
   { name: "Tsinghua University", country: "China", ranking: "Top 20 World", image: "https://images.unsplash.com/photo-1562774053-701939374585?w=400&q=80", flag: "🇨🇳" },
@@ -54,9 +53,6 @@ export function Universities() {
           </p>
         </motion.div>
 
-        {/* University Filter */}
-        <UniversityFilter />
-
         {/* Universities Grid */}
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {universities.map((uni, index) => (
@@ -83,7 +79,7 @@ export function Universities() {
               <div className="p-4">
                 <div className="flex items-center justify-between mb-2">
                   <h3 className="font-semibold text-foreground line-clamp-1">{uni.name}</h3>
-                  <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                  <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
                 </div>
                 <div className="flex items-center gap-3 text-xs">
                   <div className="flex items-center gap-1 text-muted-foreground">

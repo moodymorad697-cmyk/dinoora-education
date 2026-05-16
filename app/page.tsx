@@ -14,8 +14,6 @@ import { Footer } from "@/components/footer"
 import { TrustBadges, TrustStats, Certifications, Guarantees, SocialProof } from "@/components/trust-signals"
 import { StatsShowcase } from "@/components/stats-showcase"
 import { SuccessStories, SuccessStats, MoneyBackGuarantee, ReferralProgram } from "@/components/success-stories"
-import { StudentGallery } from "@/components/student-gallery"
-import { UniversityComparison } from "@/components/university-comparison"
 
 export default function Home() {
   return (
@@ -37,10 +35,6 @@ export default function Home() {
       <Destinations />
       <Programs />
       <Universities />
-      
-      {/* Student Gallery & Comparison */}
-      <StudentGallery />
-      <UniversityComparison />
       
       {/* Trust Building */}
       <Certifications />
