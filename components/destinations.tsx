@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, Star, Building2, BookOpen, Award } from "lucide-react"
 import Link from "next/link"
 import { destinationImages } from "@/lib/images"
+import { getCountryColors } from "@/lib/country-colors"
 
 // Verified working education & landmark images for each country
 const images = {
@@ -52,6 +53,7 @@ export function Destinations() {
           <div className="lg:row-span-2">
             {destinations.filter(d => d.featured).map((dest) => {
               const country = t.destinations.countries[dest.key]
+              const colors = getCountryColors(dest.key)
               return (
                 <div
                   key={dest.key}
@@ -71,14 +73,14 @@ export function Destinations() {
                   <div className="relative h-full flex flex-col justify-end p-8 min-h-[600px]">
                     {/* Featured Badge */}
                     <div className={`absolute top-6 ${dir === "rtl" ? "right-6" : "left-6"}`}>
-                      <div className="gold-gradient px-4 py-2 rounded-full flex items-center gap-2">
-                        <Star className="w-4 h-4 text-primary-foreground" />
-                        <span className="text-sm font-semibold text-primary-foreground">{t.destinations.featured}</span>
+                      <div className={`bg-gradient-to-r ${colors.primary} px-4 py-2 rounded-full flex items-center gap-2`}>
+                        <Star className="w-4 h-4 text-white" />
+                        <span className="text-sm font-semibold text-white">{t.destinations.featured}</span>
                       </div>
                     </div>
 
                     <div>
-                      <h3 className="text-4xl font-bold mb-2 gradient-text">{country.name}</h3>
+                      <h3 className={`text-4xl font-bold mb-2 bg-gradient-to-r ${colors.primary} bg-clip-text text-transparent`}>{country.name}</h3>
                       <p className="text-lg text-primary/80 font-medium mb-4">{country.tagline}</p>
                       <p className="text-muted-foreground mb-6 leading-relaxed">
                         {country.description}
@@ -89,7 +91,7 @@ export function Destinations() {
                         {country.highlights.map((highlight: string, i: number) => (
                           <span
                             key={i}
-                            className="px-3 py-1.5 bg-primary/10 border border-primary/20 rounded-full text-sm text-primary"
+                            className={`px-3 py-1.5 ${colors.primaryLight} ${colors.primaryBorder} rounded-full text-sm ${colors.primaryText}`}
                           >
                             {highlight}
                           </span>
@@ -98,23 +100,23 @@ export function Destinations() {
 
                       {/* Stats */}
                       <div className="grid grid-cols-3 gap-4 mb-6">
-                        <div className="glass rounded-xl p-4 text-center">
-                          <Building2 className="w-5 h-5 text-primary mx-auto mb-2" />
+                        <div className={`glass rounded-xl p-4 text-center ${colors.primaryHover}`}>
+                          <Building2 className={`w-5 h-5 ${colors.primaryText} mx-auto mb-2`} />
                           <div className="text-xl font-bold text-foreground">{country.stats.universities}</div>
                           <div className="text-xs text-muted-foreground">{t.destinations.universities}</div>
                         </div>
-                        <div className="glass rounded-xl p-4 text-center">
-                          <BookOpen className="w-5 h-5 text-primary mx-auto mb-2" />
+                        <div className={`glass rounded-xl p-4 text-center ${colors.primaryHover}`}>
+                          <BookOpen className={`w-5 h-5 ${colors.primaryText} mx-auto mb-2`} />
                           <div className="text-xl font-bold text-foreground">{country.stats.programs}</div>
                           <div className="text-xs text-muted-foreground">Programs</div>
                         </div>
-                        <div className="glass rounded-xl p-4 text-center">
-                          <Award className="w-5 h-5 text-primary mx-auto mb-2" />
+                        <div className={`glass rounded-xl p-4 text-center ${colors.primaryHover}`}>
+                          <Award className={`w-5 h-5 ${colors.primaryText} mx-auto mb-2`} />
                           <div className="text-xs font-bold text-foreground leading-tight">{country.stats.scholarships}</div>
                         </div>
                       </div>
 
-                      <Button className="gold-gradient text-primary-foreground w-full hover:opacity-90" asChild>
+                      <Button className={`bg-gradient-to-r ${colors.primary} text-white w-full hover:opacity-90`} asChild>
                         <Link href={`/destinations/${dest.key}`}>
                           {t.destinations.explore} {country.name}
                           <ArrowRight className={`w-4 h-4 ${dir === "rtl" ? "mr-2 rotate-180" : "ml-2"}`} />
@@ -131,6 +133,7 @@ export function Destinations() {
           <div className="flex flex-col gap-8">
             {destinations.filter(d => !d.featured).map((dest) => {
               const country = t.destinations.countries[dest.key]
+              const colors = getCountryColors(dest.key)
               return (
                 <div
                   key={dest.key}
@@ -148,8 +151,8 @@ export function Destinations() {
 
                   {/* Content */}
                   <div className="relative p-6 min-h-[280px] flex flex-col justify-end">
-                    <h3 className="text-2xl font-bold mb-1 text-foreground">{country.name}</h3>
-                    <p className="text-sm text-primary font-medium mb-3">{country.tagline}</p>
+                    <h3 className={`text-2xl font-bold mb-1 bg-gradient-to-r ${colors.primary} bg-clip-text text-transparent`}>{country.name}</h3>
+                    <p className={`text-sm ${colors.primaryText} font-medium mb-3`}>{country.tagline}</p>
                     <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
                       {country.description}
                     </p>
@@ -157,16 +160,16 @@ export function Destinations() {
                     {/* Quick Stats */}
                     <div className="flex items-center gap-4 mb-4">
                       <div className="flex items-center gap-2">
-                        <Building2 className="w-4 h-4 text-primary" />
+                        <Building2 className={`w-4 h-4 ${colors.primaryText}`} />
                         <span className="text-sm text-foreground font-medium">{country.stats.universities}</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <BookOpen className="w-4 h-4 text-primary" />
+                        <BookOpen className={`w-4 h-4 ${colors.primaryText}`} />
                         <span className="text-sm text-foreground font-medium">{country.stats.programs}</span>
                       </div>
                     </div>
 
-                    <Button variant="outline" className="w-full border-border/50 hover:bg-secondary/50" asChild>
+                    <Button variant="outline" className={`w-full ${colors.primaryBorder} ${colors.primaryHover} ${colors.primaryText}`} asChild>
                       <Link href={`/destinations/${dest.key}`}>
                         {t.destinations.explore}
                         <ArrowRight className={`w-4 h-4 ${dir === "rtl" ? "mr-2 rotate-180" : "ml-2"}`} />

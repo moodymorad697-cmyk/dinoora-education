@@ -21,6 +21,7 @@ import {
   CheckCircle
 } from "lucide-react"
 import { WhatsAppButton, ApplyButton } from "@/components/unified-cta"
+import { Breadcrumbs } from "@/components/breadcrumbs"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -116,21 +117,16 @@ export default function AboutPage() {
 
   return (
     <main className="min-h-screen bg-slate-950">
-      {/* Hero */}
-      <section className="relative py-20 overflow-hidden">
+      {/* Breadcrumbs */}
+      <Breadcrumbs />
+
+      {/* Hero Section */}
+      <section className="relative py-20 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/10 to-transparent" />
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl" />
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Back to Home */}
-          <Link 
-            href="/"
-            className="inline-flex items-center gap-2 text-slate-400 hover:text-amber-400 transition-colors mb-6"
-          >
-            <Home className="w-4 h-4" />
-            {locale === "en" ? "Back to Home" : "العودة للرئيسية"}
-          </Link>
           
           <motion.div
             initial={{ opacity: 0, y: 20 }}
