@@ -13,6 +13,7 @@ import { EnhancedApplicationForm } from "@/components/enhanced-application-form"
 import { Footer } from "@/components/footer"
 import { TrustBadges, TrustStats, Certifications, Guarantees, SocialProof } from "@/components/trust-signals"
 import { StatsShowcase } from "@/components/stats-showcase"
+import { SuccessStories, SuccessStats, MoneyBackGuarantee, ReferralProgram } from "@/components/success-stories"
 
 export default function Home() {
   return (
@@ -37,7 +38,11 @@ export default function Home() {
       
       {/* Trust Building */}
       <Certifications />
+      <SuccessStories />
+      <SuccessStats />
       <Testimonials />
+      <MoneyBackGuarantee />
+      <ReferralProgram />
       <Guarantees />
       <SocialProof />
       

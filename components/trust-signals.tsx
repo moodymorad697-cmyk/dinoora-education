@@ -100,13 +100,6 @@ export function TrustBadges() {
 export function Certifications() {
   const { locale } = useLanguage()
   
-  const certifications = [
-    { name: locale === "ar" ? "معتمد من ICEF" : "ICEF Certified", desc: locale === "ar" ? "تعليم دولي" : "International Education" },
-    { name: locale === "ar" ? "عضو NAFSA" : "NAFSA Member", desc: locale === "ar" ? "تعليم عالمي" : "Global Education" },
-    { name: locale === "ar" ? "ISO 9001:2015" : "ISO 9001:2015", desc: locale === "ar" ? "إدارة الجودة" : "Quality Management" },
-    { name: locale === "ar" ? "وكيل معتمد" : "Licensed Agent", desc: locale === "ar" ? "وكيل رسمي" : "Authorized Agent" },
-  ]
-  
   const partners = [
     "Tsinghua University",
     "Peking University",
@@ -119,52 +112,25 @@ export function Certifications() {
   return (
     <section className="py-16 bg-slate-900/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 gap-12">
-          {/* Certifications */}
-          <div>
-            <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-              <BadgeCheck className="w-6 h-6 text-primary" />
-              {locale === "ar" ? "الشهادات والاعتمادات" : "Certifications & Accreditations"}
-            </h3>
-            <div className="space-y-4">
-              {certifications.map((cert, index) => (
-                <div 
-                  key={index}
-                  className="flex items-center gap-4 p-4 rounded-lg bg-slate-950 border border-slate-800"
-                >
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                    <CheckCircle className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-white">{cert.name}</h4>
-                    <p className="text-sm text-slate-500">{cert.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+        <div className="text-center mb-12">
+          <h3 className="text-xl font-bold text-white mb-6 flex items-center justify-center gap-2">
+            <GraduationCap className="w-6 h-6 text-primary" />
+            {locale === "ar" ? "جامعات مرموقة" : "Prestigious Universities"}
+          </h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 max-w-4xl mx-auto">
+            {partners.map((partner, index) => (
+              <div 
+                key={index}
+                className="flex items-center gap-2 p-3 rounded-lg bg-slate-950 border border-slate-800"
+              >
+                <Building2 className="w-4 h-4 text-primary shrink-0" />
+                <span className="text-sm text-slate-300">{partner}</span>
+              </div>
+            ))}
           </div>
-          
-          {/* Prestigious Universities */}
-          <div>
-            <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-              <GraduationCap className="w-6 h-6 text-primary" />
-              {locale === "ar" ? "جامعات مرموقة" : "Prestigious Universities"}
-            </h3>
-            <div className="grid grid-cols-2 gap-3">
-              {partners.map((partner, index) => (
-                <div 
-                  key={index}
-                  className="flex items-center gap-2 p-3 rounded-lg bg-slate-950 border border-slate-800"
-                >
-                  <Building2 className="w-4 h-4 text-primary shrink-0" />
-                  <span className="text-sm text-slate-300">{partner}</span>
-                </div>
-              ))}
-            </div>
-            <p className="mt-4 text-sm text-slate-500 text-center">
-              {locale === "ar" ? "و جامعات أخرى مرموقة..." : "And other prestigious universities..."}
-            </p>
-          </div>
+          <p className="mt-4 text-sm text-slate-500 text-center">
+            {locale === "ar" ? "و جامعات أخرى مرموقة..." : "And other prestigious universities..."}
+          </p>
         </div>
       </div>
     </section>

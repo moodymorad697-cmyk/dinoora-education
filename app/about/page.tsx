@@ -248,9 +248,7 @@ export default function AboutPage() {
                   <value.icon className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white mb-2">
-                    {locale === "en" ? value.title.en : value.title.ar}
-                  </h3>
+                  <h3 className="font-bold text-white mb-2">{locale === "en" ? value.title.en : value.title.ar}</h3>
                   <p className="text-slate-400 text-sm">
                     {locale === "en" ? value.desc.en : value.desc.ar}
                   </p>
@@ -411,6 +409,201 @@ export default function AboutPage() {
                 </ul>
               </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits of Studying Abroad */}
+      <section className="py-20 bg-slate-950">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white mb-4">
+              {locale === "en" ? "Why Study Abroad?" : "لماذا الدراسة في الخارج؟"}
+            </h2>
+            <p className="text-slate-400 max-w-2xl mx-auto">
+              {locale === "en"
+                ? "Transform your future with international education"
+                : "غيّر مستقبلك بالتعليم الدولي"
+              }
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                icon: Globe,
+                title: { en: "Global Perspective", ar: "منظور عالمي" },
+                desc: { en: "Develop cross-cultural understanding and global mindset", ar: "تطوير الفهم بين الثقافات والعقلية العالمية" }
+              },
+              {
+                icon: TrendingUp,
+                title: { en: "Career Opportunities", ar: "فرص مهنية" },
+                desc: { en: "Enhance your resume with international experience", ar: "عزز سيرتك الذاتية بخبرة دولية" }
+              },
+              {
+                icon: Users,
+                title: { en: "Network Building", ar: "بناء شبكة علاقات" },
+                desc: { en: "Connect with students and professionals from around the world", ar: "تواصل مع الطلاب والمحترفين من جميع أنحاء العالم" }
+              },
+              {
+                icon: GraduationCap,
+                title: { en: "Quality Education", ar: "تعليم نوعي" },
+                desc: { en: "Access world-class universities and cutting-edge programs", ar: "الوصول إلى جامعات عالمية وبرامج متقدمة" }
+              },
+              {
+                icon: Shield,
+                title: { en: "Personal Growth", ar: "نمو شخصي" },
+                desc: { en: "Build independence, confidence, and adaptability", ar: "بناء الاستقلالية والثقة والمرونة" }
+              },
+              {
+                icon: Heart,
+                title: { en: "Life Experience", ar: "تجربة حياة" },
+                desc: { en: "Create unforgettable memories and lifelong friendships", ar: "اصنع ذكريات لا تُنسى وصداقات تدوم مدى الحياة" }
+              }
+            ].map((benefit, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="p-6 rounded-xl bg-slate-900 border border-slate-800 hover:border-primary/50 transition-all"
+              >
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                  <benefit.icon className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="font-bold text-white mb-2">{locale === "en" ? benefit.title.en : benefit.title.ar}</h3>
+                <p className="text-slate-400 text-sm">{locale === "en" ? benefit.desc.en : benefit.desc.ar}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Timeline */}
+      <section className="py-20 bg-slate-900/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white mb-4">
+              {locale === "en" ? "Our Journey" : "رحلتنا"}
+            </h2>
+            <p className="text-slate-400 max-w-2xl mx-auto">
+              {locale === "en"
+                ? "From humble beginnings to becoming a trusted education partner"
+                : "من البدايات المتواضعة إلى أن نصبح شريكاً تعليمياً موثوقاً"
+              }
+            </p>
+          </div>
+
+          <div className="max-w-3xl mx-auto">
+            <div className="space-y-8">
+              {[
+                {
+                  year: "2019",
+                  title: { en: "Founded in Yiwu, China", ar: "التأسيس في ييوو، الصين" },
+                  desc: { en: "Started with a simple mission: help Arab students access quality education", ar: "بدأنا بمهمة بسيطة: مساعدة الطلاب العرب على الوصول إلى تعليم نوعي" }
+                },
+                {
+                  year: "2020",
+                  title: { en: "First CSC Scholarship Success", ar: "أول نجاح في منحة CSC" },
+                  desc: { en: "Helped first student secure full CSC scholarship to Tsinghua University", ar: "ساعدنا أول طالب على الحصول على منحة CSC كاملة لجامعة تسينغهوا" }
+                },
+                {
+                  year: "2021",
+                  title: { en: "Expanded to Malaysia", ar: "التوسع إلى ماليزيا" },
+                  desc: { en: "Opened Malaysia office to serve students seeking education in Southeast Asia", ar: "فتحنا مكتب ماليزيا لخدمة الطلاب الباحثين عن التعليم في جنوب شرق آسيا" }
+                },
+                {
+                  year: "2022",
+                  title: { en: "500+ Students Served", ar: "خدمة أكثر من 500 طالب" },
+                  desc: { en: "Reached milestone of helping hundreds of students achieve their dreams", ar: "وصلنا إلى علامة مساعدة مئات الطلاب على تحقيق أحلامهم" }
+                },
+                {
+                  year: "2023",
+                  title: { en: "Turkey Partnership", ar: "شراكة تركيا" },
+                  desc: { en: "Added Turkey to our service portfolio with Türkiye Bursları expertise", ar: "أضفنا تركيا إلى محفظة خدماتنا بخبرة في Türkiye Bursları" }
+                },
+                {
+                  year: "2024",
+                  title: { en: "Continuing Excellence", ar: "الاستمرار في التميز" },
+                  desc: { en: "Maintaining 85% client satisfaction rate while expanding our university network", ar: "الحفاظ على معدل رضا العملاء 85% مع توسيع شبكة جامعاتنا" }
+                }
+              ].map((milestone, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="flex gap-6"
+                >
+                  <div className="flex flex-col items-center">
+                    <div className="w-12 h-12 rounded-full bg-primary text-white font-bold flex items-center justify-center">
+                      {milestone.year}
+                    </div>
+                    {index < 5 && <div className="w-0.5 h-full bg-slate-700 mt-2" />}
+                  </div>
+                  <div className="pb-8">
+                    <h3 className="text-xl font-bold text-white mb-2">{locale === "en" ? milestone.title.en : milestone.title.ar}</h3>
+                    <p className="text-slate-400">{locale === "en" ? milestone.desc.en : milestone.desc.ar}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 bg-slate-950">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white mb-4">
+              {locale === "en" ? "Frequently Asked Questions" : "الأسئلة الشائعة"}
+            </h2>
+            <p className="text-slate-400 max-w-2xl mx-auto">
+              {locale === "en"
+                ? "Answers to common questions about studying abroad"
+                : "إجابات على الأسئلة الشائعة حول الدراسة في الخارج"
+              }
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {[
+              {
+                question: { en: "What documents do I need to apply?", ar: "ما هي الوثائق التي أحتاجها للتقديم؟" },
+                answer: { en: "Required documents include passport, academic transcripts, certificates, language test scores (IELTS/TOEFL/HSK), recommendation letters, and a personal statement.", ar: "الوثائق المطلوبة تشمل جواز السفر، كشوف الدرجات، الشهادات، نتائج اختبارات اللغة (IELTS/TOEFL/HSK)، خطابات التوصية، والبيان الشخصي." }
+              },
+              {
+                question: { en: "How long does the application process take?", ar: "كم يستغرق عملية التقديم؟" },
+                answer: { en: "Application processing typically takes 4-8 weeks depending on the university and program. We recommend applying at least 3 months before the start date.", ar: "معالجة الطلب تستغرق عادة 4-8 أسابيع حسب الجامعة والبرنامج. ننصح بالتقديم قبل 3 أشهر على الأقل من تاريخ البدء." }
+              },
+              {
+                question: { en: "Do you help with scholarships?", ar: "هل تساعدون في المنح الدراسية؟" },
+                answer: { en: "Yes! We specialize in helping students secure scholarships including CSC, Türkiye Bursları, and university-specific scholarships. Our success rate is 85%.", ar: "نعم! نتخصص في مساعدة الطلاب على الحصول على منح بما في ذلك CSC، Türkiye Bursları، والمنح الخاصة بالجامعات. معدل نجاحنا 85%." }
+              },
+              {
+                question: { en: "What if my application is rejected?", ar: "ماذا إذا تم رفض طلبي؟" },
+                answer: { en: "We offer a 100% money-back guarantee. If we fail to secure your admission, we will refund your service fees in full.", ar: "نقدم ضمان استرداد 100%. إذا فشلنا في تأمين قبولك، سنسترد رسوم خدمتك بالكامل." }
+              },
+              {
+                question: { en: "Do you provide accommodation assistance?", ar: "هل تقدمون مساعدة في السكن؟" },
+                answer: { en: "Yes, we help students find safe and affordable accommodation near their universities. We can also assist with airport pickup and initial settlement.", ar: "نعم، نساعد الطلاب في العثور على سكن آمن وميسور بالقرب من جامعاتهم. يمكننا أيضاً المساعدة في الاستقبال من المطار والتسوية الأولية." }
+              }
+            ].map((faq, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="p-6 rounded-xl bg-slate-900 border border-slate-800"
+              >
+                <h3 className="font-bold text-white mb-2">{locale === "en" ? faq.question.en : faq.question.ar}</h3>
+                <p className="text-slate-400">{locale === "en" ? faq.answer.en : faq.answer.ar}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

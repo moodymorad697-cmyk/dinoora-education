@@ -291,7 +291,7 @@ export default function BlogPage() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <Link href={`/blog/${post.slug}`} className="group block h-full">
+                  <Link href={`/blog/${post.slug}?locale=${locale}`} className="group block h-full">
                     <div className="h-full bg-slate-900/50 border border-slate-800 rounded-xl overflow-hidden hover:border-primary/50 transition-all group-hover:shadow-lg group-hover:shadow-primary/10">
                       {/* Image Placeholder */}
                       <div className="aspect-video bg-slate-800 flex items-center justify-center relative overflow-hidden">
@@ -368,7 +368,7 @@ export default function BlogPage() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
                 >
-                  <Link href={`/blog/${post.slug}`} className="group block h-full">
+                  <Link href={`/blog/${post.slug}?locale=${locale}`} className="group block h-full">
                     <div className="h-full bg-slate-900/30 border border-slate-800 rounded-xl overflow-hidden hover:border-primary/30 transition-all">
                       <div className="aspect-video bg-slate-800 flex items-center justify-center relative">
                         <post.icon className="w-12 h-12 text-slate-600 group-hover:text-primary transition-colors" />

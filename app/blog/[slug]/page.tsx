@@ -686,8 +686,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     notFound()
   }
 
-  // Default to English
-  const locale: 'en' | 'ar' = 'en'
+  // Default to Arabic
+  const locale = 'ar' as 'en' | 'ar'
   const ContentIcon = article.icon
   const content = article.content[locale]
   const lines = content.split('\n')
