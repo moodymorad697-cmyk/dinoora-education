@@ -16,14 +16,6 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const [locale, setLocale] = useState<Locale>("ar")
 
   useEffect(() => {
-    // Check localStorage for saved preference
-    const saved = localStorage.getItem("dinoora-locale") as Locale | null
-    if (saved && (saved === "en" || saved === "ar")) {
-      setLocale(saved)
-    }
-  }, [])
-
-  useEffect(() => {
     // Save preference to localStorage
     localStorage.setItem("dinoora-locale", locale)
     // Update document attributes
