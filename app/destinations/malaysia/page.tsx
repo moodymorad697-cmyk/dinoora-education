@@ -127,19 +127,19 @@ export default function MalaysiaPage() {
                 description: locale === "en" ? "Famous Hindu temple and caves" : "معبد هندوسي وكهوف مشهورة"
               },
               {
-                src: "https://images.unsplash.com/photo-1551218808-94e220e084d2?w=600&q=80",
-                alt: "University of Malaya",
+                src: "https://images.unsplash.com/photo-1544531586-fde5298cdd40?w=600&q=80",
+                alt: "Malaysian University Campus",
                 title: locale === "en" ? "Top Universities" : "أفضل الجامعات",
                 description: locale === "en" ? "World-class education" : "تعليم عالمي المستوى"
               },
               {
-                src: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80",
-                alt: "Malay Culture",
+                src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
+                alt: "Malaysian Culture",
                 title: locale === "en" ? "Malay Culture" : "الثقافة الماليزية",
                 description: locale === "en" ? "Rich multicultural heritage" : "تراث متعدد الثقافات غني"
               },
               {
-                src: "https://images.unsplash.com/photo-1549144511-f099e773c147?w=600&q=80",
+                src: "https://images.unsplash.com/photo-1596436889106-be35e843f974?w=600&q=80",
                 alt: "Tropical Beaches",
                 title: locale === "en" ? "Tropical Paradise" : "الجنة الاستوائية",
                 description: locale === "en" ? "Beautiful beaches and islands" : "شواطئ وجزر جميلة"
