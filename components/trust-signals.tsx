@@ -20,6 +20,7 @@ import {
   MessageCircle
 } from "lucide-react"
 import { motion } from "framer-motion"
+import { AnimatedCounter } from "@/components/animated-counter"
 
 // Trust Badges Section
 export function TrustBadges() {
@@ -96,7 +97,7 @@ export function TrustBadges() {
   )
 }
 
-// Prestigious Universities
+// Prestigious Universities with Marquee
 export function Certifications() {
   const { locale } = useLanguage()
   
@@ -106,31 +107,48 @@ export function Certifications() {
     "University of Malaya",
     "Bogazici University",
     "Zhejiang University",
-    "Taylor's University"
+    "Taylor's University",
+    "Wuhan University",
+    "Istanbul University",
+    "Fudan University",
+    "UTM Malaysia",
   ]
   
   return (
-    <section className="py-16 bg-slate-900/50">
+    <section className="py-16 bg-slate-900/50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h3 className="text-xl font-bold text-white mb-6 flex items-center justify-center gap-2">
+        <motion.div 
+          className="text-center mb-10"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h3 className="text-xl font-bold text-white mb-2 flex items-center justify-center gap-2">
             <GraduationCap className="w-6 h-6 text-primary" />
-            {locale === "ar" ? "جامعات مرموقة" : "Prestigious Universities"}
+            {locale === "ar" ? "جامعات شريكة مرموقة" : "Prestigious Partner Universities"}
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 max-w-4xl mx-auto">
-            {universities.map((university, index) => (
+          <p className="text-sm text-slate-400">
+            {locale === "ar" ? "نعمل مع أفضل الجامعات حول العالم" : "We work with the best universities worldwide"}
+          </p>
+        </motion.div>
+        
+        {/* Animated Marquee */}
+        <div className="relative">
+          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-slate-900/50 to-transparent z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-slate-900/50 to-transparent z-10" />
+          
+          <div className="flex animate-marquee gap-4">
+            {[...universities, ...universities].map((university, index) => (
               <div 
                 key={index}
-                className="flex items-center gap-2 p-3 rounded-lg bg-slate-950 border border-slate-800"
+                className="flex-shrink-0 flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-950 border border-slate-800 hover:border-primary/50 transition-colors duration-300"
               >
                 <Building2 className="w-4 h-4 text-primary shrink-0" />
-                <span className="text-sm text-slate-300">{university}</span>
+                <span className="text-sm text-slate-300 whitespace-nowrap font-medium">{university}</span>
               </div>
             ))}
           </div>
-          <p className="mt-4 text-sm text-slate-500 text-center">
-            {locale === "ar" ? "و جامعات أخرى مرموقة..." : "And other prestigious universities..."}
-          </p>
         </div>
       </div>
     </section>
@@ -142,10 +160,10 @@ export function TrustStats() {
   const { locale } = useLanguage()
   
   const stats = [
-    { value: "98%", label: locale === "en" ? "Success Rate" : "نسبة النجاح", color: "text-primary" },
-    { value: "98%", label: locale === "en" ? "Success Rate" : "نسبة النجاح", color: "text-emerald-400" },
-    { value: "500+", label: locale === "en" ? "Students Placed" : "طالب تم قبولهم", color: "text-amber-400" },
-    { value: "50+", label: locale === "en" ? "Universities" : "جامعة", color: "text-cyan-400" },
+    { value: 98, suffix: "%", label: locale === "en" ? "Success Rate" : "نسبة النجاح", color: "text-primary" },
+    { value: 3, suffix: "", label: locale === "en" ? "Countries" : "دول", color: "text-emerald-400" },
+    { value: 500, suffix: "+", label: locale === "en" ? "Students Placed" : "طالب تم قبولهم", color: "text-amber-400" },
+    { value: 50, suffix: "+", label: locale === "en" ? "Universities" : "جامعة", color: "text-cyan-400" },
   ]
   
   return (
@@ -163,7 +181,9 @@ export function TrustStats() {
             >
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
               <div className="relative">
-                <div className={`text-3xl font-bold mb-2 text-white`}>{stat.value}</div>
+                <div className="text-3xl font-bold mb-2 text-white">
+                  <AnimatedCounter end={stat.value} suffix={stat.suffix} duration={2} />
+                </div>
                 <div className={`text-sm ${stat.color}`}>{stat.label}</div>
               </div>
             </motion.div>

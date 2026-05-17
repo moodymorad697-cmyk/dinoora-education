@@ -11,7 +11,7 @@ const testimonials = [
     country: "Saudi Arabia",
     university: "Tsinghua University",
     program: "Computer Science",
-    image: "/images/student-1.jpg",
+    image: "https://ui-avatars.com/api/?name=Ahmed+Al-Rashid&background=f59e0b&color=fff&size=128&bold=true",
     content: {
       en: "DINOORA transformed my dream into reality. Their team handled everything from university selection to visa processing with incredible professionalism. I received a full CSC scholarship and now studying at China's #1 university!",
       ar: "حولت دينورا حلمي إلى واقع. تعامل فريقهم مع كل شيء من اختيار الجامعة إلى معالجة التأشيرة باحترافية لا تصدق. حصلت على منحة CSC كاملة والآن أدرس في الجامعة رقم 1 في الصين!"
@@ -24,7 +24,7 @@ const testimonials = [
     country: "Egypt",
     university: "Peking University",
     program: "Medicine (MBBS)",
-    image: "/images/student-2.jpg",
+    image: "https://ui-avatars.com/api/?name=Fatima+Hassan&background=10b981&color=fff&size=128&bold=true",
     content: {
       en: "As a medical student, choosing the right program was crucial. DINOORA's advisors understood my goals and matched me with a WHO-recognized MBBS program. Their support didn't end at admission - they helped me settle in Beijing!",
       ar: "كطالبة طب، كان اختيار البرنامج المناسب أمراً حاسماً. فهم مستشارو دينورا أهدافي وطابقوني مع برنامج طب بشري معترف به من منظمة الصحة العالمية. دعمهم لم ينتهِ عند القبول - ساعدوني في الاستقرار في بكين!"
@@ -37,7 +37,7 @@ const testimonials = [
     country: "Somalia",
     university: "Zhejiang University",
     program: "Engineering",
-    image: "/images/student-3.jpg",
+    image: "https://ui-avatars.com/api/?name=Omar+Yusuf&background=6366f1&color=fff&size=128&bold=true",
     content: {
       en: "From my first inquiry to landing in Hangzhou, DINOORA was with me every step. The airport pickup, accommodation setup, and university registration - everything was seamless. They truly care about student success!",
       ar: "من استفساري الأول حتى وصولي إلى هانغتشو، كانت دينورا معي في كل خطوة. الاستقبال من المطار، إعداد السكن، والتسجيل الجامعي - كل شيء كان سلساً. إنهم يهتمون حقاً بنجاح الطلاب!"
@@ -86,7 +86,13 @@ export function Testimonials() {
       
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <motion.div 
+          className="text-center max-w-3xl mx-auto mb-16"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+        >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-6">
             <span className="text-sm font-medium text-primary">{t.testimonials.label}</span>
           </div>
@@ -97,13 +103,17 @@ export function Testimonials() {
           <p className="text-lg text-muted-foreground">
             {t.testimonials.description}
           </p>
-        </div>
+        </motion.div>
 
         {/* Testimonials Grid */}
         <div className="grid gap-8 lg:grid-cols-3">
           {testimonials.map((testimonial, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
               className="group relative rounded-3xl border border-border/50 bg-card/30 p-8 backdrop-blur-sm transition-all duration-500 hover:border-primary/30 hover:bg-card/50 hover:shadow-2xl hover:shadow-primary/5"
             >
               {/* Quote Icon */}
@@ -142,7 +152,7 @@ export function Testimonials() {
                   <p className="text-xs text-primary">{testimonial.program}</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 

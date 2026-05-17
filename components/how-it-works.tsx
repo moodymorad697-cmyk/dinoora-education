@@ -2,6 +2,7 @@
 
 import { Send, Search, FileText, CheckCircle, Stamp, Plane, Sparkles, ArrowRight } from "lucide-react"
 import { useLanguage } from "@/lib/language-context"
+import { motion } from "framer-motion"
 
 export function HowItWorks() {
   const { t, dir } = useLanguage()
@@ -51,7 +52,13 @@ export function HowItWorks() {
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <motion.div 
+          className="text-center max-w-3xl mx-auto mb-20"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+        >
           <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-md mb-6">
             <Sparkles className="w-4 h-4 text-primary" />
             <span className="text-sm font-semibold text-primary tracking-wider uppercase">{t.howItWorks.label}</span>
@@ -63,7 +70,7 @@ export function HowItWorks() {
           <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed">
             {t.howItWorks.description}
           </p>
-        </div>
+        </motion.div>
 
         {/* Steps - Premium Cards */}
         <div className="relative">
@@ -86,10 +93,13 @@ export function HowItWorks() {
               const data = t.howItWorks.steps[step.key]
               const Icon = step.icon
               return (
-                <div
+                <motion.div
                   key={index}
                   className="group relative"
-                  style={{ animationDelay: `${index * 100}ms` }}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
                   {/* Card */}
                   <div className="relative h-full rounded-3xl overflow-hidden card-glow lift-gold backdrop-blur-xl bg-gradient-to-br from-white/[0.04] to-white/[0.01] border border-white/10 p-7 transition-all duration-500">
@@ -123,7 +133,7 @@ export function HowItWorks() {
                     {/* Decorative corner accent */}
                     <div className="absolute -bottom-12 -right-12 w-32 h-32 bg-gradient-to-br from-primary/0 to-primary/0 group-hover:from-primary/10 group-hover:to-transparent rounded-full blur-2xl transition-all duration-700" />
                   </div>
-                </div>
+                </motion.div>
               )
             })}
           </div>

@@ -2,6 +2,7 @@
 
 import { Shield, Zap, Users, Award, FileCheck, HeartHandshake, Sparkles, BadgeCheck } from "lucide-react"
 import { useLanguage } from "@/lib/language-context"
+import { motion } from "framer-motion"
 
 export function WhyChooseUs() {
   const { t } = useLanguage()
@@ -97,7 +98,13 @@ export function WhyChooseUs() {
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <motion.div 
+          className="text-center max-w-3xl mx-auto mb-20"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+        >
           <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-md mb-6">
             <Sparkles className="w-4 h-4 text-primary" />
             <span className="text-sm font-semibold text-primary tracking-wider uppercase">{t.whyChooseUs.label}</span>
@@ -109,15 +116,19 @@ export function WhyChooseUs() {
           <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed">
             {t.whyChooseUs.description}
           </p>
-        </div>
+        </motion.div>
 
         {/* Premium Features Grid */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, index) => {
             const Icon = feature.Icon
             return (
-              <div
+              <motion.div
                 key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="group relative rounded-3xl card-glow lift-gold backdrop-blur-xl bg-gradient-to-br from-white/[0.05] to-white/[0.01] border border-white/10 p-7 transition-all duration-500 overflow-hidden"
               >
                 {/* Decorative gradient blob */}
@@ -145,7 +156,7 @@ export function WhyChooseUs() {
                   {/* Bottom accent */}
                   <div className={`mt-5 h-1 w-12 rounded-full bg-gradient-to-r ${feature.gradient} opacity-60 group-hover:w-20 transition-all duration-500`} />
                 </div>
-              </div>
+              </motion.div>
             )
           })}
         </div>

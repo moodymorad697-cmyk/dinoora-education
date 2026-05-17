@@ -6,6 +6,7 @@ import '../styles/enhancements.css'
 import { LanguageProvider } from '@/lib/language-context'
 import { ThemeProvider } from '@/components/theme-provider'
 import { FloatingActions } from '@/components/floating-actions'
+import { ScrollProgress } from '@/components/scroll-progress'
 import { 
   OrganizationSchema, 
   WebsiteSchema, 
@@ -219,6 +220,7 @@ export default function RootLayout({
       <body className={`${jakarta.variable} ${outfit.variable} ${cairo.variable} antialiased font-sans`} suppressHydrationWarning style={{ textRendering: 'optimizeLegibility' }}>
         <ThemeProvider>
           <LanguageProvider>
+            <ScrollProgress />
             <PerformanceOptimizations />
             <div className="min-h-screen bg-background">
               {children}
