@@ -115,7 +115,7 @@ export default function MalaysiaPage() {
                 description: locale === "en" ? "Modern capital city" : "العاصمة الحديثة"
               },
               {
-                src: "https://images.unsplash.com/photo-1586380303210-8a2b6d25d5e4?w=600&q=80",
+                src: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=600&q=80",
                 alt: "Petronas Towers",
                 title: locale === "en" ? "Petronas Towers" : "أبراج بتروناس",
                 description: locale === "en" ? "Iconic twin towers of Kuala Lumpur" : "أبراج التوأم الشهيرة في كوالالمبور"

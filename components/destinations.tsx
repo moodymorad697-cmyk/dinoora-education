@@ -9,9 +9,9 @@ import { getCountryColors } from "@/lib/country-colors"
 
 // Verified working education & landmark images for each country
 const images = {
-  china: "https://images.unsplash.com/photo-1599939571322-792a326991db?w=800&q=80", // Forbidden City Beijing
-  malaysia: "https://images.unsplash.com/photo-1597211833712-5e41faa202ea?w=800&q=80", // Kuala Lumpur Skyline
-  turkey: "https://images.unsplash.com/photo-1528644285894-3666295b0f83?w=800&q=80", // Hagia Sophia Istanbul
+  china: "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=800&q=80", // Traditional Chinese Architecture
+  malaysia: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=800&q=80", // Petronas Towers Kuala Lumpur
+  turkey: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800&q=80", // Istanbul Cityscape
 };
 
 export function Destinations() {

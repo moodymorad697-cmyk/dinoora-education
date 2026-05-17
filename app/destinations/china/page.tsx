@@ -179,10 +179,10 @@ export default function ChinaPage() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                src: "https://images.unsplash.com/photo-1599939571322-792a326991db?w=600&q=80",
-                alt: "Forbidden City Beijing",
-                title: locale === "en" ? "Forbidden City" : "المدينة المحرمة",
-                description: locale === "en" ? "Ancient imperial palace complex" : "مجمع القصر الإمبراطوري القديم"
+                src: "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=600&q=80",
+                alt: "Traditional Chinese Temple",
+                title: locale === "en" ? "Chinese Temples" : "المعابد الصينية",
+                description: locale === "en" ? "Ancient sacred architecture" : "عمارة مقدسة قديمة"
               },
               {
                 src: "https://images.unsplash.com/photo-1508804052814-cd3ba865a116?w=600&q=80",

@@ -109,7 +109,7 @@ export default function TurkeyPage() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                src: "https://images.unsplash.com/photo-1528644285894-3666295b0f83?w=600&q=80",
+                src: "https://images.unsplash.com/photo-1466442929976-97f336a657be?w=600&q=80",
                 alt: "Hagia Sophia",
                 title: locale === "en" ? "Hagia Sophia" : "آيا صوفيا",
                 description: locale === "en" ? "Historic Byzantine masterpiece" : "تحفة بيزنطية تاريخية"
