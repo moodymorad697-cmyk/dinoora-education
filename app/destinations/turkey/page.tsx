@@ -133,16 +133,16 @@ export default function TurkeyPage() {
                 description: locale === "en" ? "World-class education" : "تعليم عالمي المستوى"
               },
               {
-                src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80",
-                alt: "Turkish Culture",
-                title: locale === "en" ? "Turkish Culture" : "الثقافة التركية",
-                description: locale === "en" ? "Rich heritage and hospitality" : "تراث غني وكرم ضيافة"
-              },
-              {
                 src: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=600&q=80",
                 alt: "Cappadocia",
                 title: locale === "en" ? "Cappadocia" : "كبادوكيا",
                 description: locale === "en" ? "Famous fairy chimneys" : "مداخن الجنيات الشهيرة"
+              },
+              {
+                src: "https://images.unsplash.com/photo-1531219572328-a0171b4448a3?w=600&q=80",
+                alt: "Turkish Culture",
+                title: locale === "en" ? "Turkish Culture" : "الثقافة التركية",
+                description: locale === "en" ? "Rich heritage and hospitality" : "تراث غني وكرم ضيافة"
               }
             ].map((image, i) => (
               <div key={i} className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">

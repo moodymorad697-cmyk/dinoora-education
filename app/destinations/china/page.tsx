@@ -191,12 +191,6 @@ export default function ChinaPage() {
                 description: locale === "en" ? "Ancient imperial palace complex" : "مجمع القصر الإمبراطوري القديم"
               },
               {
-                src: "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=600&q=80",
-                alt: "Traditional Chinese Architecture",
-                title: locale === "en" ? "Chinese Architecture" : "العمارة الصينية",
-                description: locale === "en" ? "Beautiful traditional buildings" : "مباني تقليدية جميلة"
-              },
-              {
                 src: "https://images.unsplash.com/photo-1474181487882-5abf3f0ba6c2?w=600&q=80",
                 alt: "Chinese University Campus",
                 title: locale === "en" ? "Top Universities" : "أفضل الجامعات",
@@ -213,6 +207,12 @@ export default function ChinaPage() {
                 alt: "Shanghai Bund",
                 title: locale === "en" ? "Shanghai Bund" : "شانغهاي",
                 description: locale === "en" ? "Iconic waterfront promenade" : "كورنيش المياه الشهير"
+              },
+              {
+                src: "https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?w=600&q=80",
+                alt: "Traditional Chinese Architecture",
+                title: locale === "en" ? "Chinese Architecture" : "العمارة الصينية",
+                description: locale === "en" ? "Beautiful traditional buildings" : "مباني تقليدية جميلة"
               }
             ].map((image, i) => (
               <div key={i} className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">

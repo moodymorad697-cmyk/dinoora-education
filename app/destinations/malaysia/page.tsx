@@ -128,12 +128,12 @@ export default function MalaysiaPage() {
               },
               {
                 src: "https://images.unsplash.com/photo-1544531586-fde5298cdd40?w=600&q=80",
-                alt: "Malaysian University Campus",
+                alt: "University of Malaya",
                 title: locale === "en" ? "Top Universities" : "أفضل الجامعات",
                 description: locale === "en" ? "World-class education" : "تعليم عالمي المستوى"
               },
               {
-                src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
+                src: "https://images.unsplash.com/photo-1549144511-f099e773c147?w=600&q=80",
                 alt: "Malaysian Culture",
                 title: locale === "en" ? "Malay Culture" : "الثقافة الماليزية",
                 description: locale === "en" ? "Rich multicultural heritage" : "تراث متعدد الثقافات غني"
