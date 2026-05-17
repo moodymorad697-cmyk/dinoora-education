@@ -109,40 +109,40 @@ export default function MalaysiaPage() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {[
               {
+                src: "https://images.unsplash.com/photo-1586380303210-8a2b6d25d5e4?w=600&q=80",
+                alt: "Petronas Towers",
+                title: locale === "en" ? "Petronas Towers" : "أبراج بتروناس",
+                description: locale === "en" ? "Iconic twin towers of Kuala Lumpur" : "أبراج التوأم الشهيرة في كوالالمبور"
+              },
+              {
+                src: "https://images.unsplash.com/photo-1597211833712-5e41faa202ea?w=600&q=80",
+                alt: "Kuala Lumpur Skyline",
+                title: locale === "en" ? "Kuala Lumpur" : "كوالالمبور",
+                description: locale === "en" ? "Modern capital city" : "العاصمة الحديثة"
+              },
+              {
+                src: "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=600&q=80",
+                alt: "Batu Caves",
+                title: locale === "en" ? "Batu Caves" : "كهف باتو",
+                description: locale === "en" ? "Famous Hindu temple and caves" : "معبد هندوسي وكهوف مشهورة"
+              },
+              {
                 src: "https://images.unsplash.com/photo-1551218808-94e220e084d2?w=600&q=80",
                 alt: "University of Malaya",
-                title: locale === "en" ? "Premier Universities" : "الجامعات المتميزة",
-                description: locale === "en" ? "Internationally recognized institutions" : "مؤسسات معترف بها دولياً"
+                title: locale === "en" ? "Top Universities" : "أفضل الجامعات",
+                description: locale === "en" ? "World-class education" : "تعليم عالمي المستوى"
               },
               {
                 src: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80",
-                alt: "Kuala Lumpur City",
-                title: locale === "en" ? "Modern Metropolis" : "المدينة الحديثة",
-                description: locale === "en" ? "Dynamic business and cultural hub" : "مركز أعمال وثقافي ديناميكي"
+                alt: "Malay Culture",
+                title: locale === "en" ? "Malay Culture" : "الثقافة الماليزية",
+                description: locale === "en" ? "Rich multicultural heritage" : "تراث متعدد الثقافات غني"
               },
               {
                 src: "https://images.unsplash.com/photo-1549144511-f099e773c147?w=600&q=80",
-                alt: "Malaysian Students",
-                title: locale === "en" ? "Diverse Community" : "المجتمع المتنوع",
-                description: locale === "en" ? "Multicultural student environment" : "بيئة طلابية متعددة الثقافات"
-              },
-              {
-                src: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80",
-                alt: "Malaysian Nature",
-                title: locale === "en" ? "Natural Beauty" : "الجمال الطبيعي",
-                description: locale === "en" ? "Tropical paradise and beaches" : "الجنة الاستوائية والشواطئ"
-              },
-              {
-                src: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&q=80",
-                alt: "University Campus",
-                title: locale === "en" ? "Campus Facilities" : "مرافق الحرم الجامعي",
-                description: locale === "en" ? "Modern learning environments" : "بيئات تعلم حديثة"
-              },
-              {
-                src: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=600&q=80",
-                alt: "Cultural Heritage",
-                title: locale === "en" ? "Cultural Heritage" : "التراث الثقافي",
-                description: locale === "en" ? "Rich Malay, Chinese, and Indian cultures" : "ثقافات الملايو والصينيين والهنود الغنية"
+                alt: "Tropical Beaches",
+                title: locale === "en" ? "Tropical Paradise" : "الجنة الاستوائية",
+                description: locale === "en" ? "Beautiful beaches and islands" : "شواطئ وجزر جميلة"
               }
             ].map((image, i) => (
               <div key={i} className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">

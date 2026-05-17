@@ -110,39 +110,39 @@ export default function TurkeyPage() {
             {[
               {
                 src: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=600&q=80",
-                alt: "Istanbul University",
-                title: locale === "en" ? "Historic Universities" : "الجامعات التاريخية",
-                description: locale === "en" ? "Centuries-old institutions of excellence" : "مؤسسات التميز التي يعود تاريخها لقرون"
+                alt: "Blue Mosque Istanbul",
+                title: locale === "en" ? "Blue Mosque" : "المسجد الأزرق",
+                description: locale === "en" ? "Iconic Ottoman architecture" : "عمارة عثمانية شهيرة"
               },
               {
                 src: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=600&q=80",
                 alt: "Istanbul Bosphorus",
-                title: locale === "en" ? "Strategic Location" : "الموقع الاستراتيجي",
+                title: locale === "en" ? "Bosphorus Strait" : "مضيق البوسفور",
                 description: locale === "en" ? "Bridge between Europe and Asia" : "جسر بين أوروبا وآسيا"
               },
               {
-                src: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80",
-                alt: "Turkish Students",
-                title: locale === "en" ? "Vibrant Community" : "المجتمع النابض",
-                description: locale === "en" ? "Welcoming and diverse student body" : "جسم طلابي مرحب ومتنوع"
-              },
-              {
-                src: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80",
-                alt: "Turkish Landscapes",
-                title: locale === "en" ? "Natural Wonders" : "العجائب الطبيعية",
-                description: locale === "en" ? "From beaches to mountains" : "من الشواطئ إلى الجبال"
+                src: "https://images.unsplash.com/photo-1528644285894-3666295b0f83?w=600&q=80",
+                alt: "Hagia Sophia",
+                title: locale === "en" ? "Hagia Sophia" : "آيا صوفيا",
+                description: locale === "en" ? "Historic Byzantine masterpiece" : "تحفة بيزنطية تاريخية"
               },
               {
                 src: "https://images.unsplash.com/photo-1585506942812-e72b29cef752?w=600&q=80",
-                alt: "Modern Campus",
-                title: locale === "en" ? "Modern Facilities" : "المرافق الحديثة",
-                description: locale === "en" ? "State-of-the-art learning spaces" : "مساحات تعلم متطورة"
+                alt: "Turkish University",
+                title: locale === "en" ? "Top Universities" : "أفضل الجامعات",
+                description: locale === "en" ? "World-class education" : "تعليم عالمي المستوى"
               },
               {
                 src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80",
-                alt: "Campus Activities",
-                title: locale === "en" ? "Student Activities" : "أنشطة الطلاب",
-                description: locale === "en" ? "Rich cultural and social events" : "أحداث ثقافية واجتماعية غنية"
+                alt: "Turkish Culture",
+                title: locale === "en" ? "Turkish Culture" : "الثقافة التركية",
+                description: locale === "en" ? "Rich heritage and hospitality" : "تراث غني وكرم ضيافة"
+              },
+              {
+                src: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=600&q=80",
+                alt: "Cappadocia",
+                title: locale === "en" ? "Cappadocia" : "كبادوكيا",
+                description: locale === "en" ? "Famous fairy chimneys" : "مداخن الجنيات الشهيرة"
               }
             ].map((image, i) => (
               <div key={i} className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">

@@ -179,40 +179,40 @@ export default function ChinaPage() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                src: "https://images.unsplash.com/photo-1565688534245-05d6b5be184a?w=600&q=80",
-                alt: "Tsinghua University Campus",
+                src: "https://images.unsplash.com/photo-1508804052814-cd3ba865a116?w=600&q=80",
+                alt: "Great Wall of China",
+                title: locale === "en" ? "Great Wall of China" : "السور العظيم",
+                description: locale === "en" ? "One of the world's most iconic landmarks" : "أحد أكثر المعالم شهرة في العالم"
+              },
+              {
+                src: "https://images.unsplash.com/photo-1599939571322-792a326991db?w=600&q=80",
+                alt: "Forbidden City Beijing",
+                title: locale === "en" ? "Forbidden City" : "المدينة المحرمة",
+                description: locale === "en" ? "Ancient imperial palace complex" : "مجمع القصر الإمبراطوري القديم"
+              },
+              {
+                src: "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=600&q=80",
+                alt: "Traditional Chinese Architecture",
+                title: locale === "en" ? "Chinese Architecture" : "العمارة الصينية",
+                description: locale === "en" ? "Beautiful traditional buildings" : "مباني تقليدية جميلة"
+              },
+              {
+                src: "https://images.unsplash.com/photo-1474181487882-5abf3f0ba6c2?w=600&q=80",
+                alt: "Chinese University Campus",
                 title: locale === "en" ? "Top Universities" : "أفضل الجامعات",
                 description: locale === "en" ? "World-class education facilities" : "مرافق تعليمية عالمية المستوى"
               },
               {
-                src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80",
-                alt: "Beijing Cityscape",
-                title: locale === "en" ? "Modern Cities" : "مدن حديثة",
+                src: "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=600&q=80",
+                alt: "Beijing Skyline",
+                title: locale === "en" ? "Modern Beijing" : "بكين الحديثة",
                 description: locale === "en" ? "Blend of tradition and innovation" : "مزيج من التقاليد والابتكار"
               },
               {
-                src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
-                alt: "Chinese Students Studying",
-                title: locale === "en" ? "Student Community" : "المجتمع الطلابي",
-                description: locale === "en" ? "Diverse international student body" : "جسم طلابي دولي متنوع"
-              },
-              {
-                src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80",
-                alt: "Shanghai Skyline",
-                title: locale === "en" ? "Cultural Experience" : "التجربة الثقافية",
-                description: locale === "en" ? "Rich history and modern culture" : "تاريخ غني وثقافة حديثة"
-              },
-              {
-                src: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&q=80",
-                alt: "University Library",
-                title: locale === "en" ? "Research Facilities" : "مرافق البحث",
-                description: locale === "en" ? "State-of-the-art research centers" : "مراكز بحث متطورة"
-              },
-              {
-                src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80",
-                alt: "Campus Life",
-                title: locale === "en" ? "Campus Activities" : "أنشطة الحرم الجامعي",
-                description: locale === "en" ? "Vibrant student life and events" : "حياة طلابية نابضة بالحياة"
+                src: "https://images.unsplash.com/photo-1535139262971-c51845709a48?w=600&q=80",
+                alt: "Shanghai Bund",
+                title: locale === "en" ? "Shanghai Bund" : "شانغهاي",
+                description: locale === "en" ? "Iconic waterfront promenade" : "كورنيش المياه الشهير"
               }
             ].map((image, i) => (
               <div key={i} className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
