@@ -109,6 +109,12 @@ export default function TurkeyPage() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {[
               {
+                src: "https://images.unsplash.com/photo-1528644285894-3666295b0f83?w=600&q=80",
+                alt: "Hagia Sophia",
+                title: locale === "en" ? "Hagia Sophia" : "آيا صوفيا",
+                description: locale === "en" ? "Historic Byzantine masterpiece" : "تحفة بيزنطية تاريخية"
+              },
+              {
                 src: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=600&q=80",
                 alt: "Blue Mosque Istanbul",
                 title: locale === "en" ? "Blue Mosque" : "المسجد الأزرق",
@@ -119,12 +125,6 @@ export default function TurkeyPage() {
                 alt: "Istanbul Bosphorus",
                 title: locale === "en" ? "Bosphorus Strait" : "مضيق البوسفور",
                 description: locale === "en" ? "Bridge between Europe and Asia" : "جسر بين أوروبا وآسيا"
-              },
-              {
-                src: "https://images.unsplash.com/photo-1528644285894-3666295b0f83?w=600&q=80",
-                alt: "Hagia Sophia",
-                title: locale === "en" ? "Hagia Sophia" : "آيا صوفيا",
-                description: locale === "en" ? "Historic Byzantine masterpiece" : "تحفة بيزنطية تاريخية"
               },
               {
                 src: "https://images.unsplash.com/photo-1585506942812-e72b29cef752?w=600&q=80",

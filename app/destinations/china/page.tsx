@@ -179,16 +179,16 @@ export default function ChinaPage() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                src: "https://images.unsplash.com/photo-1508804052814-cd3ba865a116?w=600&q=80",
-                alt: "Great Wall of China",
-                title: locale === "en" ? "Great Wall of China" : "السور العظيم",
-                description: locale === "en" ? "One of the world's most iconic landmarks" : "أحد أكثر المعالم شهرة في العالم"
-              },
-              {
                 src: "https://images.unsplash.com/photo-1599939571322-792a326991db?w=600&q=80",
                 alt: "Forbidden City Beijing",
                 title: locale === "en" ? "Forbidden City" : "المدينة المحرمة",
                 description: locale === "en" ? "Ancient imperial palace complex" : "مجمع القصر الإمبراطوري القديم"
+              },
+              {
+                src: "https://images.unsplash.com/photo-1508804052814-cd3ba865a116?w=600&q=80",
+                alt: "Great Wall of China",
+                title: locale === "en" ? "Great Wall of China" : "السور العظيم",
+                description: locale === "en" ? "One of the world's most iconic landmarks" : "أحد أكثر المعالم شهرة في العالم"
               },
               {
                 src: "https://images.unsplash.com/photo-1474181487882-5abf3f0ba6c2?w=600&q=80",

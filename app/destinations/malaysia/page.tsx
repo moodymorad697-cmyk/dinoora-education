@@ -109,16 +109,16 @@ export default function MalaysiaPage() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                src: "https://images.unsplash.com/photo-1586380303210-8a2b6d25d5e4?w=600&q=80",
-                alt: "Petronas Towers",
-                title: locale === "en" ? "Petronas Towers" : "أبراج بتروناس",
-                description: locale === "en" ? "Iconic twin towers of Kuala Lumpur" : "أبراج التوأم الشهيرة في كوالالمبور"
-              },
-              {
                 src: "https://images.unsplash.com/photo-1597211833712-5e41faa202ea?w=600&q=80",
                 alt: "Kuala Lumpur Skyline",
                 title: locale === "en" ? "Kuala Lumpur" : "كوالالمبور",
                 description: locale === "en" ? "Modern capital city" : "العاصمة الحديثة"
+              },
+              {
+                src: "https://images.unsplash.com/photo-1586380303210-8a2b6d25d5e4?w=600&q=80",
+                alt: "Petronas Towers",
+                title: locale === "en" ? "Petronas Towers" : "أبراج بتروناس",
+                description: locale === "en" ? "Iconic twin towers of Kuala Lumpur" : "أبراج التوأم الشهيرة في كوالالمبور"
               },
               {
                 src: "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=600&q=80",
